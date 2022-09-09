@@ -5,5 +5,7 @@ IXD 617 Advanced Tech: Mobile Web
 
 ### Important Links
 - https://christysung02.com/aau/ixd617/
-- https://christysung02.com/aau/ixd617/profile/
 - https://github.com/christysung02/IXD617_202290_01
+
+### Assignment Links
+- https://christysung02.com/aau/ixd617/profile/

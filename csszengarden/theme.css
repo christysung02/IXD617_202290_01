@@ -71,6 +71,9 @@ p{
     border: solid 1px black;
     padding: 20px 20px;
     border-radius: 25px;
+    display: grid;
+    grid-gap: 5px;
+    margin-top: 40px;
 }
 
 .supporting{
@@ -80,9 +83,40 @@ p{
     margin-left:50px;
 }
 
+.explanation {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 1.5px solid white;
+    margin-bottom: 80px;
+    border-style:groove;
+    padding: 30px;
+}
+
+.explanation h3{
+    font-size: 30px;
+    color: white;
+    font-weight: 900;
+}
+
+.participation {
+    background: #8aa6a3;
+    padding: 50px;
+    padding-top: 30px;
+    border-style: outset;
+    border-color: yellowgreen;
+    border-width: 10px;
+    transform: rotate(8deg);
+    border-radius: 50px;
+    margin-bottom: -80px;
+}
+
 .benefits{
-    border:#8aa6a3 dotted 10px;
-    padding: 20px;
+    border:white dotted 10px;
+    padding: 30px;
+    transform: rotate(-5deg);
+    margin-top: 80px;
+    margin-bottom: -5px;
+    background: #4c5958;
 }
 
 .benefits h3{
@@ -91,12 +125,20 @@ p{
     font-size: 25px;
 }
 
+.benefits p{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2em;
+}
+
 .requirements{
     background-image: linear-gradient(#127369, #8aa6a3);
     padding: 40px;
     border-radius: 80px;
-    margin: 60px 0px;
     transform: rotate(5deg);
+    border-bottom: white solid 20px;
+    border-right: white solid 10px;
 }
 
 .requirements h3{
@@ -120,4 +162,17 @@ p{
 .sidebar li{
     list-style-type: none;
     line-height: 2em;
+}
+
+.sidebar h3{
+    color: #127369;
+    font-weight: 900;
+    font-size: 20px;
+    text-indent: 20px;
+    text-shadow: white 1px 1px;
+}
+
+.footer{
+    background-color: white;
+    padding: 0px 20px;
 }

@@ -78,7 +78,6 @@ p{
 
 .supporting{
     max-width: 700px;
-    margin-top: 150px;
     margin-right: 50px;
     margin-left:50px;
 }
@@ -154,14 +153,15 @@ p{
 }
 
 .sidebar{
-    margin-right: 0px;
-    background-color: #8aa6a3;
     padding: 20px;
+    background-image: linear-gradient(to right, #8aa6a3, #127369, #10403b);
 }
 
 .sidebar li{
-    list-style-type: none;
-    line-height: 2em;
+    list-style-type:decimal-leading-zero;
+    line-height: 3em;
+    color: black;
+    font-weight: 400;
 }
 
 .sidebar h3{
@@ -169,10 +169,28 @@ p{
     font-weight: 900;
     font-size: 20px;
     text-indent: 20px;
-    text-shadow: white 1px 1px;
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.footer{
+.sidebar a{
+    color: white;
+    font-weight: 400;
+}
+
+footer {
+    padding: 50px auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+footer a{
+    padding: 20px 30px;
+    border-style:double;
+    margin: 5px;
+    border-color: #127369;
+    border-width: 5px;
+    color: 127369;
     background-color: white;
-    padding: 0px 20px;
 }

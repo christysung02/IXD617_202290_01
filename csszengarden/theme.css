@@ -1,18 +1,36 @@
-.explanation h3{
+body{
+    background-color: cornflowerblue;
+}
+
+
+header{
+    color: white;
+    background-color: #1e90ff;
+    padding: 20px;
+}
+
+
+h1{
+    color:white;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    border-bottom: 2px solid white;
+}
+
+h2{
+    color: rgb(0, 183, 255);
+    font-family: 'Lora', serif;
+    font-weight: 500;
+}
+
+h3{
     color: blue;
+    font-family: 'Lora', serif;
+    font-weight: 400;
 }
-.page-wrapper{
-    display: flex;
-    flex-wrap: wrap;
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
-.page-wrapper section{
-    width: 100%;
-}
-.page-wrapper .main{
-    width: 80%;
-    flex: 0 1 auto;
-}
-.page-wrapper .sidebar{
-    width: 250px;
-    flex: none;
-}
+

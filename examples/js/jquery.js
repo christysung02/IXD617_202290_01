@@ -1,6 +1,7 @@
 
 
 $(()=>{
+    //ACCORDION
 
     $(".accordion dt").on("click", function(e) {
         //$(this).next().show();

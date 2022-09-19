@@ -1,3 +1,5 @@
+
+/* Accordion*/
 .accordion dt{
     background-color: #72c4da;
     padding: 0.5em 1em;
@@ -17,4 +19,54 @@
 
 .accordion dt ~ dt{
     margin-top: 1em;
+}
+
+/* Tab group*/
+.tabgroup {
+    height: 40vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.tabset {
+    display: flex;
+    line-height: 3em;
+    flex: none;
+}
+.tab {
+    padding: 0 1em;
+    position: relative;
+}
+.tab:hover{
+    background-color: lightskyblue;
+}
+.tab::after{
+    content: "";
+    height: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(44, 21, 255);
+    transition: all 0.3s;
+}
+.contentset {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+}
+.content {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+.content.active{
+    pointer-events: initial;
+    opacity: 1;
 }

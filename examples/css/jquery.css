@@ -1,9 +1,11 @@
 
 /* Accordion*/
+
 .accordion dt{
     background-color: #72c4da;
     padding: 0.5em 1em;
     font-weight: bold;
+    text-transform: uppercase;
     letter-spacing: 0.3em;
     font-variant: small-caps;
     cursor: pointer;
@@ -36,22 +38,26 @@
 .tab {
     padding: 0 1em;
     position: relative;
+    cursor: pointer;
 }
 .tab:hover{
     background-color: lightskyblue;
 }
 .tab::after{
     content: "";
-    height: 0;
+    height:0;
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgb(44, 21, 255);
+    background-color: rgb(134, 70, 255);
     transition: all 0.3s;
 }
+.tab.active::after{
+    height: 3px;
+}
 .contentset {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     overflow: hidden;
     position: relative;
 }

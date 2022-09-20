@@ -2,7 +2,6 @@
 
 $(()=>{
     //ACCORDION
-
     $(".accordion dt").on("click", function(e) {
         //$(this).next().show();
         //$(this).next().toggle();
@@ -14,7 +13,7 @@ $(()=>{
     });
 
     /* Tab group */
-    $(".tabgroup .tab").on("click", function(e){
+    $(".tabgroup .tab").on("click", function(e) {
         let id= $(this).index();
 
         $(this).addClass("active")

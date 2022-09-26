@@ -7,13 +7,36 @@
     <title>Restaurants Tracker</title>
     <link rel="stylesheet" href="src/css/app.css">
 
-    <script src="../lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="src/js/app.js"></script>
-    <script src="../lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
     <section data-role="page" id="signin-page">
-        
+        <div data-role="main">
+            <form>
+                <input type="text">
+                <input type="password">
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div>
+            <a href="#recent-page" class="form-buttom">Sign In</a>
+        </div>
+    </section>
+
+    <section data-role="page" id="recent-page">
+        <header data-role="header">
+            Navigation
+        </header>
+        <div data-role="main">
+            MAP!
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href=""></a></li>
+            </ul>
+        </footer>
     </section>
 
 </body>

@@ -1,0 +1,57 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root{
+    --foot-header:'Inter', sans-serif;
+    --foot-body:var(--foot-header);
+
+    --header-height: 3rem;
+    --color-main-rgb: rgb(0, 165, 234);
+    --color-main-hue: 178;
+    --color-main-light:hsl(var(--color-main-hue)),52%, 77%);
+    --color-main-medium:hsl(var(--color-main-hue)),52%, 77%);
+    --color-main-dark:hsl(var(--color-main-hue)),52%, 77%);
+} 
+
+body {
+    margin: 0;
+    font-family:var(--foot-body);
+}
+
+a{
+    color: var(--color-main-medium);
+}
+
+/* App structure */
+.ui-loader {
+    display: none;
+}
+[data-role="page"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+}
+[data-role="page"].ul-page-active {
+    display: flex;
+    flex-direction: column;
+}
+
+[data-role="main"]{
+    flex: 1 1 100%;
+    position: relative;
+    z-index: 1;
+}
+[data-role="header"],
+[data-role="footer"]{
+    line-height: var(--header-height);
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 2%);
+    z-index: 2;
+}

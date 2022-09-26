@@ -7,7 +7,6 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    font-variant: small-caps;
     cursor: pointer;
 }
 
@@ -62,6 +61,7 @@
     position: relative;
 }
 .content {
+    position:absolute;
     top: 0;
     left: 0;
     width: 100%;

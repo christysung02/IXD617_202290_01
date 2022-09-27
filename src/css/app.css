@@ -27,8 +27,7 @@ a{
 
 img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0.5rem auto;
 }
 
 h2{
@@ -98,7 +97,7 @@ a.ui-link {
 }
 
 [data-role="main"]{
-    flex: 1 1 100%;
+    flex: 1 1 80%;
     position: relative;
     z-index: 1;
 }
@@ -116,7 +115,7 @@ a.ui-link {
 [data-role="footer"]{
     line-height: var(--header-height);
     height: var(--footer-height);
-    position: relative;
+    position:relative;
     overflow: hidden;
     background-color: var(--color-main-rgb);
     box-shadow: 0 0 5px rgba(0, 0, 0, 5%);
@@ -139,9 +138,9 @@ a.ui-link {
 }
 
 [data-role="footer"] img {
-  height: 86px;
-  width: auto;
-  padding-top: 8px;
+    height: 80px;
+    width: auto;
+    margin: 20px auto;
 }
 
 [data-role="header"] h1 {

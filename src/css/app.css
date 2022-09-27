@@ -25,8 +25,52 @@ a{
     text-decoration: none;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    text-align: center;
+    color: var(--color-main-medium);
+    font-weight: bold;
+    margin: 1rem auto;
+    letter-spacing: 2px;
+}
+
+h3 {
+    margin: 10px;
+    margin-left: initial;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 2rem;
+}
+
+input[type="password"] {
+    width: 100%;
+    height: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30%;
+    margin-bottom: 60%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
 a.form-buttom.ui-link {
-    color: var(--color-main-rgb);
+    color: var(--color-main-light);
+    padding: 1rem 100px;
+    background-color: var(--color-main-rgb);
+    margin-top: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 a.ui-link {
@@ -79,15 +123,7 @@ a.ui-link {
     z-index: 2;
 }
 /* Core Navigation */
-[data-role="header"] ul{
-    list-style-type: none;
-    margin:0;
-    padding:0;
-    display:flex;
-    width:100%;
-    position:relative;
-}
-
+[data-role="header"] ul,
 [data-role="footer"] ul {
     list-style-type: none;
     margin:0;

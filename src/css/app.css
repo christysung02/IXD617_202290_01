@@ -7,11 +7,10 @@
     --foot-body:var(--foot-header);
 
     --header-height: 3rem;
-    --color-main-rgb: rgb(0, 165, 234);
-    --color-main-hue: 178;
-    --color-main-light:hsl(var(--color-main-hue), 52%, 77%);
-    --color-main-medium:hsl(var(--color-main-hue), 38%, 56%);
-    --color-main-dark:hsl(var(--color-main-hue), 57%, 27%);
+    --color-main-rgb:rgb(37, 188, 252);
+    --color-main-light:white;
+    --color-main-medium:rgb(0, 164, 235);
+    --color-main-dark:black;
 } 
 
 body {
@@ -20,10 +19,18 @@ body {
 }
 
 a{
-    color: var(--color-main-medium);
+    color:var(--color-main-light);
     font-weight: bold;
     text-decoration: none;
 }
+
+a.form-buttom.ui-link {
+    color: var(--color-main-rgb);
+}
+
+a.ui-link {
+    color:black;
+} 
 
 /* App structure */
 .ui-loader {
@@ -57,7 +64,7 @@ a{
     height: var(--header-height);
     position: relative;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--color-main-rgb);
     box-shadow: 0 0 5px rgba(0, 0, 0, 2%);
     z-index: 2;
 }

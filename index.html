@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,14 @@
     <script src="src/js/app.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
+
 <body>
     <section data-role="page" id="signin-page">
         <div data-role="main">
             <form>
                 <input type="text">
                 <input type="password">
-                <button>Sign In</button>
+                <button class="form-button">Sign In</button>
             </form>
         </div>
         <div>
@@ -25,19 +27,90 @@
         </div>
     </section>
 
+    <!--RECENT PAGE-->
     <section data-role="page" id="recent-page">
-        <header data-role="header">
-            Navigation
-        </header>
         <div data-role="main">
             MAP!
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href=""></a></li>
+                <li><a href="#recent-page">Recent</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="user-profile-page">Profile</a></li>
             </ul>
         </footer>
     </section>
 
+    <!--LIST PAGE-->
+    <section data-role="page" id="list-page">
+        <header data-role="header">
+            Restaurants List
+        </header>
+        <div data-role="main">
+            <!--div.restaurantslist-item*10>a[href="#restaurants-profile-page"]>{Country $}-->
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 1</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 2</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 3</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 4</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 5</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 6</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 7</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 8</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 9</a></div>
+            <div class="restaurantslist-item"><a href="#restaurants-profile-page">Country 10</a></div>
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#recent-page">Recent</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!--USER PROFILE PAGE-->
+    <section data-role="page" id="user-profile-page">
+        <div data-role="main">
+           User Profile
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#recent-page">Recent</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!--USER PROFILE PAGE-->
+    <section data-role="page" id="user-profile-page">
+        <div data-role="main">
+           User Profile
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#recent-page">Recent</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+     <!--RESTAURANTS PROFILE PAGE-->
+     <section data-role="page" id="restaurants-profile-page">
+        <header data-role="header">
+            <h1>Different style of the restaurants</h1>
+            <ul>
+                <li><a href="#" date-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#restaurants-edit-page">Edit</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+           Restaurants Profile
+        </div>
+    </section>
+
 </body>
+
 </html>

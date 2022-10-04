@@ -23,7 +23,7 @@
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signin-hero">
-                <img src="src/img/map image.png" alt="" class="hero-icon">
+                <img src="src/img/heropic.png" alt="" class="hero-icon">
             </div>
             <form class="form" id="signin-form" data-ajax="false">
                 <div class="warning"></div>
@@ -78,7 +78,12 @@
 
     <!-- RECENT PAGE -->
     <section data-role="page" id="recent-page">
-
+        <header data-role="header">
+            <h1>MAP</h1>
+        </header>
+        <div data-role="main">
+            <div class="map"><img src="src/img/map image.png"></div>
+        </div>
         <footer data-role="footer">
             <ul>
                 <li><a href="#recent-page"><img src="src/img/mapyellow.jpg"></a></li>
@@ -92,7 +97,7 @@
     <!-- LIST PAGE -->
     <section data-role="page" id="list-page">
         <header data-role="header">
-            <h1>List</h1>
+            <h1>LIST</h1>
         </header>
         <div data-role="main">
             <div class="restaurantslist">
@@ -115,8 +120,10 @@
 
     <!-- USER PROFILE PAGE -->
     <section data-role="page" id="user-profile-page">
+        <header data-role="header">
+            <h1>PROFILE</h1>
+        </header>
         <div data-role="main">
-            <h1>User Profile</h1>
             <div>
                 <a href="#" class="js-logout">Log out</a>
             </div>
@@ -133,10 +140,10 @@
     </section>
 
 
-    <!-- restaurants PROFILE PAGE -->
+    <!-- RESTAURANTS PROFILE PAGE -->
     <section data-role="page" id="restaurants-profile-page">
         <header data-role="header">
-            <h1>restaurants Profile</h1>
+            <h1>COUNTRY</h1>
             <ul>
                 <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>

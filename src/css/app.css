@@ -48,7 +48,7 @@ a {
 }
 
 [data-role="main"] {
-    flex: 1 1 100%;
+    flex: 1 1 80%;
     position: relative;
     overflow: hidden;
 
@@ -64,9 +64,6 @@ a {
     background-color: var(--color-main-blue);
     z-index: 2;
 }
-
-
-
 
 /* Core Navigation */
 [data-role="header"] ul,
@@ -89,9 +86,11 @@ a {
     left:0;
     width:100%;
     height:100%;
-
     text-align:center;
-    font-size: 1em;
+    font-size: 20px;
+    color: var(--color-main-white);
+    font-weight: 600;
+    letter-spacing: 3px;
     margin:0;
 }
 
@@ -102,8 +101,6 @@ a {
 [data-role="footer"] a {
     display:block;
 }
-
-
 
 
 /* Basic layout tools */
@@ -189,9 +186,8 @@ a {
     background-image: url('');
     background-position: center;
     background-size: cover;
+    z-index: 1;
 }
-
-
 
 
 /* Restaurant LIST */

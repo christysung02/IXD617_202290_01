@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restagory</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,18 +20,13 @@
 </head>
 
 <body>
-
-
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signin-hero">
-                <img src="images/icons/dice.svg" alt="" class="hero-icon">
+                <img src="src/img/map image.png" alt="" class="hero-icon">
             </div>
             <form class="form" id="signin-form" data-ajax="false">
                 <div class="warning"></div>
-                <div>
-                    <h2 class="login-header" style="text-align: center;">LOGIN</h2>
-                </div>
                 <div class="form-control">
                     <label class="form-label" for="signin-username">Username</label>
                     <input class="form-input" type="text" id="signin-username" data-role="none"
@@ -72,7 +66,7 @@
                         placeholder="Type your Password">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-button" value="Click me" data-role="none">
+                    <input type="submit" class="form-button" value="CONFIRM" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
                     Already have an account? <a href="#signin-page">Sign In!</a>
@@ -84,14 +78,12 @@
 
     <!-- RECENT PAGE -->
     <section data-role="page" id="recent-page">
-        <div data-role="main">
-            <div class="map"></div>
-        </div>
+
         <footer data-role="footer">
             <ul>
                 <li><a href="#recent-page"><img src="src/img/mapyellow.jpg"></a></li>
                 <li><a href="#list-page"><img src="src/img/listwhite.jpg"></a></li>
-                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></li>
+                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
             </ul>
         </footer>
     </section>
@@ -100,42 +92,24 @@
     <!-- LIST PAGE -->
     <section data-role="page" id="list-page">
         <header data-role="header">
-            <h1>Restaurants List</h1>
+            <h1>List</h1>
         </header>
         <div data-role="main">
             <div class="restaurantslist">
-                <!-- div.restaurantslist-item*10>a[href="#restaurants-profile-page"]>{Restaurants $} -->
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 1</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 2</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 3</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 4</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 5</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 6</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 7</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 8</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 9</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">Restaurants 10</a></div>
-            </div>
-            <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
+                <!-- div.restaurantslist-item*10>a[href="#restaurants-profile-page"]>{restaurants $} -->
+                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 1</a></div>
+                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 2</a></div>
+                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 3</a></div>
+                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 4</a></div>
             </div>
         </div>
         <footer data-role="footer">
             <ul>
                 <li><a href="#recent-page"><img src="src/img/mapwhite.jpg"></a></li>
                 <li><a href="#list-page"><img src="src/img/listyellow.jpg"></a></li>
-                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></li>
+                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
             </ul>
         </footer>
-
-        <div id="list-add-modal" class="modal">
-            <div class="modal-back" data-deactivate="#list-add-modal"></div>
-            <div class="modal-popup">
-                <div class="modal-head">Head</div>
-                <div class="modal-body">Body</div>
-                <div class="modal-foot">Foot</div>
-            </div>
-        </div>
     </section>
 
 
@@ -149,18 +123,20 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href="#recent-page"><img src="src/img/mapwhite.jpg"></a></li>
-                <li><a href="#list-page"><img src="src/img/listwhite.jpg"></a></li>
-                <li><a href="#user-profile-page"><img src="src/img/profileyellow.jpg"></li>
+                <ul>
+                    <li><a href="#recent-page"><img src="src/img/mapwhite.jpg"></a></li>
+                    <li><a href="#list-page"><img src="src/img/listwhite.jpg"></a></li>
+                    <li><a href="#user-profile-page"><img src="src/img/profileyellow.jpg"></a></li>
+                </ul>
             </ul>
         </footer>
     </section>
 
 
-    <!-- Restaurants PROFILE PAGE -->
+    <!-- restaurants PROFILE PAGE -->
     <section data-role="page" id="restaurants-profile-page">
         <header data-role="header">
-            <h1>Restaurants Profile</h1>
+            <h1>restaurants Profile</h1>
             <ul>
                 <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
@@ -171,8 +147,6 @@
             Restaurants Profile
         </div>
     </section>
-
-
 </body>
 
 </html>

@@ -99,11 +99,46 @@
         </header>
         <div data-role="main">
             <div class="restaurantslist">
-                <!-- div.restaurantslist-item*10>a[href="#restaurants-profile-page"]>{restaurants $} -->
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 1</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 2</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 3</a></div>
-                <div class="restaurantslist-item"><a href="#restaurants-profile-page">restaurants 4</a></div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
+                <div class="restaurantslist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="#restaurants-profile-page">Country 1</a>
+                </div>
             </div>
         </div>
         <footer data-role="footer">
@@ -115,6 +150,52 @@
         </footer>
     </section>
 
+    <!-- RESTAURANTS PROFILE PAGE -->
+    <section data-role="page" id="restaurants-profile-page">
+        <header data-role="header">
+            <h1>COUNTRY NAME</h1>
+            <ul>
+                <li><a href="#" data-rel="back"><img src="src/img/arrow.png"></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#restaurants-edit-page"><img src="src/img/edit.png"></a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="countrylist">
+                <div class="countrylist-item">
+                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="">Restaurant</a>
+                </div>
+                <div class="countrylist-item">
+                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="">Restaurant</a>
+                </div>
+                <div class="countrylist-item">
+                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="">Restaurant</a>
+                </div>
+                <div class="countrylist-item">
+                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                    <br>
+                    <a href="">Restaurant</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANT EDIT PAGE -->
+    <section data-role="page" id="restaurants-edit-page">
+        <header data-role="header">
+            <h1>Taiwan</h1>
+        </header>
+        <div data-role="main">
+
+        </div>
+    </section>
 
     <!-- USER PROFILE PAGE -->
     <section data-role="page" id="user-profile-page">
@@ -122,7 +203,23 @@
             <h1>PROFILE</h1>
         </header>
         <div data-role="main">
-            <div>
+            <div class="profilecontent">
+                <img src="src/img/profile.png">
+                <div class="form-control">
+                    <label class="form-label">Pronouns</label>
+                    <input class="form-input" type="text" id="pronouns" data-role="none"
+                        placeholder="Type your pronouns">
+                </div>
+                <div class="form-control">
+                    <label class="form-label">Birthday</label>
+                    <input class="form-input" type="text" id="birthday" data-role="none"
+                        placeholder="day/month/year">
+                </div>
+                <div class="form-control">
+                    <label class="form-label">Bio</label>
+                    <input class="form-input" type="text" id="bio" data-role="none"
+                        placeholder="Tell me more about you!">
+                </div>
                 <a href="#" class="js-logout">Log out</a>
             </div>
         </div>
@@ -137,21 +234,6 @@
         </footer>
     </section>
 
-
-    <!-- RESTAURANTS PROFILE PAGE -->
-    <section data-role="page" id="restaurants-profile-page">
-        <header data-role="header">
-            <h1>COUNTRY</h1>
-            <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
-                <li class="flex-stretch"></li>
-                <li><a href="#restaurants-edit-page">Edit</a></li>
-            </ul>
-        </header>
-        <div data-role="main">
-            Restaurants Profile
-        </div>
-    </section>
 </body>
 
 </html>

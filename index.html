@@ -20,11 +20,12 @@
 <body>
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
-            <div class="flex-stretch signin-hero">
-                <img src="src/img/heropic.png" alt="" class="hero-icon">
+            <div class="flex-stretch signin-hero" style="flex: 1;">
+                <img src="src/img/heroheader.png" class="hero-icon">
             </div>
-            <form class="form" id="signin-form" data-ajax="false">
+            <form class="form" id="signin-form" data-ajax="false" style="flex: 2;">
                 <div class="warning"></div>
+                <h2 style="text-align: center;">LOGIN</h2>
                 <div class="form-control">
                     <label class="form-label" for="signin-username">Username</label>
                     <input class="form-input" type="text" id="signin-username" data-role="none"
@@ -46,9 +47,13 @@
     </section>
 
     <section data-role="page" id="signup-page">
-        <div data-role="main" class="display-flex flex-column flex-justify-center">
-            <form class="form" id="signup-form" data-ajax="false">
-                <div class="form-control">
+        <div data-role="main" class="display-flex flex-column" >
+            <div class="flex-stretch signup-hero" style="flex: 1;">
+                <img src="src/img/heroheader.png" class="hero-icon">
+            </div>
+            <form class="form" id="signup-form" data-ajax="false" style="flex: 2;">
+                <h2 style="text-align: center;">SIGN UP</h2>
+                <div class="form-control" style="flex: 2;">
                     <label class="form-label" for="signup-username">Username</label>
                     <input class="form-input" type="text" id="signup-username" data-role="none"
                         placeholder="Type your Username">
@@ -95,49 +100,39 @@
     <!-- LIST PAGE -->
     <section data-role="page" id="list-page">
         <header data-role="header">
-            <h1>LIST</h1>
+            <h1>Country</h1>
+            <ul>
+                <li><a href="#recent-page"><img src="src/img/arrow.png"></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" data-activate="#list-add-modal-listpage"><img src="src/img/plus.png"></a></li>
+            </ul>
         </header>
         <div data-role="main">
-            <div class="restaurantslist">
-                <div class="restaurantslist-item">
+            <div class="countrylist">
+                <div class="countrylist-item">
                     <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
+                    <a href="#restaurants-profile-page">TAIWAN</a>
                 </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="countrylist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/united states.png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
+                    <a href="#restaurants-profile-page">USA</a>
                 </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="countrylist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/united kingdom.png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
+                    <a href="#restaurants-profile-page">UK</a>
                 </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="countrylist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/turkey.png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
+                    <a href="#restaurants-profile-page">Turkey</a>
                 </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="countrylist-item">
+                    <a href="#restaurants-profile-page"><img src="src/img/viet nam.png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
-                </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
-                    <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
-                </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
-                    <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
-                </div>
-                <div class="restaurantslist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
-                    <br>
-                    <a href="#restaurants-profile-page">Country 1</a>
+                    <a href="#restaurants-profile-page">Viet Nam</a>
                 </div>
             </div>
         </div>
@@ -148,41 +143,65 @@
                 <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
             </ul>
         </footer>
+        <div id="list-add-modal-listpage" class="modal">
+            <div class="modal-back" data-deactivate="#list-add-modal-listpage"></div>
+            <div class="modal-popup">
+                <div class="modal-head"><img src="src/img/uploadimage.png"></div>
+                <div class="modal-body">
+                    <label class="form-label" for="popup">Country</label>
+                    <input class="form-input" type="text" id="popup" data-role="none"
+                        placeholder="Enter the country">
+                </div>
+                <div class="modal-foot">
+                    <a href="#"><img src="src/img/add.png"></a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- RESTAURANTS PROFILE PAGE -->
     <section data-role="page" id="restaurants-profile-page">
         <header data-role="header">
-            <h1>COUNTRY NAME</h1>
+            <h1>TAIWAN</h1>
             <ul>
-                <li><a href="#" data-rel="back"><img src="src/img/arrow.png"></a></li>
+                <li><a href="#list-page"><img src="src/img/arrow.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#restaurants-edit-page"><img src="src/img/edit.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
-            <div class="countrylist">
-                <div class="countrylist-item">
-                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+            <div class="restaurantslist">
+                <div class="restaurantslist-item">
+                    <a href=""><img src="src/img/sticky tofu.png" alt="flag"></a>
                     <br>
-                    <a href="">Restaurant</a>
+                    <a href="">Sticky Tofu</a>
                 </div>
-                <div class="countrylist-item">
-                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="restaurantslist-item">
+                    <a href=""><img src="src/img/hot pot.png" alt="flag"></a>
                     <br>
-                    <a href="">Restaurant</a>
+                    <a href="">Hot Pot</a>
                 </div>
-                <div class="countrylist-item">
-                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
+                <div class="restaurantslist-item">
+                    <a href=""><img src="src/img/boba.png" alt="flag"></a>
                     <br>
-                    <a href="">Restaurant</a>
+                    <a href="">Boba milk tea</a>
                 </div>
-                <div class="countrylist-item">
-                    <a href=""><img src="src/img/taiwan.png" alt="flag"></a>
-                    <br>
-                    <a href="">Restaurant</a>
+            </div>
+            <div class="floater bottom right">
+                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
+            </div>
+            <div id="list-add-modal" class="modal">
+                <div class="modal-back" data-deactivate="#list-add-modal"></div>
+                <div class="modal-popup">
+                    <div class="modal-head"><img src="src/img/uploadimage.png"></div>
+                    <div class="modal-body">
+                        <label class="form-label" for="popup">Restaurant</label>
+                        <input class="form-input" type="text" id="popup" data-role="none"
+                            placeholder="Type your restaurant">
+                    </div>
+                    <div class="modal-foot">
+                        <a href="#"><img src="src/img/add.png"></a>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -199,12 +218,10 @@
 
     <!-- USER PROFILE PAGE -->
     <section data-role="page" id="user-profile-page">
-        <header data-role="header">
-            <h1>PROFILE</h1>
-        </header>
         <div data-role="main">
             <div class="profilecontent">
                 <img src="src/img/profile.png">
+                <h3>NAME</h3>
                 <div class="form-control">
                     <label class="form-label">Pronouns</label>
                     <input class="form-input" type="text" id="pronouns" data-role="none"
@@ -212,8 +229,7 @@
                 </div>
                 <div class="form-control">
                     <label class="form-label">Birthday</label>
-                    <input class="form-input" type="text" id="birthday" data-role="none"
-                        placeholder="day/month/year">
+                    <input class="form-input" type="number" id="birthday" data-role="none" placeholder="day/month/year">
                 </div>
                 <div class="form-control">
                     <label class="form-label">Bio</label>

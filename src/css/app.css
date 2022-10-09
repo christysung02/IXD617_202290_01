@@ -216,6 +216,15 @@ a {
     align-items: center;
 }
 
+/* Warning */
+.warning p{
+    color: red;
+    font-size: 10px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-align: center;
+}
+
 /* Restaurants LIST */
 .restaurantslist {
     height: fit-content;

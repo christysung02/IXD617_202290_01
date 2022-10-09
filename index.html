@@ -24,7 +24,6 @@
                 <img src="src/img/heroheader.png" class="hero-icon">
             </div>
             <form class="form" id="signin-form" data-ajax="false" style="flex: 2;">
-                <div class="warning"></div>
                 <h2 style="text-align: center;">LOGIN</h2>
                 <div class="form-control">
                     <label class="form-label" for="signin-username">Username</label>
@@ -35,6 +34,9 @@
                     <label class="form-label" for="signin-password">Password</label>
                     <input class="form-input" type="password" id="signin-password" data-role="none"
                         placeholder="Type your Password">
+                </div>
+                <div class="warning" style="display:none;">
+                    <p>The username or password is incorrect, try it again.</p>
                 </div>
                 <div class="form-control">
                     <input type="submit" class="form-button" value="LOGIN" data-role="none">
@@ -149,11 +151,11 @@
                 <div class="modal-head"><img src="src/img/uploadimage.png"></div>
                 <div class="modal-body">
                     <label class="form-label" for="popup">Country</label>
-                    <input class="form-input" type="text" id="popup" data-role="none"
+                    <input class="form-input" type="text" id="country-input" data-role="none"
                         placeholder="Enter the country">
                 </div>
                 <div class="modal-foot">
-                    <a href="#"><img src="src/img/add.png"></a>
+                    <div id="add-country"><img src="src/img/add.png"></div>
                 </div>
             </div>
         </div>

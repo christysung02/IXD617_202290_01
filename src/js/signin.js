@@ -9,7 +9,7 @@ const checkSigninForm = () => {
     if (userval === "user" && passval === "pass") {
         // Logged In
         console.log("Success");
-        sessionStorage.userId = 3;
+        sessionStorage.userId = 1;
 
         $("#signin-form")[0].reset();
     } else {
@@ -17,8 +17,8 @@ const checkSigninForm = () => {
         console.log("Failure");
         sessionStorage.removeItem("userId");
 
-        $(".warning").html("");
-        setTimeout(()=>{$(".warning").html("");},3000)
+        $(".warning").css("display", "block");
+        setTimeout(()=>{$(".warning").css("display", "none");},3000)
     }
 
     checkUserId();

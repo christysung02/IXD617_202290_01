@@ -121,6 +121,12 @@ a {
 .overscroll { overflow: auto; }
 
 
+/* Onboarding */
+#onboarding-page {
+    background-image: url('../img/introduce.png');
+    background-size:cover;
+    background-position:center;
+}
 
 
 /* FORMS */

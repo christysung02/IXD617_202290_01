@@ -44,7 +44,7 @@ $(() => {
         console.log(country)
         $(".countrylist").append(`
             <div class="countrylist-item">
-                <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                <a href="#restaurants-profile-page"><img src="src/img/country.png" alt="flag"></a>
                 <br>
              <a href="#restaurants-profile-page">${country}</a>
             </div>
@@ -71,7 +71,7 @@ $(() => {
         console.log(restaurant)
         $(".restaurantslist").append(`
             <div class="restaurantslist-item">
-                <a href="#restaurants-profile-page"><img src="src/img/sticky tofu.png" alt="flag"></a>
+                <a href="#restaurants-profile-page"><img src="src/img/restaurant.png" alt="flag"></a>
                 <br>
             <a href="#restaurants-profile-page">${restaurant}</a>
             </div>

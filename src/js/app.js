@@ -1,7 +1,6 @@
 
 // Document Ready
 $(() => {
-
     checkUserId();
 
     // EVENT DELEGATION
@@ -39,15 +38,15 @@ $(() => {
     // })
 
     // Add country
-    .on("click", "#add-country", function(e){
+    .on("click", "#add-country", function(){
         const country = $("#country-input").val();
         console.log(country)
         $(".countrylist").append(`
             <div class="countrylist-item">
-            <a href="#restaurants-profile-page"><img src="src/img/united states.png" alt="flag"></a>
-            <br>
-            <a href="#restaurants-profile-page">${country}</a>
-        </div>
+                <a href="#restaurants-profile-page"><img src="src/img/united states.png" alt="flag"></a>
+                <br>
+             <a href="#restaurants-profile-page">${country}</a>
+            </div>
         `)
         // const target = $(this).data("deactivate");
         $("#list-add-modal-listpage").removeClass("active");
@@ -55,9 +54,12 @@ $(() => {
 
     // Long click
     var timer
-    $('.countrylist').on("mousedown",function(){
+    $('body').on("mousedown",'.countrylist-item',function(e){
         timer = setTimeout(function(){
             console.log("Long click");
+            // console.log($(e.target).closest('.countrylist-item').attr("class"));
+            console.log($(e.target).html)
+            $(e.target).closest('.countrylist-item').remove()
         },500);
     }).on("mouseup mouseleave",function(){
         clearTimeout(timer);

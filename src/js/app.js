@@ -55,12 +55,12 @@ $(() => {
 
     // Long click
     var timer
-    $('body').on("mousedown",'.countrylist-item',function(e){
-        timer = setTimeout(function(){
+    $('body').on("mousedown touchstart",'.countrylist-item',function(e){
+        timer = setTimeout(() => {
             console.log("Long click");
-            $(e.target).closest('.countrylist-item').remove()
+            $(this).remove()
         },500);
-    }).on("mouseup mouseleave",function(){
+    }).on("mouseup touchend",function(){
         clearTimeout(timer);
     })
 
@@ -82,12 +82,12 @@ $(() => {
 
     // Long click
     var timer
-    $('body').on("mousedown",'.restaurantslist-item',function(e){
-        timer = setTimeout(function(){
+    $('body').on("mousedown touchstart",'.restaurantslist-item',function(e){
+        timer = setTimeout(() => {
             console.log("Long click");
-            $(e.target).closest('.restaurantslist-item').remove()
+            $(this).remove()
         },500);
-    }).on("mouseup mouseleave",function(){
+    }).on("mouseup touchend",function(){
         clearTimeout(timer);
     })
     

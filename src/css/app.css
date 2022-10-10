@@ -49,9 +49,9 @@ a {
 
 [data-role="main"] {
     flex: 1 1 80%;
-    position: relative;
     height: 100%;
     overflow: auto;
+    overflow-x: hidden;
 
     z-index:1;
 }

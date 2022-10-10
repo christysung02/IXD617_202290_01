@@ -50,7 +50,7 @@ $(() => {
             </div>
         `)
         // Make modal disappear.
-        $("#list-add-modal-listpage").removeClass("active");
+        $("#add-modal-country").removeClass("active");
     })
 
     // Long click
@@ -63,4 +63,32 @@ $(() => {
     }).on("mouseup mouseleave",function(){
         clearTimeout(timer);
     })
+
+    //Add restaurant
+    .on("click", "#add-restaurant", function(){
+        const restaurant = $("#restaurant-input").val();
+        // Add new ite
+        console.log(restaurant)
+        $(".restaurantslist").append(`
+            <div class="restaurantslist-item">
+                <a href="#restaurants-profile-page"><img src="src/img/sticky tofu.png" alt="flag"></a>
+                <br>
+            <a href="#restaurants-profile-page">${restaurant}</a>
+            </div>
+        `)
+        // Make modal disappear.
+        $("#add-modal-restaurant").removeClass("active");
+    })
+
+    // Long click
+    var timer
+    $('body').on("mousedown",'.restaurantslist-item',function(e){
+        timer = setTimeout(function(){
+            console.log("Long click");
+            $(e.target).closest('.restaurantslist-item').remove()
+        },500);
+    }).on("mouseup mouseleave",function(){
+        clearTimeout(timer);
+    })
+    
 })

@@ -106,7 +106,7 @@
             <ul>
                 <li><a href="#recent-page"><img src="src/img/arrow.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#list-add-modal-listpage"><img src="src/img/plus.png"></a></li>
+                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plus.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -145,8 +145,8 @@
                 <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
             </ul>
         </footer>
-        <div id="list-add-modal-listpage" class="modal">
-            <div class="modal-back" data-deactivate="#list-add-modal-listpage"></div>
+        <div id="add-modal-country" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-country"></div>
             <div class="modal-popup">
                 <div class="modal-head"><img src="src/img/uploadimage.png"></div>
                 <div class="modal-body">
@@ -189,19 +189,19 @@
                 </div>
             </div>
             <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
+                <a href="#" class="btn-circle" data-activate="#add-modal-restaurant">&plus;</a>
             </div>
-            <div id="list-add-modal" class="modal">
-                <div class="modal-back" data-deactivate="#list-add-modal"></div>
+            <div id="add-modal-restaurant" class="modal">
+                <div class="modal-back" data-deactivate="#add-modal-restaurant"></div>
                 <div class="modal-popup">
                     <div class="modal-head"><img src="src/img/uploadimage.png"></div>
                     <div class="modal-body">
                         <label class="form-label" for="popup">Restaurant</label>
-                        <input class="form-input" type="text" id="popup" data-role="none"
+                        <input class="form-input" type="text" id="restaurant-input" data-role="none"
                             placeholder="Type your restaurant">
                     </div>
                     <div class="modal-foot">
-                        <a href="#"><img src="src/img/add.png"></a>
+                        <div id="add-restaurant"><img src="src/img/add.png"></div>
                     </div>
                 </div>
             </div>

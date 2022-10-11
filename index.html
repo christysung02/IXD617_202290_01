@@ -31,8 +31,10 @@
 </head>
 
 <body>
+    <!-- Onboarding page -->
     <section data-role="page" id="onboarding-page"></section>
 
+    <!-- signin-page -->
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signin-hero" style="flex: 1;"></div>
@@ -60,7 +62,7 @@
             </form>
         </div>
     </section>
-
+    <!-- signup-page -->
     <section data-role="page" id="signup-page">
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signup-hero" style="flex: 1;"></div>
@@ -92,7 +94,7 @@
     </section>
 
 
-    <!-- RECENT PAGE -->
+    <!-- Map page -->
     <section data-role="page" id="recent-page">
         <header data-role="header">
             <h1>MAP</h1>
@@ -100,6 +102,10 @@
         <div data-role="main">
             <div class="map"><img src="src/img/map image.png"></div>
         </div>
+        <div class="floater bottom right">
+            <a href="#" class="profile-btn-circle" data-activate="#"><img src="src/img/mapfloat.png"></a>
+        </div>
+
         <footer data-role="footer">
             <ul>
                 <li><a href="#recent-page"><img src="src/img/mapyellow.jpg"></a></li>
@@ -162,10 +168,10 @@
             <div class="modal-popup">
                 <div class="modal-head">
                     <label class="form-label" for="img">Select image of the country</label>
-                    <input class="form-input" type="file" id="img" name="img" accept="image/*">
+                    <input class="form-input" type="file" id="add-img" name="img" accept="image/*">
                 </div>
                 <div class="modal-body">
-                    <div id="country-dropdown"></div>
+                    <div class="country-dropdown" id="country-dropdown"></div>
                 </div>
                 <div class="modal-foot">
                     <div id="add-country"><img src="src/img/add.png"></div>
@@ -229,8 +235,7 @@
     <section data-role="page" id="user-profile-page">
         <div data-role="main">
             <div class="profilecontent">
-                <img src="src/img/profile.png">
-                <input class="imageupload" type="file" id="img" name="img" accept="image/*">
+                <input class="form-input" type="file" id="add-profileimg" name="img" accept="image/*">
                 <h3>NAME</h3>
                 <div class="form-control">
                     <label class="form-label">Pronouns</label>

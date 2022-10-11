@@ -332,6 +332,24 @@ a {
     padding: 0.5em 1em;
 }
 
+.modal-body {
+    background-color: white;
+    padding: 0.5em 1em;
+    flex: 1 1 100%;
+    overflow: auto;
+}
+
+select#country-selected {
+    background-color: var(--color-main-gray);
+    border-width: 1px;
+    border-color: var(--color-main-white);
+    border-style: solid;
+    border-radius: 5px;
+    padding: 1.1em 1em;
+    display: inline-block;
+    width: 100%;
+}
+
 .modal-foot {
     display: block;
     margin-left: auto;
@@ -339,13 +357,6 @@ a {
     margin-top: 0.5rem;
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
-}
-
-.modal-body {
-    background-color: white;
-    padding: 0.5em 1.5em;
-    flex: 1 1 100%;
-    overflow: auto;
 }
 
 /*PROFILE*/

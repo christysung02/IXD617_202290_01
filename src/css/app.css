@@ -76,6 +76,12 @@ a {
     width:100%;
     position:relative;
 }
+
+[data-role="header"] img {
+    width:50px;
+    height:50px;
+}
+
 [data-role="footer"] li {
     flex: 1 1 auto;
     text-align: center;
@@ -96,7 +102,7 @@ a {
 }
 
 [data-role="header"] a {
-    padding: 0 1em;
+    padding:0.8em 1em;
 }
 [data-role="header"] a,
 [data-role="footer"] a {
@@ -123,11 +129,10 @@ a {
 
 /* Onboarding */
 #onboarding-page {
-    background-image: url('../img/introduce.png');
+    background-image: url('../img/onboardingimg.png');
     background-size:cover;
     background-position:center;
 }
-
 
 /* FORMS */
 .form-control {
@@ -138,7 +143,7 @@ a {
     color: var(--color-main-blue);
     display: block;
     margin-bottom: 0.5em;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .form-input {
     background-color: var(--color-main-gray);
@@ -169,7 +174,9 @@ a {
 
 #signin-page,
 #signup-page{
-    background-color: var(--color-main-blue);
+    background-image: url('../img/headerimg.png');
+    background-size:cover;
+    background-position:center;
 }
 
 #signin-form,
@@ -211,6 +218,7 @@ a {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 2rem;
+    padding-top: 2em;
 }
 .countrylist-item{
     font-weight: 500;
@@ -238,6 +246,7 @@ a {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 2rem;
+    padding-top: 2em;
 }
 .restaurantslist-item{
     font-weight: 500;
@@ -319,7 +328,6 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem;
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
 }
@@ -331,7 +339,6 @@ a {
     margin-top: 0.5rem;
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
-    padding-bottom: 2rem;
 }
 
 .modal-body {
@@ -342,6 +349,9 @@ a {
 }
 
 /*PROFILE*/
+.imageupload{
+
+}
 .profilecontent{
     padding:3rem;
     height: 100%;

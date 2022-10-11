@@ -399,3 +399,7 @@ a.js-logout.ui-link {
     background: var(--color-main-gray); 
     border-radius: 10px;
   }
+
+  #country-selected-button span.form-control{
+      display:none;
+  }

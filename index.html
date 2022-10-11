@@ -19,7 +19,12 @@
     <script src="src/js/app.js"></script>
     <script src="src/js/signin.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-    <!-- <script src="countrydropdown.html"></script> -->
+    <script>
+        $(function(){
+            $("#country-dropdown").load("src/countrydropdown.html"); 
+        });
+    </script>
+    
 
 </head>
 
@@ -157,6 +162,7 @@
                     <label class="form-label" for="img">Select image of the country</label>
                     <input class="form-input" type="file" id="img" name="img" accept="image/*">
                 </div>
+                <div id="country-dropdown"></div>
                 <div class="modal-body">
                     <label class="form-label" for="popup">Country<span
                             style="color: red !important; display: inline; float: none;">*</span></label>

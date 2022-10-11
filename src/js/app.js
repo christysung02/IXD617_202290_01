@@ -30,7 +30,8 @@ $(() => {
 
     // Add country
     .on("click", "#add-country", function(){
-        const country = $("#country-input").val();
+        // const country = $("#country-input").val();
+        const country=$('#country-selected option:selected').attr('value');
         // Add new ite
         console.log(country)
         $(".countrylist").append(`
@@ -58,7 +59,7 @@ $(() => {
     //Add restaurant
     .on("click", "#add-restaurant", function(){
         const restaurant = $("#restaurant-input").val();
-        // Add new ite
+        // Add new item.
         console.log(restaurant)
         $(".restaurantslist").append(`
             <div class="restaurantslist-item">

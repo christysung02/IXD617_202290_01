@@ -43,7 +43,7 @@ const getCountries = () => (new Array(50)).fill(0).map((o,i)=>{
 const getLocations = () => (new Array(250)).fill(0).map((o,i)=>{
     o = {};
     o.id = i + 1;
-    o.animal_id = chance.natural({min:1, max:50});
+    o.countries_id = chance.natural({min:1, max:50});
     o.lat = chance.latitude({min:37.67, max:37.80});
     o.lng = chance.longitude({min:-122.50, max:-122.37});
     o.description = chance.sentence();

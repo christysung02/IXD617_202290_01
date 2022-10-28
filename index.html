@@ -122,7 +122,7 @@
         <header data-role="header">
             <h1>CUISINE</h1>
             <ul>
-                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
+                <li><a href="#"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
             </ul>
@@ -130,14 +130,14 @@
         <div data-role="main">
             <div class="countrylist">
                 <div class="countrylist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
+                    <a href="#cuisine-list-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Taiwan</p>
                     </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/country/United States of America (US).png"
+                    <a href="#cuisine-list-page"><img src="src/img/country/United States of America (US).png"
                             alt="flag"></a>
                     <br>
                     <div class="country-name">
@@ -145,14 +145,14 @@
                     </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
+                    <a href="#cuisine-list-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Italy</p>
                     </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
+                    <a href="#cuisine-list-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Japan</p>
@@ -165,22 +165,85 @@
             <div class="modal-back" data-deactivate="#add-modal-country"></div>
             <div class="modal-popup">
                 <div data-role="modal-header" class="modal-head">
-                    <ul>
-                        <li>
-                            <a href="#cuisine-page">
-                                <p>cancel</p>
-                            </a>
-                        </li>
-                        <li class="flex-stretch"></li>
-                        <li id="add-country">
-                            <a href="#cuisine-page">
-                                <p style="font-weight: 700; color: var(--color-main-red);">Add</p>
-                            </a>
-                        </li>
-                    </ul>
+                    <p class="modal-title">ADD A NEW TYPE OF CUISINE</p>
                 </div>
                 <div class="modal-body">
                     <div class="country-dropdown" id="country-dropdown"></div>
+                </div>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="remove-modal-country"><button class="cancelbtn">cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="add-country"><button class="addbtn">Add</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUISINE LIST PAGE -->
+    <section data-role="page" id="cuisine-list-page">
+        <header data-role="header">
+            <h1>Taiwan</h1>
+            <ul>
+                <li><a href="#cuisine-page"><img src="src/img/leftarrowicon.png"></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" data-activate="#add-modal-cuisine"><img src="src/img/plusicon.png"></a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="cuisineslist">
+                <div class="cuisineslist-item">
+                    <a href="#cuisine-detail-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
+                    <br>
+                    <div class="cuisine-name">
+                        <p>Hot Pot</p>
+                    </div>
+                </div>
+                <div class="cuisineslist-item">
+                    <a href="#cuisine-detail-page"><img src="src/img/boba.png" alt="boba"></a>
+                    <br>
+                    <div class="cuisine-name">
+                        <p>Boba milk tea</p>
+                    </div>
+                </div>
+                <div class="cuisineslist-item">
+                    <a href="#cuisine-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
+                    <br>
+                    <div class="cuisine-name">
+                        <p>Dumpling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-modal-cuisine" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-cuisine"></div>
+            <div class="modal-popup">
+                <div data-role="modal-header" class="modal-head">
+                    <p class="modal-title">ADD A NEW CUISINE</p>
+                </div>
+                <div class="modal-body">
+                    <div class="inputspace">
+                        <label class="form-label" for="img">Select image of the cuisine</label>
+                        <input class="form-input" type="file" id="img" name="img" accept="image/*">
+                    </div>
+                    <div class="inputspace">
+                        <label class="form-label" for="popup">Name of the cuisine</label>
+                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                            placeholder="ex: boba milk tea.">
+                    </div>
+                    <div class="inputspace">
+                        <label class="form-label" for="popup">Description</label>
+                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                            placeholder="Write down some comment~">
+                    </div>
+                </div>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="remove-modal-cuisine"><button class="cancelbtn">cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="add-cuisine"><button class="addbtn">Add</button></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -189,49 +252,15 @@
     <!-- CUISINE DETAIL PAGE -->
     <section data-role="page" id="cuisine-detail-page">
         <header data-role="header">
-            <h1>Taiwan</h1>
             <ul>
-                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
+                <li><a href="#cuisine-list-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
+                <li><a href="#" data-activate="#"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
-            <div class="restaurantslist">
-                <div class="restaurantslist-item">
-                    <a href=""><img src="src/img/sticky tofu.png" alt="flag"></a>
-                    <br>
-                    <a href="">Sticky Tofu</a>
-                </div>
-                <div class="restaurantslist-item">
-                    <a href=""><img src="src/img/hot pot.png" alt="flag"></a>
-                    <br>
-                    <a href="">Hot Pot</a>
-                </div>
-                <div class="restaurantslist-item">
-                    <a href=""><img src="src/img/boba.png" alt="flag"></a>
-                    <br>
-                    <a href="">Boba milk tea</a>
-                </div>
-            </div>
-            <div id="add-modal-restaurant" class="modal">
-                <div class="modal-back" data-deactivate="#add-modal-restaurant"></div>
-                <div class="modal-popup">
-                    <div class="modal-head">
-                        <label class="form-label" for="img">Select image of the restaurant</label>
-                        <input class="form-input" type="file" id="img" name="img" accept="image/*">
-                    </div>
-                    <div class="modal-body">
-                        <label class="form-label" for="popup">Restaurant<span
-                                style="color: red !important; display: inline; float: none;">*</span></label>
-                        <input class="form-input" type="text" id="restaurant-input" data-role="none"
-                            placeholder="Type your restaurant">
-                    </div>
-                    <div class="modal-foot">
-                        <div id="add-restaurant"><img src="src/img/add.png"></div>
-                    </div>
-                </div>
-            </div>
+            <img src="src/img/bobadetail.png" alt="boba">
+            <h4>Boba milk tea</h4>
         </div>
     </section>
 

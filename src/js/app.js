@@ -36,11 +36,17 @@ $(() => {
         console.log(country)
         $(".countrylist").append(`
             <div class="countrylist-item">
-                <a href="#cuisine-detail-page"><img src="src/img/country.png" alt="flag"></a>
+                <a href="#cuisines-profile-page"><img src="src/img/country.png" alt="flag"></a>
                 <br>
-             <a href="#cuisine-detail-page">${country}</a>
+             <a href="#cuisines-profile-page">${country}</a>
             </div>
         `)
+        // Make modal disappear.
+        $("#add-modal-country").removeClass("active");
+    })
+    
+    // Remove country
+    .on("click", "#remove-modal-country", function(){
         // Make modal disappear.
         $("#add-modal-country").removeClass("active");
     })
@@ -56,25 +62,31 @@ $(() => {
         clearTimeout(timer);
     })
 
-    //Add restaurant
-    .on("click", "#add-restaurant", function(){
-        const restaurant = $("#restaurant-input").val();
+    //Add cuisine
+    .on("click", "#add-cuisine", function(){
+        const cuisine = $("#cuisine-input").val();
         // Add new item.
-        console.log(restaurant)
-        $(".restaurantslist").append(`
-            <div class="restaurantslist-item">
-                <a href="#cuisine-detail-page"><img src="src/img/restaurant.png" alt="flag"></a>
+        console.log(cuisine)
+        $(".cuisineslist").append(`
+            <div class="cuisineslist-item">
+                <a href="#cuisines-profile-page"><img src="src/img/cuisine.png" alt="cuisine"></a>
                 <br>
-            <a href="#cuisine-detail-page">${restaurant}</a>
+            <a href="#cuisines-profile-page">${cuisine}</a>
             </div>
         `)
         // Make modal disappear.
-        $("#add-modal-restaurant").removeClass("active");
+        $("#add-modal-cuisine").removeClass("active");
+    })
+
+      // Remove cuisine
+      .on("click", "#remove-modal-cuisine", function(){
+        // Make modal disappear.
+        $("#add-modal-cuisine").removeClass("active");
     })
 
     // Long click
     var timer
-    $('body').on("mousedown touchstart",'.restaurantslist-item',function(e){
+    $('body').on("mousedown touchstart",'.cuisineslist-item',function(e){
         timer = setTimeout(() => {
             console.log("Long click");
             $(this).remove()

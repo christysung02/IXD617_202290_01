@@ -74,8 +74,8 @@ a {
     width:100%;
     position:relative;
 }
-
-[data-role="modal-header"],ul{
+[data-role="modal-header"],ul,
+[data-role="modal-footer"],ul{
     list-style-type: none;
     margin:0;
     padding:0;
@@ -111,7 +111,7 @@ a {
     display:block;
 }
 
-[data-role="modal-header"] p{
+[data-role="modal-footer"] p{
     color: var(--color-main-black);
     font-weight: 400;
     font-size: 16px;
@@ -190,7 +190,7 @@ h2{
     line-height: 18px;
     color: var(--color-main-gray);
     display: flex;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     align-items: center;
 }
 
@@ -258,8 +258,9 @@ h2{
     width: 100%;
 }
 
-/* CUNSINE*/
-.countrylist {
+/* COUNTRY and CUNSINE */
+.countrylist,
+.cuisineslist {
     position: relative;
     padding: 1em;
     display: grid;
@@ -267,7 +268,8 @@ h2{
     grid-gap: 1em;
     padding-top: 1em;
 }
-.countrylist-item{
+.countrylist-item,
+.cuisineslist-item{
     display: flex;
     flex-direction: column;
     column-count: 2;
@@ -276,7 +278,8 @@ h2{
     height: fit-content;
 }
 
-.country-name {
+.country-name,
+.cuisine-name {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -285,40 +288,9 @@ h2{
     text-align: center;
 }
 
-.country-name p{
+.country-name p,
+.cuisine-name p{
     margin: 0px auto;
-}
-/* .add-country {
-    background-color: var(--color-main-red);
-    border-width: 0;
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    display: inline-block;
-    width: 100%;
-    height: 36px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-    color: var(--color-main-white);
-    margin-top: 1rem;
-} */
-
-/* Restaurants LIST */
-.restaurantslist {
-    position: relative;
-    padding: 1em;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 2rem;
-    padding-top: 2em;
-}
-.restaurantslist-item{
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    column-count: 2;
-    justify-content: center;
-    align-items: center;
 }
 
 /* FLOATER */
@@ -362,11 +334,11 @@ h2{
 
 .modal-popup {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     background-color: var(--color-main-white);
     width: 80vw;
-    max-height: 60vh;
+    max-height: 80vh;
     display:flex;
     flex-direction: column;
     border-radius: 1em;
@@ -379,7 +351,8 @@ h2{
     transform: translate(-50%, -50%);
 }
 
-.modal-head{
+.modal-header,
+.modal-foot{
     display: block;
     margin-left: 0;
     margin-right: 0;
@@ -394,44 +367,78 @@ label {
 }
 
 /* cancel and save button */
-.modal-head.ui-header.ui-bar-inherit {
+.modal-foot.ui-header.ui-bar-inherit {
     height: 4em;
 }
 
 .modal-body {
     background-color: white;
-    padding: 0.5em 1em;
+    padding: 1em 0.5em;
     flex: 1 1 100%;
     overflow: auto;
+}
+.modal-head{
+    display: block;
+    margin: 0px;
+    padding: 1em;
+    background-color: var(--color-main-yellow);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .modal-foot {
     display: block;
-    margin: 0.1em;
-    margin-top: 0.5rem;
-    padding: 0.5em 1em;
-    
+    margin: 0px;
+    padding: 0.5em;
 }
 
-.form-addbutton {
-    background-color: var(--color-main-red);
+.modal-title{
+    font-weight: 600; 
+    font-size: 16px; 
+    line-height: 21px; 
+    margin: 0px;
+    text-align: center;
+}
+
+.cancelbtn {
+    background-color: var(--color-main-gray);
     border-width: 0;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 100%;
-    height: 36px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
+    width: 5rem;
+    height: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
     color: var(--color-main-white);
-    margin-top: 3rem;
+}
+
+.addbtn {
+    background-color: var(--color-main-red);
+    border-width: 0;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 10rem;
+    height: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-main-white);
+}
+
+.inputspace{
+ margin: 0em;
+ margin-bottom: 1em;
+}
+
+input#cuisine-input {
+    padding: 0em;
 }
 
 select#country-selected {
     border-width: 0px;
     border-bottom: 0.5px solid var(--color-main-red);
-    padding: 0 1em;
     display: inline-block;
     width: 100%;
     height: 36px;
@@ -439,17 +446,18 @@ select#country-selected {
     font-size: 16px;
     line-height: 21px;
     background-color: transparent;
+    margin: 0px;
 }
 
-/* input#add-img {
-    height: 10rem;
+input#img {
+    height: 9rem;
     background-image: url("../img/uploadimage.png");
     background-size:cover;
     background-position:center;
     border-bottom: 0 solid;
     border-radius: 5px;
-    margin-top: 16px;
-} */
+    margin-top: 8px;
+}
 
 /*PROFILE*/
 .profilecontent{

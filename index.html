@@ -8,9 +8,8 @@
     <title>Restagory</title>
 
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="256x256" href="src/img/heroicon.png">
-    <link rel="preload" as="image" href="src/img/onboardingimg.png">
-    <link rel="preload" as="image" href="src/img/headerimg.png">
+    <!-- <link rel="icon" sizes="256x256" href="src/img/heroicon.png"> -->
+    <link rel="preload" as="image" href="src/img/onboardingpage.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +21,11 @@
     <script src="src/js/signin.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script>
-        $(function(){
-            $("#country-dropdown").load("src/countrydropdown.html"); 
+        $(function () {
+            $("#country-dropdown").load("src/countrydropdown.html");
         });
     </script>
-    
+
 
 </head>
 
@@ -39,24 +38,25 @@
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signin-hero" style="flex: 1;"></div>
             <form class="form" id="signin-form" data-ajax="false" style="flex: 2;">
-                <h2 style="text-align: center;">LOGIN</h2>
+                <h2 style="text-align: center;">SIGN IN</h2>
                 <div class="form-control">
                     <label class="form-label" for="signin-username">Username</label>
                     <input class="form-input" type="text" id="signin-username" data-role="none"
-                        placeholder="Type your Username">
+                        placeholder="Enter your username">
                 </div>
                 <div class="form-control">
                     <label class="form-label" for="signin-password">Password</label>
                     <input class="form-input" type="password" id="signin-password" data-role="none"
-                        placeholder="Type your Password">
+                        placeholder="Enter your password">
                 </div>
                 <div class="warning" style="display:none;">
                     <p>The username or password is incorrect, try it again.</p>
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-button" value="LOGIN" data-role="none">
+                    <input type="submit" class="form-button" value="SIGN IN" data-role="none">
                 </div>
-                <div class="form-control" style="text-align:center; font-size: 0.7em">
+                <div class="form-control"
+                    style="text-align:center; font-weight: 500; font-size: 12px; line-height: 13px;">
                     Don't have an account? <a href="#signup-page">Sign Up!</a>
                 </div>
             </form>
@@ -67,126 +67,133 @@
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch signup-hero" style="flex: 1;"></div>
             <form class="form" id="signup-form" data-ajax="false" style="flex: 2;">
-                <h2 style="text-align: center;">SIGN UP</h2>
+                <h2 style="text-align: center;">BECOME OUR MEMBER</h2>
                 <div class="form-control" style="flex: 2;">
                     <label class="form-label" for="signup-username">Username</label>
                     <input class="form-input" type="text" id="signup-username" data-role="none"
-                        placeholder="Type your Username">
+                        placeholder="Enter your username">
                 </div>
                 <div class="form-control">
-                    <label class="form-label" for="signup-password">Type a Password</label>
+                    <label class="form-label" for="signup-password">Password</label>
                     <input class="form-input" type="password" id="signup-password" data-role="none"
-                        placeholder="Type your Password">
+                        placeholder="Enter your password">
                 </div>
                 <div class="form-control">
                     <label class="form-label" for="signup-confirm">Confirm Password</label>
                     <input class="form-input" type="password" id="signup-confirm" data-role="none"
-                        placeholder="Type your Password">
+                        placeholder="Re-enter your password">
                 </div>
                 <div class="form-control">
                     <input type="submit" class="form-button" value="CONFIRM" data-role="none">
                 </div>
-                <div class="form-control" style="text-align:center; font-size: 0.7em">
+                <div class="form-control"
+                    style="text-align:center; font-weight: 500; font-size: 12px; line-height: 13px;">
                     Already have an account? <a href="#signin-page">Sign In!</a>
                 </div>
             </form>
         </div>
     </section>
 
-
     <!-- Map page -->
-    <section data-role="page" id="recent-page">
+    <section data-role="page" id="map-page">
+        <div class="map"></div>
         <header data-role="header">
             <h1>MAP</h1>
+            <ul>
+                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#user-profile-page"><img src="src/img/profileicon.png"></a></li>
+            </ul>
         </header>
         <div data-role="main">
-            <div class="map"><img src="src/img/map image.png"></div>
+            <div class="mapimg">
+                <img src="src/img/mapdumpling.png">
+                <img src="src/img/mapburger.png">
+                <img src="src/img/mapsalad.png">
+            </div>
         </div>
         <div class="floater bottom right">
-            <a href="#" class="profile-btn-circle" data-activate="#"><img src="src/img/mapfloat.png"></a>
+            <a href="#" class="profile-btn-circle" data-activate="#"><img src="src/img/maptrackicon.png"></a>
         </div>
-
-        <footer data-role="footer">
-            <ul>
-                <li><a href="#recent-page"><img src="src/img/mapyellow.jpg"></a></li>
-                <li><a href="#list-page"><img src="src/img/listwhite.jpg"></a></li>
-                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
-            </ul>
-        </footer>
     </section>
 
-
-    <!-- LIST PAGE -->
-    <section data-role="page" id="list-page">
+    <!-- CUISINE PAGE -->
+    <section data-role="page" id="cuisine-page">
         <header data-role="header">
-            <h1>COUNTRY</h1>
+            <h1>CUISINE</h1>
             <ul>
-                <li><a href="#recent-page"><img src="src/img/arrow.png"></a></li>
+                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plus.png"></a></li>
+                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
             <div class="countrylist">
                 <div class="countrylist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/taiwan.png" alt="flag"></a>
+                    <a href="#cuisine-detail-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">TAIWAN</a>
+                    <div class="country-name">
+                        <p>Taiwan</p>
+                    </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/united states.png" alt="flag"></a>
+                    <a href="#cuisine-detail-page"><img src="src/img/country/United States of America (US).png"
+                            alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">USA</a>
+                    <div class="country-name">
+                        <p>United States</p>
+                    </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/united kingdom.png" alt="flag"></a>
+                    <a href="#cuisine-detail-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">UK</a>
+                    <div class="country-name">
+                        <p>Italy</p>
+                    </div>
                 </div>
                 <div class="countrylist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/turkey.png" alt="flag"></a>
+                    <a href="#cuisine-detail-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
                     <br>
-                    <a href="#restaurants-profile-page">Turkey</a>
+                    <div class="country-name">
+                        <p>Japan</p>
+                    </div>
                 </div>
-                <div class="countrylist-item">
-                    <a href="#restaurants-profile-page"><img src="src/img/viet nam.png" alt="flag"></a>
-                    <br>
-                    <a href="#restaurants-profile-page">Viet Nam</a>
-                </div>
-
             </div>
         </div>
-        <footer data-role="footer">
-            <ul>
-                <li><a href="#recent-page"><img src="src/img/mapwhite.jpg"></a></li>
-                <li><a href="#list-page"><img src="src/img/listyellow.jpg"></a></li>
-                <li><a href="#user-profile-page"><img src="src/img/profilewhite.jpg"></a></li>
-            </ul>
-        </footer>
+
         <div id="add-modal-country" class="modal">
             <div class="modal-back" data-deactivate="#add-modal-country"></div>
             <div class="modal-popup">
-                <div class="modal-head">
-                    <label class="form-label" for="img">Select image of the country</label>
-                    <input class="form-input" type="file" id="add-img" name="img" accept="image/*">
+                <div data-role="modal-header" class="modal-head">
+                    <ul>
+                        <li>
+                            <a href="#cuisine-page">
+                                <p>cancel</p>
+                            </a>
+                        </li>
+                        <li class="flex-stretch"></li>
+                        <li id="add-country">
+                            <a href="#cuisine-page">
+                                <p style="font-weight: 700; color: var(--color-main-red);">Add</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="modal-body">
                     <div class="country-dropdown" id="country-dropdown"></div>
-                </div>
-                <div class="modal-foot">
-                    <div id="add-country"><img src="src/img/add.png"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RESTAURANTS PROFILE PAGE -->
-    <section data-role="page" id="restaurants-profile-page">
+    <!-- CUISINE DETAIL PAGE -->
+    <section data-role="page" id="cuisine-detail-page">
         <header data-role="header">
-            <h1>TAIWAN</h1>
+            <h1>Taiwan</h1>
             <ul>
-                <li><a href="#list-page"><img src="src/img/arrow.png"></a></li>
+                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
+                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -206,9 +213,6 @@
                     <br>
                     <a href="">Boba milk tea</a>
                 </div>
-            </div>
-            <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#add-modal-restaurant">&plus;</a>
             </div>
             <div id="add-modal-restaurant" class="modal">
                 <div class="modal-back" data-deactivate="#add-modal-restaurant"></div>
@@ -257,8 +261,8 @@
         <footer data-role="footer">
             <ul>
                 <ul>
-                    <li><a href="#recent-page"><img src="src/img/mapwhite.jpg"></a></li>
-                    <li><a href="#list-page"><img src="src/img/listwhite.jpg"></a></li>
+                    <li><a href="#map-page"><img src="src/img/mapwhite.jpg"></a></li>
+                    <li><a href="#cuisine-page"><img src="src/img/listwhite.jpg"></a></li>
                     <li><a href="#user-profile-page"><img src="src/img/profileyellow.jpg"></a></li>
                 </ul>
             </ul>

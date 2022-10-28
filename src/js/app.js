@@ -36,9 +36,9 @@ $(() => {
         console.log(country)
         $(".countrylist").append(`
             <div class="countrylist-item">
-                <a href="#restaurants-profile-page"><img src="src/img/country.png" alt="flag"></a>
+                <a href="#cuisine-detail-page"><img src="src/img/country.png" alt="flag"></a>
                 <br>
-             <a href="#restaurants-profile-page">${country}</a>
+             <a href="#cuisine-detail-page">${country}</a>
             </div>
         `)
         // Make modal disappear.
@@ -63,9 +63,9 @@ $(() => {
         console.log(restaurant)
         $(".restaurantslist").append(`
             <div class="restaurantslist-item">
-                <a href="#restaurants-profile-page"><img src="src/img/restaurant.png" alt="flag"></a>
+                <a href="#cuisine-detail-page"><img src="src/img/restaurant.png" alt="flag"></a>
                 <br>
-            <a href="#restaurants-profile-page">${restaurant}</a>
+            <a href="#cuisine-detail-page">${restaurant}</a>
             </div>
         `)
         // Make modal disappear.

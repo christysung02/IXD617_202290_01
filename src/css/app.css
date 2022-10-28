@@ -10,11 +10,11 @@
     --header-height: 5rem;
 
     --color-main-white: #FFFFFF;
-    --color-main-yellow:#FFCF4F;
-    --color-main-lightblue: #4FBFFF;
-    --color-main-gray: #D9D9D9;
-    --color-main-transblue: hsl(233, 41%, 21%, 0.9);
-    --color-main-blue: #1F244A;
+    --color-main-yellow:#F2E5C4;
+    --color-main-red: #D9524C;
+    --color-main-gray: #969696;
+    --color-main-transgray: rgba(150, 150, 150, 0.6);
+    --color-main-black: #000000;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 }
 
 a {
-    color:var(--color-main-lightblue);
+    color:var(--color-main-red);
     font-weight: bold;
     text-decoration: none;
     text-align: center;
@@ -57,19 +57,25 @@ a {
     z-index:1;
 }
 
-[data-role="header"],
-[data-role="footer"] {
+[data-role="header"]{
     line-height: var(--header-height);
-    height: var(--header-height);
+    height: var(--header-height); 
     position: relative;
     overflow: hidden;
-    background-color: var(--color-main-blue);
     z-index: 2;
 }
 
 /* Core Navigation */
-[data-role="header"] ul,
-[data-role="footer"] ul {
+[data-role="header"], ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display:flex;
+    width:100%;
+    position:relative;
+}
+
+[data-role="modal-header"],ul{
     list-style-type: none;
     margin:0;
     padding:0;
@@ -83,33 +89,34 @@ a {
     height:50px;
 }
 
-[data-role="footer"] li {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-[data-role="header"] h1 {
+[data-role="header"] h1{
     position:absolute;
-    top:0;
+    top:1rem;
     left:0;
     width:100%;
     height:100%;
     text-align:center;
-    font-size: 20px;
-    color: var(--color-main-white);
-    font-weight: 600;
-    letter-spacing: 3px;
+    color: var(--color-main-black);
     margin:0;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.02em;
 }
 
 [data-role="header"] a {
     padding:0.8em 1em;
+    padding-top: 2rem;
 }
-[data-role="header"] a,
-[data-role="footer"] a {
+[data-role="header"] a{
     display:block;
 }
 
+[data-role="modal-header"] p{
+    color: var(--color-main-black);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px; 
+}
 
 /* Basic layout tools */
 .display-flex { display:flex; }
@@ -130,7 +137,7 @@ a {
 
 /* Onboarding */
 #onboarding-page {
-    background-image: url('../img/onboardingimg.png');
+    background-image: url('../img/onboardingpage.png');
     background-size:cover;
     background-position:center;
 }
@@ -139,53 +146,25 @@ a {
 .form-control {
     margin: 1em 0;
 }
-.form-label {
-    font-size: 17px;
-    color: var(--color-main-blue);
-    display: block;
-    margin-bottom: 0.5em;
-    margin-top: 1rem;
-}
-.form-input {
-    background-color: var(--color-main-gray);
-    border-width: 1px;
-    border-color: var(--color-main-white);
-    border-style: solid;
-    border-radius: 5px;
-    padding: 0.8em 1em;
-    display: inline-block;
-    width: 100%;
-}
-.form-button {
-    background-color: var(--color-main-lightblue);
-    border-width: 0;
-    border-radius: 0.2em;
-    padding: 0.5em 1em;
-    display: inline-block;
-    width: 100%;
-    font: inherit;
-    text-align: center;
-    font-size: 20px;
-    color: var(--color-main-white);
-    margin-top: 2rem;
-}
-.form-button:hover {
-    text-decoration: none;
+
+#signin-page{
+    background-image: url('../img/signinheader.png');
+    background-size:cover;
+    background-position:center;
 }
 
-#signin-page,
 #signup-page{
-    background-image: url('../img/headerimg.png');
+    background-image: url('../img/becomeourmemberheader.png');
     background-size:cover;
     background-position:center;
 }
 
 #signin-form,
 #signup-form {
-    padding: 3em;
+    padding: 2em;
     background-color: var(--color-main-white);
     border-radius: 30px 30px 0px 0px;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .signin-hero,
@@ -195,40 +174,57 @@ a {
     justify-content: center;
     align-items: center;
 }
-.hero-icon {
-    width: 80vw;
+
+/* title of the sign-in and sign-up */
+h2{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: var(--color-main-black);
+    padding-bottom: 2rem;
 }
 
-.map {
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('');
-    background-position: center;
-    background-size: cover;
-    z-index: -1;
-}
-
-
-/* COUNTRY LIST */
-.countrylist {
-    position: relative;
-    padding: 1em;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 2rem;
-    padding-top: 2em;
-}
-.countrylist-item{
+.form-label {
+    font-size: 13px;
     font-weight: 500;
+    line-height: 18px;
+    color: var(--color-main-gray);
     display: flex;
-    flex-direction: column;
-    column-count: 2;
-    justify-content: center;
+    margin-bottom: 8px;
     align-items: center;
-    height: fit-content;
+}
+
+.form-input {
+    border-width: 0px;
+    border-bottom: 0.5px solid var(--color-main-red);
+    padding: 0 1em;
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: transparent;
+}
+
+
+.form-button {
+    background-color: var(--color-main-red);
+    border-width: 0;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-main-white);
+    margin-top: 3rem;
+}
+
+.form-button:hover {
+    text-decoration: none;
 }
 
 /* Warning */
@@ -239,6 +235,73 @@ a {
     text-decoration: underline;
     text-align: center;
 }
+
+
+/* MAP */
+#map-page{
+    background-size:cover;
+    background-position:center;
+    z-index: -1;
+    background-image: url('../img/map.png');
+    background-size:cover;
+    background-position:center;
+}
+
+.mapimg {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    overflow: auto;
+    width: 100%;
+}
+
+/* CUNSINE*/
+.countrylist {
+    position: relative;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+    padding-top: 1em;
+}
+.countrylist-item{
+    display: flex;
+    flex-direction: column;
+    column-count: 2;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.country-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.country-name p{
+    margin: 0px auto;
+}
+/* .add-country {
+    background-color: var(--color-main-red);
+    border-width: 0;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-main-white);
+    margin-top: 1rem;
+} */
 
 /* Restaurants LIST */
 .restaurantslist {
@@ -260,36 +323,12 @@ a {
 
 /* FLOATER */
 .floater { position:absolute; }
-.floater.top { top: 3rem; }
-.floater.right { right: 2rem; }
-.floater.bottom { bottom: 7rem; }
-.floater.left { left: 3rem; }
+.floater.right { right: 1rem; }
+.floater.bottom { bottom: 14rem; }
 .floater {z-index: 1;}
 
 .profile-btn-circle{
-    border-radius: 5rem;
-    line-height: 7rem;
-    font-size:5em;
-    width: 6rem;
-    height: 6rem;
-    text-align:center;
-    background-color:var(--color-main-yellow);
-    color: var(--color-main-white);
     display: block;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
-}
-
-.btn-circle {
-    border-radius: 5rem;
-    line-height: 5rem;
-    font-size:5em;
-    width: 6rem;
-    height: 6rem;
-    text-align:center;
-    background-color:var(--color-main-yellow);
-    color: var(--color-main-white);
-    display: block;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
 }
 
 /* MODAL */
@@ -315,7 +354,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-main-transblue);
+    background-color: var(--color-main-transgray);
 }
 .modal-back.transparent {
     background-color: transparent;
@@ -323,7 +362,7 @@ a {
 
 .modal-popup {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     background-color: var(--color-main-white);
     width: 80vw;
@@ -333,6 +372,7 @@ a {
     border-radius: 1em;
     overflow:hidden;
     transition: all 0.3s;
+    padding: 1em;
 }
 
 .modal.active .modal-popup {
@@ -341,10 +381,21 @@ a {
 
 .modal-head{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--color-neutral-lighter);
-    padding: 0.5em 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 1em;
+}
+
+label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-main-gray);
+}
+
+/* cancel and save button */
+.modal-head.ui-header.ui-bar-inherit {
+    height: 4em;
 }
 
 .modal-body {
@@ -356,38 +407,49 @@ a {
 
 .modal-foot {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0.1em;
     margin-top: 0.5rem;
-    background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
+    
 }
 
-input#add-img {
-    height: 8rem;
-    background-image: url("../img/uploadimage.png");
-}
-
-input#add-profileimg {
-    height: 9rem;
-    width: 9rem;
-    display:block; 
-    margin:auto;
-    background-image: url("../img/profile.png");
-    background-size:cover;
-    background-position:center;
+.form-addbutton {
+    background-color: var(--color-main-red);
+    border-width: 0;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-main-white);
+    margin-top: 3rem;
 }
 
 select#country-selected {
-    background-color: var(--color-main-gray);
-    border-width: 1px;
-    border-color: var(--color-main-white);
-    border-style: solid;
-    border-radius: 5px;
-    padding: 1.1em 1em;
+    border-width: 0px;
+    border-bottom: 0.5px solid var(--color-main-red);
+    padding: 0 1em;
     display: inline-block;
     width: 100%;
+    height: 36px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: transparent;
 }
+
+/* input#add-img {
+    height: 10rem;
+    background-image: url("../img/uploadimage.png");
+    background-size:cover;
+    background-position:center;
+    border-bottom: 0 solid;
+    border-radius: 5px;
+    margin-top: 16px;
+} */
 
 /*PROFILE*/
 .profilecontent{
@@ -438,6 +500,7 @@ a.js-logout.ui-link {
     border-radius: 10px;
   }
 
+  /* Remove the non-necessary string come with selected bar */
   #country-selected-button span.form-control{
       display:none;
   }

@@ -56,9 +56,10 @@ const checkUserId = () => {
             console.log("After 1.5 sec.")
             $.mobile.navigate("#signin-page");
         },1500)
+
     } else {
         // logged in
-        $.mobile.navigate("#recent-page");
+        $.mobile.navigate("#map-page");
     }
 }
 

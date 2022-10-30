@@ -256,7 +256,6 @@ h2{
     padding-left: 1em;
     overflow: auto;
     width: 100%;
-    overflow-x: hidden;
 }
 
 /* COUNTRY and CUNSINE */
@@ -573,7 +572,7 @@ h6{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--color-main-red); 
+    background: var(--color-main-gray); 
     border-radius: 10px;
   }
 

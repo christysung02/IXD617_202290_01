@@ -299,8 +299,34 @@ h2{
 .floater.bottom { bottom: 14rem; }
 .floater {z-index: 1;}
 
-.profile-btn-circle{
-    display: block;
+/*MODAL-DRAWER*/
+.modal-drawer {
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+    transition: all 0.3s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.modal-drawer.right,
+.modal-drawer.left {
+    height: 100%;
+    width: 70vw;
+}
+.modal-drawer.right { right: 0; transform: translateX(100%); }
+.modal-drawer.left { left: 0; transform: translateX(-100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+    height: 40vh;
+    width: 100%;
+}
+.modal-drawer.top { top: 0; transform: translateY(-100%); }
+.modal-drawer.bottom { bottom: 0; transform: translateY(100%); }
+.modal.active .modal-drawer {
+    transform: translate(0);
 }
 
 /* MODAL */

@@ -100,7 +100,7 @@
         <header data-role="header">
             <h1>MAP</h1>
             <ul>
-                <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
+                <li><a href="#" data-activate="#modal-drawer"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#profile-page"><img src="src/img/profileicon.png"></a></li>
             </ul>
@@ -111,9 +111,16 @@
                 <img src="src/img/mapburger.png">
                 <img src="src/img/mapsalad.png">
             </div>
+            <div class="floater bottom right">
+                <a href="#"><img src="src/img/maptrackicon.png"></a>
+            </div>
         </div>
-        <div class="floater bottom right">
-            <a href="#" class="profile-btn-circle" data-activate="#"><img src="src/img/maptrackicon.png"></a>
+        <div id="modal-drawer" class="modal">
+            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-drawer left">
+                <div class="modal-head">Head</div>
+                <div class="modal-body">Body</div>
+            </div>
         </div>
     </section>
 

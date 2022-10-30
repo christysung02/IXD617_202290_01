@@ -102,7 +102,7 @@
             <ul>
                 <li><a href="#map-page"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#user-profile-page"><img src="src/img/profileicon.png"></a></li>
+                <li><a href="#profile-page"><img src="src/img/profileicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -194,17 +194,17 @@
         <div data-role="main">
             <div class="cuisineslist">
                 <div class="cuisineslist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
-                    <br>
-                    <div class="cuisine-name">
-                        <p>Hot Pot</p>
-                    </div>
-                </div>
-                <div class="cuisineslist-item">
                     <a href="#cuisine-detail-page"><img src="src/img/boba.png" alt="boba"></a>
                     <br>
                     <div class="cuisine-name">
                         <p>Boba milk tea</p>
+                    </div>
+                </div>
+                <div class="cuisineslist-item">
+                    <a href="#cuisine-detail-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
+                    <br>
+                    <div class="cuisine-name">
+                        <p>Hot Pot</p>
                     </div>
                 </div>
                 <div class="cuisineslist-item">
@@ -261,43 +261,59 @@
         <div data-role="main">
             <img src="src/img/bobadetail.png" alt="boba">
             <h4>Boba milk tea</h4>
+            <h6>This is my favorite boba shop in the bay area.</h6>
         </div>
     </section>
 
     <!-- USER PROFILE PAGE -->
-    <section data-role="page" id="user-profile-page">
-        <div data-role="main">
-            <div class="profilecontent">
-                <input class="form-input" type="file" id="add-profileimg" name="img" accept="image/*">
-                <h3>NAME</h3>
-                <div class="form-control">
-                    <label class="form-label">Pronouns</label>
-                    <input class="form-input" type="text" id="pronouns" data-role="none"
-                        placeholder="Type your pronouns">
+    <!-- <section data-role="page" id="signup-page">
+        <div data-role="main" class="display-flex flex-column">
+            <div class="flex-stretch signup-hero" style="flex: 1;"></div>
+            <form class="form" id="signup-form" data-ajax="false" style="flex: 2;">
+                <h2 style="text-align: center;">BECOME OUR MEMBER</h2> -->
+    <section data-role="page" id="profile-page">
+        <div data-role="main" class="display-flex flex-column">
+            <div class="profileupper" style="flex: 1.5;">
+                <header data-role="header">
+                    <h1>PROFILE</h1>
+                    <ul>
+                        <li><a href="#"><img src="src/img/listicon.png"></a></li>
+                        <li class="flex-stretch"></li>
+                    </ul>
+                </header>
+                <div class="photoandname">
+                    <img src="src/img/head.png" alt="head">
+                    <h2>Christy</h2>
+                    <p>I love to challenge something different.</p>
+                    <div class="countrow">
+                        <div class="countrowlist">
+                            <p>Photos</p>
+                            <h2>120</h2>
+                        </div>
+                        <div class="countrowlist">
+                            <p>Countries</p>
+                            <h2>6</h2>
+                        </div>
+                        <div class="countrowlist">
+                            <p>Cuisines</p>
+                            <h2>25</h2>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-control">
-                    <label class="form-label">Birthday</label>
-                    <input class="form-input" type="date" id="birthday" data-role="none" placeholder="day/month/year">
+            </div>
+            <div class="profilephotos" style="flex:1">
+                <div class="profilephotoslist">
+                    <img src="src/img/profile1.png">
+                    <img src="src/img/profile2.png">
+                    <img src="src/img/profile3.png">
+                    <img src="src/img/profile4.png">
                 </div>
-                <div class="form-control">
-                    <label class="form-label">Bio</label>
-                    <input class="form-input" type="text" id="bio" data-role="none"
-                        placeholder="Tell me more about you!">
-                </div>
-                <a href="#" class="js-logout">Log out</a>
             </div>
         </div>
-        <footer data-role="footer">
-            <ul>
-                <ul>
-                    <li><a href="#map-page"><img src="src/img/mapwhite.jpg"></a></li>
-                    <li><a href="#cuisine-page"><img src="src/img/listwhite.jpg"></a></li>
-                    <li><a href="#user-profile-page"><img src="src/img/profileyellow.jpg"></a></li>
-                </ul>
-            </ul>
-        </footer>
     </section>
 
 </body>
 
 </html>
+
+<!-- <a href="#" class="js-logout">Log out</a> -->

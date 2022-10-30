@@ -256,6 +256,7 @@ h2{
     padding-left: 1em;
     overflow: auto;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* COUNTRY and CUNSINE */
@@ -459,37 +460,105 @@ input#img {
     margin-top: 8px;
 }
 
-/*PROFILE*/
-.profilecontent{
-    padding:3rem;
-    height: 100%;
-    position: relative;
-    overflow: auto;
-}
-
-.profilecontent h3{
+/*CUISINE DETAIL PAGE*/
+h4{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
     text-align: center;
-    color: var(--color-main-blue);
-    font-weight: 600;
+    margin: 2em 1em;
 }
 
-.profilecontent img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-input#bio {
-    padding-bottom: 8rem;
+h6{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    margin: 0em 3em;
 }
 
-a.js-logout.ui-link {
+/*PROFILE*/
+.profileupper{
+    background-size:cover;
+    background-position:center;
+    z-index: -1;
+    background-size:cover;
+    background-position:center;
+    background-image: url("../img/profilebackground.png");
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 4px 10px var(--color-main-gray);
+}
+
+.photoandname{
     display: flex;
-    justify-content: center;
-    font-weight: 300;
-    text-decoration: underline;
-    padding-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
 }
+
+.photoandname h2{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: var(--color-main-red);
+    padding: 0px;
+}
+
+.countrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    gap: 32px;
+}
+
+.countrowlist{
+    width: 6em;
+    height: 6em;
+    background-color: #ffffff8e;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.countrowlist p{
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-main-gray);
+    padding: 0px;
+    margin: 4px auto;
+}
+
+.countrowlist h2{
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-main-black);
+    padding: 0px;
+    margin: 8px auto;
+}
+
+.profilephotos{
+    padding: 0.5em;
+    overflow: auto;
+    overflow-x: hidden;
+} 
+
+.profilephotoslist{
+    position: relative;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+    padding-top: 1em;
+} 
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -498,13 +567,13 @@ a.js-logout.ui-link {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 1px grey; 
+    box-shadow: inset 0 0 1px var(--color-main-gray); 
     border-radius: 10px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--color-main-gray); 
+    background: var(--color-main-red); 
     border-radius: 10px;
   }
 

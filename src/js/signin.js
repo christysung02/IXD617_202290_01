@@ -1,5 +1,3 @@
-
-
 const checkSigninForm = () => {
     const userval = $("#signin-username").val();
     const passval = $("#signin-password").val();

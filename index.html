@@ -119,8 +119,10 @@
         <div id="modal-drawer" class="modal">
             <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
             <div class="modal-drawer left">
-                <div class="modal-head"><a href=""><img src="src/img/leftarrowicon.png"></a></div>
-                <div class="modal-body ">
+                <div class="modal-head maplistleftarrow">
+                    <a href=""><img src="src/img/leftarrowicon.png"></a>
+                </div>
+                <div class="modal-body list">
                     <a href="#map-page"><h1>MAP</h1></a>
                     <a href="#cuisine-page"><h1>CUISINE</h1></a>
                     <a href="#profile-page"><h1>PROFILE</h1></a>
@@ -133,7 +135,7 @@
     <!-- CUISINE PAGE -->
     <section data-role="page" id="cuisine-page">
         <header data-role="header">
-            <h1>CUISINE</h1>
+            <h1>TYPE OF CUISINE</h1>
             <ul>
                 <li><a href="#"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
@@ -177,8 +179,8 @@
         <div id="add-modal-country" class="modal">
             <div class="modal-back" data-deactivate="#add-modal-country"></div>
             <div class="modal-popup">
-                <div data-role="modal-header" class="modal-head">
-                    <p class="modal-title">ADD A NEW TYPE OF CUISINE</p>
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>ADD A NEW TYPE OF CUISINE</p>
                 </div>
                 <div class="modal-body">
                     <div class="country-dropdown" id="country-dropdown"></div>
@@ -232,8 +234,8 @@
         <div id="add-modal-cuisine" class="modal">
             <div class="modal-back" data-deactivate="#add-modal-cuisine"></div>
             <div class="modal-popup">
-                <div data-role="modal-header" class="modal-head">
-                    <p class="modal-title">ADD A NEW CUISINE</p>
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>ADD A NEW CUISINE</p>
                 </div>
                 <div class="modal-body">
                     <div class="inputspace">
@@ -271,7 +273,7 @@
                 <li><a href="#" data-activate="#"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
-        <div data-role="main">
+        <div data-role="main" class="cuisine-detail">
             <img src="src/img/bobadetail.png" alt="boba">
             <h4>Boba milk tea</h4>
             <h6>This is my favorite boba shop in the bay area.</h6>

@@ -36,15 +36,17 @@ $(() => {
         console.log(country)
         $(".countrylist").append(`
             <div class="countrylist-item">
-                <a href="#cuisines-profile-page"><img src="src/img/country.png" alt="flag"></a>
+                <a href="#cuisine-list-page"><img src="src/img/country/Australia (AU).png" alt="flag"></a>
                 <br>
-             <a href="#cuisines-profile-page">${country}</a>
+                <div class="country-name">
+                    <p>${country}</p>
+                </div>
             </div>
         `)
         // Make modal disappear.
         $("#add-modal-country").removeClass("active");
     })
-    
+
     // Remove country
     .on("click", "#remove-modal-country", function(){
         // Make modal disappear.
@@ -69,14 +71,17 @@ $(() => {
         console.log(cuisine)
         $(".cuisineslist").append(`
             <div class="cuisineslist-item">
-                <a href="#cuisines-profile-page"><img src="src/img/cuisine.png" alt="cuisine"></a>
+                <a href="#cuisine-list-page"><img src="src/img/boba.png" alt="cuisine"></a>
                 <br>
-            <a href="#cuisines-profile-page">${cuisine}</a>
+                <div class="country-name">
+                    <p>${cuisine}</p>
+                </div>
             </div>
         `)
         // Make modal disappear.
         $("#add-modal-cuisine").removeClass("active");
     })
+
 
       // Remove cuisine
       .on("click", "#remove-modal-cuisine", function(){

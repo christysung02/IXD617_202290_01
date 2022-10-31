@@ -258,6 +258,34 @@ h2{
     width: 100%;
 }
 
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.list h1{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-main-black);
+}
+
+.modal-body.list{
+    padding: 0em 1em;
+}
+
+.js-logout{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: var(--color-main-red);
+    position: absolute;
+    bottom: 5em;
+}
+
 /* COUNTRY and CUNSINE */
 .countrylist,
 .cuisineslist {
@@ -398,11 +426,22 @@ label {
 }
 
 .modal-head{
-    display: block;
     margin: 0px;
     padding: 1em;
+    background-color: var(--color-main-white);
+}
+
+.modal-head.modal-title{
     background-color: var(--color-main-yellow);
     border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
 }
 
 .modal-body {
@@ -417,7 +456,6 @@ label {
     margin: 0px;
     padding: 0.5em;
 }
-
 
 .cancelbtn {
     background-color: var(--color-main-gray);
@@ -480,7 +518,7 @@ input#img {
 }
 
 /*CUISINE DETAIL PAGE*/
-h4{
+.cuisine-detail h4{
     font-weight: 700;
     font-size: 16px;
     line-height: 21px;
@@ -488,7 +526,7 @@ h4{
     margin: 2em 1em;
 }
 
-h6{
+.cuisine-detail h6{
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;

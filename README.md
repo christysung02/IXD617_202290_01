@@ -14,8 +14,8 @@ IXD 617 Advanced Tech: Mobile Web
 - http://christysung02.com/aau/ixd617/profile/
 - http://christysung02.com/aau/ixd617/csszengarden/
 - http://christysung02.com/aau/ixd617/pdf/
-- http://christysung02.com/aau/ixd617/data/generator.html
 
 ### Example Links
 - http://christysung02.com/aau/ixd617/examples/jquery.html
 - http://christysung02.com/aau/ixd617/examples/jquery_mobile.html
+- http://christysung02.com/aau/ixd617/data/generator.html

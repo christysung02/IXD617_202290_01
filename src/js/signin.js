@@ -1,4 +1,4 @@
-const checkSigninForm = () => {
+export const checkSigninForm = () => {
     const userval = $("#signin-username").val();
     const passval = $("#signin-password").val();
 
@@ -28,7 +28,7 @@ const checkSigninForm = () => {
 }
 
 
-const checkUserId = () => {
+export const checkUserId = () => {
     // We updated the `sessionStorage.userId` in `checkSigninForm`.
     // Thus, we can read it to see it user is logged-in or not.
     if (sessionStorage.userId === undefined) {
@@ -49,9 +49,9 @@ const checkUserId = () => {
         // Otherwise, go to onboarding page first.
         $.mobile.navigate("#onboarding-page");    
 
-        // Wait for 1.5 sec and then go to sign-in page.
+        // Wait for 3 sec and then go to sign-in page.
         setTimeout(() => {
-            console.log("After 1.5 sec.")
+            console.log("After 3 sec.")
             $.mobile.navigate("#signin-page");
         },1500)
 

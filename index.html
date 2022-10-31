@@ -101,29 +101,29 @@
         <header data-role="header">
             <h1>MAP</h1>
             <ul>
-                <li><a href="#" data-activate="#modal-drawer"><img src="src/img/listicon.png"></a></li>
+                <li><a href="#" data-activate="#modal-drawer-map"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#profile-page"><img src="src/img/profileicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
             <div class="mapimg">
-                <img src="src/img/mapdumpling.png">
-                <img src="src/img/mapburger.png">
-                <img src="src/img/mapsalad.png">
+                <a href="#cuisine-page"><img src="src/img/mapdumpling.png"></a>
+                <a href="#cuisine-page"><img src="src/img/mapburger.png"></a>
+                <a href="#cuisine-page"><img src="src/img/mapsalad.png"></a>
             </div>
             <div class="floater bottom right">
                 <a href="#"><img src="src/img/maptrackicon.png"></a>
             </div>
         </div>
-        <div id="modal-drawer" class="modal">
+        <div id="modal-drawer-map" class="modal">
             <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
             <div class="modal-drawer left">
                 <div class="modal-head maplistleftarrow">
-                    <a href=""><img src="src/img/leftarrowicon.png"></a>
+                    <img id="close-modal-drawer-map" src="src/img/leftarrowicon.png">
                 </div>
                 <div class="modal-body list">
-                    <a href="#map-page"><h1>MAP</h1></a>
+                    <h1 id="close-modal-drawer-map" style="color: var(--color-main-black);">MAP</h1>
                     <a href="#cuisine-page"><h1>CUISINE</h1></a>
                     <a href="#profile-page"><h1>PROFILE</h1></a>
                     <a href="#" class="js-logout">LOG OUT</a>
@@ -137,7 +137,7 @@
         <header data-role="header">
             <h1>TYPE OF CUISINE</h1>
             <ul>
-                <li><a href="#"><img src="src/img/listicon.png"></a></li>
+                <li><a href="#" data-activate="#modal-drawer-cuisine"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
             </ul>
@@ -191,6 +191,21 @@
                         <li class="flex-stretch"></li>
                         <li id="add-country"><button class="addbtn">Add</button></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-drawer-cuisine" class="modal">
+            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-drawer left">
+                <div class="modal-head maplistleftarrow">
+                    <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
+                </div>
+                <div class="modal-body list">
+                    <a href="#map-page"><h1>MAP</h1></a>
+                    <h1 id="close-modal-drawer-cuisine" style="color: var(--color-main-black);">CUISINE</h1>
+                    <a href="#profile-page"><h1>PROFILE</h1></a>
+                    <a href="#" class="js-logout">LOG OUT</a>
                 </div>
             </div>
         </div>
@@ -287,7 +302,7 @@
                 <header data-role="header">
                     <h1>PROFILE</h1>
                     <ul>
-                        <li><a href="#"><img src="src/img/listicon.png"></a></li>
+                        <li><a href="#" data-activate="#modal-drawer-profile"><img src="src/img/listicon.png"></a></li>
                         <li class="flex-stretch"></li>
                     </ul>
                 </header>
@@ -317,6 +332,21 @@
                     <img src="src/img/profile2.png">
                     <img src="src/img/profile3.png">
                     <img src="src/img/profile4.png">
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-drawer-profile" class="modal">
+            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-drawer left">
+                <div class="modal-head maplistleftarrow">
+                    <img id="close-modal-drawer-profile" src="src/img/leftarrowicon.png">
+                </div>
+                <div class="modal-body list">
+                    <a href="#map-page"><h1>MAP</h1></a>
+                    <a href="#cuisine-page"><h1>CUISINE</h1></a>
+                    <h1 id="close-modal-drawer-profile" style="color: var(--color-main-black);">PROFILE</h1>
+                    <a href="#" class="js-logout">LOG OUT</a>
                 </div>
             </div>
         </div>

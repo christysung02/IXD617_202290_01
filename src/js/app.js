@@ -1,12 +1,23 @@
-// import { checkSigninForm, checkUserId } from "./signin.js";
+import { CuisineDetailPage, CuisineListPage, CuisinePage, MapPage, ProfilePage } from "./routes.js";
+import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
 $(() => {
     checkUserId();
 
-    // EVENT DELEGATION
     $(document)
+    .on("onpagecontainerbeforeshow", function(event, ui){
 
+        switch(ui.toPage[0].id) {
+            case "map-page": MapPage();break;
+            case "cuisine-page":CuisinePage();break;
+            case "cuisine-list-page":CuisineListPage();break;
+            case "cuisine-detail-page":CuisineDetailPage();break;
+            case "profile-page":ProfilePage();break;
+        }
+    })
+
+    // EVENT DELEGATION
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
         checkSigninForm();
@@ -28,6 +39,23 @@ $(() => {
         const target = $(this).data("deactivate");
         $(target).removeClass("active");
     })
+
+    //Close modal-drawer
+    .on("click", "#close-modal-drawer-map",function(){
+        // Make modal disappear.
+        $("#modal-drawer-map").removeClass("active");
+    })
+
+    .on("click", "#close-modal-drawer-cuisine",function(){
+        // Make modal disappear.
+        $("#modal-drawer-cuisine").removeClass("active");
+    })
+
+    .on("click", "#close-modal-drawer-profile",function(){
+        // Make modal disappear.
+        $("#modal-drawer-profile").removeClass("active");
+    })
+
 
     // Add country
     .on("click", "#add-country", function(){

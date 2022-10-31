@@ -269,7 +269,7 @@ h2{
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
-    color: var(--color-main-black);
+    color: var(--color-main-gray);
 }
 
 .modal-body.list{
@@ -382,9 +382,9 @@ h2{
     height: 100%;
     background-color: var(--color-main-transgray);
 }
-.modal-back.transparent {
+/* .modal-back.transparent {
     background-color: transparent;
-}
+} */
 
 .modal-popup {
     position: absolute;

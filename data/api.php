@@ -39,12 +39,27 @@ function makeQuery($conn,$prep,$params,$makeResults=true) {
     }
 }
 
+function makeStatement($data){
+    $conn = makeConn();
+    $type = @$data->type;
+    $params = @$data->params;
+
+    switch($type){
+        case "users_all":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_users`", $params);
+        case "countries_all":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_countries`", $params);
+        case "locations_all":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_locations`", $params);
+        default:
+            return ["error"=>"No Match Type"];
+    }
+}
+
+$data = json_decode(file_get_contents("php://input"));
+
 die(
     json_encode(
-        makeQuery(
-            makeConn(),
-            "SELECT * FROM track_ixd617_countries WHERE user_id=4 AND type='Taiwan'",
-            []
-        )
+      makeStatement($data)
     )
 );

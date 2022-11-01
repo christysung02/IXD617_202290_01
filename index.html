@@ -122,8 +122,8 @@
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-map" src="src/img/leftarrowicon.png">
                 </div>
-                <div class="modal-body list">
-                    <h1 id="close-modal-drawer-map" style="color: var(--color-main-black);">MAP</h1>
+                <div class="modal-body list" id="close-modal-drawer-map">
+                    <h1 style="color: var(--color-main-black);">MAP</h1>
                     <a href="#cuisine-page"><h1>CUISINE</h1></a>
                     <a href="#profile-page"><h1>PROFILE</h1></a>
                     <a href="#" class="js-logout">LOG OUT</a>
@@ -201,9 +201,9 @@
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
                 </div>
-                <div class="modal-body list">
+                <div class="modal-body list" id="close-modal-drawer-cuisine">
                     <a href="#map-page"><h1>MAP</h1></a>
-                    <h1 id="close-modal-drawer-cuisine" style="color: var(--color-main-black);">CUISINE</h1>
+                    <h1 style="color: var(--color-main-black);">CUISINE</h1>
                     <a href="#profile-page"><h1>PROFILE</h1></a>
                     <a href="#" class="js-logout">LOG OUT</a>
                 </div>
@@ -285,13 +285,45 @@
             <ul>
                 <li><a href="#cuisine-list-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#"><img src="src/img/settingicon.png"></a></li>
+                <li><a href="#" data-activate="#edit-modal-cuisine"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main" class="cuisine-detail">
             <img src="src/img/bobadetail.png" alt="boba">
             <h4>Boba milk tea</h4>
             <h6>This is my favorite boba shop in the bay area.</h6>
+        </div>
+
+        <div id="edit-modal-cuisine" class="modal">
+            <div class="modal-back" data-deactivate="#edit-modal-cuisine"></div>
+            <div class="modal-popup">
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>EDIT YOUR CUISINE</p>
+                </div>
+                <div class="modal-body">
+                    <div class="inputspace">
+                        <label class="form-label" for="img">Select image of the cuisine</label>
+                        <input class="form-input" type="file" id="img" name="img" accept="image/*">
+                    </div>
+                    <div class="inputspace">
+                        <label class="form-label" for="popup">Name of the cuisine</label>
+                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                            placeholder="ex: boba milk tea.">
+                    </div>
+                    <div class="inputspace">
+                        <label class="form-label" for="popup">Description</label>
+                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                            placeholder="Write down some comment~">
+                    </div>
+                </div>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="cancel-cuisine"><button class="cancelbtn">cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="save-cuisine"><button class="savebtn">Save</button></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -342,10 +374,10 @@
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-profile" src="src/img/leftarrowicon.png">
                 </div>
-                <div class="modal-body list">
+                <div class="modal-body list" id="close-modal-drawer-profile">
                     <a href="#map-page"><h1>MAP</h1></a>
                     <a href="#cuisine-page"><h1>CUISINE</h1></a>
-                    <h1 id="close-modal-drawer-profile" style="color: var(--color-main-black);">PROFILE</h1>
+                    <h1 style="color: var(--color-main-black);">PROFILE</h1>
                     <a href="#" class="js-logout">LOG OUT</a>
                 </div>
             </div>

@@ -471,7 +471,8 @@ label {
     color: var(--color-main-white);
 }
 
-.addbtn {
+.addbtn,
+.savebtn{
     background-color: var(--color-main-red);
     border-width: 0;
     border-radius: 20px;

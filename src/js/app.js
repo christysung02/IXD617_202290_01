@@ -39,8 +39,8 @@ $(() => {
         const target = $(this).data("deactivate");
         $(target).removeClass("active");
     })
-
-    //Close modal-drawer
+        
+    //Close modal-drawer    
     .on("click", "#close-modal-drawer-map",function(){
         // Make modal disappear.
         $("#modal-drawer-map").removeClass("active");
@@ -118,6 +118,19 @@ $(() => {
         $("#add-modal-cuisine").removeClass("active");
     })
 
+
+    //Back to edit-modal-cuisine page
+    .on("click", "#cancel-cuisine",function(){
+        // Make modal disappear.
+        $("#edit-modal-cuisine").removeClass("active");
+    })
+
+    .on("click", "#save-cuisine",function(){
+        // Make modal disappear.
+        $("#edit-modal-cuisine").removeClass("active");
+    })
+
+
     // Long click
     var timer
     $('body').on("mousedown touchstart",'.cuisineslist-item',function(e){
@@ -128,5 +141,4 @@ $(() => {
     }).on("mouseup touchend",function(){
         clearTimeout(timer);
     })
-    
 })

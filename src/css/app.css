@@ -535,6 +535,29 @@ input#img {
     margin: 0em 3em;
 }
 
+input#changecuisineimage{
+    height: 9rem;
+    width: 9rem;
+    background-image: url("../img/boba.png");
+    background-size:cover;
+    background-position:center;
+    border-bottom: 0 solid;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.inputspace textarea{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid var(--color-main-red);
+    border-radius: 4px;
+    background-color: var(--color-main-white);
+    resize: none;
+}
+
 /*PROFILE*/
 .profileupper{
     background-size:cover;

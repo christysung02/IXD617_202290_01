@@ -33,6 +33,8 @@
     <!-- ONBOARDING PAGE -->
     <section data-role="page" id="onboarding-page"></section>
 
+
+
     <!-- SIGNIN PAGE -->
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
@@ -62,6 +64,8 @@
             </form>
         </div>
     </section>
+
+
 
     <!-- SIGNUP PAGE -->
     <section data-role="page" id="signup-page">
@@ -94,6 +98,8 @@
             </form>
         </div>
     </section>
+
+
 
     <!-- MAP PAGE -->
     <section data-role="page" id="map-page">
@@ -131,6 +137,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- CUISINE PAGE -->
     <section data-role="page" id="cuisine-page">
@@ -211,6 +219,8 @@
         </div>
     </section>
 
+
+
     <!-- CUISINE LIST PAGE -->
     <section data-role="page" id="cuisine-list-page">
         <header data-role="header">
@@ -279,6 +289,8 @@
         </div>
     </section>
 
+
+
     <!-- CUISINE DETAIL PAGE -->
     <section data-role="page" id="cuisine-detail-page">
         <header data-role="header">
@@ -302,18 +314,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="inputspace">
-                        <label class="form-label" for="img">Select image of the cuisine</label>
-                        <input class="form-input" type="file" id="img" name="img" accept="image/*">
+                        <label class="form-label" for="img">Change image of your cuisine</label>
+                        <input class="form-input" type="file" id="changecuisineimage" name="img" accept="image/*">
                     </div>
                     <div class="inputspace">
-                        <label class="form-label" for="popup">Name of the cuisine</label>
-                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
-                            placeholder="ex: boba milk tea.">
+                         <label class="form-label" for="popup">Name of the cuisine</label>
+                         <form>
+                             <textarea id="changecontent">Boba milk tea</textarea>
+                         </form>
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Description</label>
-                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
-                            placeholder="Write down some comment~">
+                        <form>
+                            <textarea id="changecontent">This is my favorite boba shop in the bay area.</textarea>
+                        </form>
                     </div>
                 </div>
                 <div data-role="modal-footer" class="modal-foot">
@@ -326,6 +340,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- PROFILE PAGE -->
     <section data-role="page" id="profile-page">

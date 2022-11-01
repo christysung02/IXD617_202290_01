@@ -17,6 +17,8 @@ $(() => {
         }
     })
 
+
+
     // EVENT DELEGATION
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
@@ -40,6 +42,8 @@ $(() => {
         $(target).removeClass("active");
     })
         
+
+
     //Close modal-drawer    
     .on("click", "#close-modal-drawer-map",function(){
         // Make modal disappear.
@@ -55,6 +59,7 @@ $(() => {
         // Make modal disappear.
         $("#modal-drawer-profile").removeClass("active");
     })
+
 
 
     // Add country
@@ -93,6 +98,8 @@ $(() => {
         clearTimeout(timer);
     })
 
+
+
     //Add cuisine
     .on("click", "#add-cuisine", function(){
         const cuisine = $("#cuisine-input").val();
@@ -125,10 +132,21 @@ $(() => {
         $("#edit-modal-cuisine").removeClass("active");
     })
 
-    .on("click", "#save-cuisine",function(){
-        // Make modal disappear.
-        $("#edit-modal-cuisine").removeClass("active");
-    })
+    // //Change new cuisine detail
+    // .on("click", "#save-cuisine",function change_text(){
+    //     const content = $("#changecontent").val();
+    //     // Add new item.
+    //     console.log(content)
+    //     $(".cuisineslist").change_text(`
+    //        <div class="inputspace">
+    //             <label class="form-label" for="popup">Name of the cuisine</label>
+    //             <form>
+    //                 <textarea id="changecontent">${content}</textarea>
+    //             </form>
+    //         </div>
+    //     `)
+    // })
+
 
 
     // Long click

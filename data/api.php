@@ -39,16 +39,18 @@ function makeQuery($conn,$prep,$params,$makeResults=true) {
     }
 }
 
+
+//make a funciton and define variables=$data
 function makeStatement($data){
     $conn = makeConn();
     $type = @$data->type;
     $params = @$data->params;
-
+//switch similar with if/else does, simplify language
     switch($type){
         case "users_all":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_users`", $params);
-        case "countries_all":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_countries`", $params);
+        case "cuisines_all":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines`", $params);
         case "locations_all":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_locations`", $params);
         default:

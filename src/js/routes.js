@@ -3,15 +3,7 @@
 
 export const MapPage = async() => {}
 
-export const CuisinePage = async() => {
-
-    let countries = await query({
-        type:"users all",
-        params:[]
-    });
-
-    console.log(countries)
-}
+export const CuisinePage = async() => {}
 
 export const CuisineListPage = async() => {}
 

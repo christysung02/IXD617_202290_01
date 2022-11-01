@@ -6,14 +6,16 @@ $(() => {
     checkUserId();
 
     $(document)
-    .on("onpagecontainerbeforeshow", function(event, ui){
 
+    .on("onpagecontainerbeforeshow", function(event, ui) {
+
+        /* Page Routes*/
         switch(ui.toPage[0].id) {
-            case "map-page": MapPage();break;
-            case "cuisine-page":CuisinePage();break;
-            case "cuisine-list-page":CuisineListPage();break;
-            case "cuisine-detail-page":CuisineDetailPage();break;
-            case "profile-page":ProfilePage();break;
+            case "map-page": MapPage(); break;
+            case "cuisine-page":CuisinePage(); break; 
+            case "cuisine-list-page":CuisineListPage(); break;
+            case "cuisine-detail-page":CuisineDetailPage(); break;
+            case "profile-page":ProfilePage(); break;
         }
     })
 
@@ -131,22 +133,6 @@ $(() => {
         // Make modal disappear.
         $("#edit-modal-cuisine").removeClass("active");
     })
-
-    // //Change new cuisine detail
-    // .on("click", "#save-cuisine",function change_text(){
-    //     const content = $("#changecontent").val();
-    //     // Add new item.
-    //     console.log(content)
-    //     $(".cuisineslist").change_text(`
-    //        <div class="inputspace">
-    //             <label class="form-label" for="popup">Name of the cuisine</label>
-    //             <form>
-    //                 <textarea id="changecontent">${content}</textarea>
-    //             </form>
-    //         </div>
-    //     `)
-    // })
-
 
 
     // Long click

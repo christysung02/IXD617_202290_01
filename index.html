@@ -10,6 +10,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     <!-- <link rel="icon" sizes="256x256" href="src/img/heroicon.png"> -->
     <link rel="preload" as="image" href="src/img/onboardingpage.png">
+    <link rel="preload" as="image" href="src/img/signinheader.png">
+    <link rel="preload" as="image" href="src/img/becomeourmemberheader.png">
+    <link rel="preload" as="image" href="src/img/map.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,6 @@
     <link rel="stylesheet" href="src/css/app.css">
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="src/js/app.js" type="module"></script>
-    <script src="src/js/signin.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script>
         $(function () {
@@ -49,7 +51,7 @@
                 <div class="form-control">
                     <label class="form-label" for="signin-password">Password</label>
                     <input class="form-input" type="password" id="signin-password" data-role="none"
-                        placeholder="Enter your password">
+                        placeholder="Enter your current-password">
                 </div>
                 <div class="warning" style="display:none;">
                     <p>The username or password is incorrect, try it again.</p>
@@ -81,12 +83,12 @@
                 <div class="form-control">
                     <label class="form-label" for="signup-password">Password</label>
                     <input class="form-input" type="password" id="signup-password" data-role="none"
-                        placeholder="Enter your password">
+                        placeholder="Enter your new-password">
                 </div>
                 <div class="form-control">
                     <label class="form-label" for="signup-confirm">Confirm Password</label>
                     <input class="form-input" type="password" id="signup-confirm" data-role="none"
-                        placeholder="Re-enter your password">
+                        placeholder="Re-enter your new-password">
                 </div>
                 <div class="form-control">
                     <input type="submit" class="form-button" value="CONFIRM" data-role="none">
@@ -320,13 +322,13 @@
                     <div class="inputspace">
                          <label class="form-label" for="popup">Name of the cuisine</label>
                          <form>
-                             <textarea id="changecontent">Boba milk tea</textarea>
+                             <textarea>Boba milk tea</textarea>
                          </form>
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Description</label>
                         <form>
-                            <textarea id="changecontent">This is my favorite boba shop in the bay area.</textarea>
+                            <textarea>This is my favorite boba shop in the bay area.</textarea>
                         </form>
                     </div>
                 </div>

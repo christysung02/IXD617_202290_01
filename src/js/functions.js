@@ -1,13 +1,14 @@
 // Promise
-export const query = (options) => {
-    return fetch('data/api.php', {
+export const query = async (options) => {
+    const d = await fetch('data/api.php', {
         method: 'POST',
         body: JSON.stringify(options)
-    }).then((d)=>d.json())
-    .then((d)=>{
-        if (d.error) throw(d.error);
-        else return d;
     });
+    const d_1 = await d.json();
+    if (d_1.error)
+        throw (d_1.error);
+    else
+        return d_1;
 }
 
 // Curried function

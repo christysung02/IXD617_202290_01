@@ -5,8 +5,9 @@ export const checkSigninForm = () => {
     const passval = $("#signin-password").val();
 
     console.log(userval, passval)
-    
-    let founduser = await query({
+
+    let founduser = async() => 
+        await query({
         type: 'check_signin',
         params: [userval,passval]
     });
@@ -16,10 +17,10 @@ export const checkSigninForm = () => {
         console.log("Success");
 
         sessionStorage.userId = founduser.result[0].id;
-
+``
         $("#signin-form")[0].reset();
     } else {
-        // Not Logged In
+        // Not Logged In s
         console.log("Failure");
         sessionStorage.removeItem("userId");
 

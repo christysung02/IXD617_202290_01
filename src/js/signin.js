@@ -1,23 +1,26 @@
+import { query } from "./functions.js";
+
 export const checkSigninForm = () => {
     const userval = $("#signin-username").val();
     const passval = $("#signin-password").val();
 
     console.log(userval, passval)
 
-    if (userval === "user" && passval === "pass") {
+    let founduser = await query({
+        type: 'check_signin',
+        params: [userval,passval]
+    });
+
+
+    if (founduser.result.length > 0) {
         // Logged In
         console.log("Success");
-
-        // If user logged in, set sessionStorage.userId.
-        sessionStorage.userId = 1;
+        sessionStorage.userId = founduser.result[0].id;
 
         $("#signin-form")[0].reset();
     } else {
         // Not Logged In
         console.log("Failure");
-
-        // If not logged in, erase sessionStorage.userId.
-        // Thus, sessionStorage.userId = undefined.
         sessionStorage.removeItem("userId");
 
         $(".warning").css("display", "block");
@@ -26,6 +29,30 @@ export const checkSigninForm = () => {
 
     checkUserId();
 }
+
+
+//     if (userval === "user" && passval === "pass") {
+//         // Logged In
+//         console.log("Success");
+
+//         // If user logged in, set sessionStorage.userId.
+//         sessionStorage.userId = 1;
+
+//         $("#signin-form")[0].reset();
+//     } else {
+//         // Not Logged In
+//         console.log("Failure");
+
+//         // If not logged in, erase sessionStorage.userId.
+//         // Thus, sessionStorage.userId = undefined.
+//         sessionStorage.removeItem("userId");
+
+//         $(".warning").css("display", "block");
+//         setTimeout(()=>{$(".warning").css("display", "none");},3000)
+//     }
+
+//     checkUserId();
+// }
 
 
 export const checkUserId = () => {

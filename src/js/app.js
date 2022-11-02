@@ -31,8 +31,28 @@ $(() => {
         sessionStorage.removeItem("userId");
         checkUserId();
     })
+//new
+    .on("click", ".cuisines-jump", function(e) {
+        let id = $(this).data("id");
+
+        sessionStorage.cuisinesId = id;
+    })
+    .on("click", ".locations-jump", function(e) {
+        let id = $(this).data("id");
+
+        sessionStorage.locationsId = id;
+    })
 
 
+    .on("click", ".nav-link", function(e) {
+        let id = $(this).index();
+        $(this).parent().next().children().eq(id)
+            .addClass("active")
+            .siblings().removeClass("active");
+        $(this).addClass("active")
+            .siblings().removeClass("active");
+    })
+//new end
 
     // ACTIVATE TOOLS
     .on("click", "[data-activate]", function(e) {

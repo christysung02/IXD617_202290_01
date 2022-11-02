@@ -491,10 +491,6 @@ label {
  margin-bottom: 1em;
 }
 
-input#cuisine-input {
-    padding: 0em;
-}
-
 select#country-selected {
     border-width: 0px;
     border-bottom: 0.5px solid var(--color-main-red);

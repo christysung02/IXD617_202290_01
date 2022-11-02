@@ -9,7 +9,10 @@
 
     <meta name="mobile-web-app-capable" content="yes">
     <!-- <link rel="icon" sizes="256x256" href="src/img/heroicon.png"> -->
-    <link rel="preload" as="image" href="src/img/onboardingpage.png">
+    <link rel="prefetch" as="image" href="src/img/onboardingpage.png">
+    <link rel="prefetch" as="image" href="src/img/signinheader.png">
+    <link rel="prefetch" as="image" href="src/img/becomeourmemberheader.png">
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,7 @@
     <link rel="stylesheet" href="src/css/app.css">
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="src/js/app.js" type="module"></script>
-    <script src="src/js/signin.js"></script>
+    <!-- <script src="src/js/signin.js"></script> -->
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script>
         $(function () {
@@ -76,7 +79,7 @@
                 <div class="form-control" style="flex: 2;">
                     <label class="form-label" for="signup-username">Username</label>
                     <input class="form-input" type="text" id="signup-username" data-role="none"
-                        placeholder="Enter your username">
+                        placeholder="Enter your username" >
                 </div>
                 <div class="form-control">
                     <label class="form-label" for="signup-password">Password</label>
@@ -269,12 +272,12 @@
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Name of the cuisine</label>
-                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                        <input class="form-input" type="text" data-role="none"
                             placeholder="ex: boba milk tea.">
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Description</label>
-                        <input class="form-input" type="text" id="cuisine-input" data-role="none"
+                        <input class="form-input" type="text" data-role="none"
                             placeholder="Write down some comment~">
                     </div>
                 </div>
@@ -320,13 +323,13 @@
                     <div class="inputspace">
                          <label class="form-label" for="popup">Name of the cuisine</label>
                          <form>
-                             <textarea id="changecontent">Boba milk tea</textarea>
+                             <textarea>Boba milk tea</textarea>
                          </form>
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Description</label>
                         <form>
-                            <textarea id="changecontent">This is my favorite boba shop in the bay area.</textarea>
+                            <textarea>This is my favorite boba shop in the bay area.</textarea>
                         </form>
                     </div>
                 </div>

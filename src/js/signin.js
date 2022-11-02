@@ -5,16 +5,16 @@ export const checkSigninForm = () => {
     const passval = $("#signin-password").val();
 
     console.log(userval, passval)
-
+    
     let founduser = await query({
         type: 'check_signin',
         params: [userval,passval]
     });
 
-
     if (founduser.result.length > 0) {
         // Logged In
         console.log("Success");
+
         sessionStorage.userId = founduser.result[0].id;
 
         $("#signin-form")[0].reset();

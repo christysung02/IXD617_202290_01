@@ -18,8 +18,6 @@ function fetchAll($result) {
     return $a;
 }
 
-
-
 function makeQuery($conn,$prep,$params,$makeResults=true) {
     try {
         if (count($params)) {
@@ -69,8 +67,7 @@ function makeStatement($data){
 
         case "check_signin":
             return makeQuery($conn, "SELECT `id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);
-//new end        
-            default:
+        default:
             return ["error"=>"No Match Type"];
     }
 }
@@ -80,6 +77,5 @@ $data = json_decode(file_get_contents("php://input"));
 die(
     json_encode(
       makeStatement($data),
-    //   JSON_NUMERIC_CHECK
+      JSON_NUMERIC_CHECK
     )
-);

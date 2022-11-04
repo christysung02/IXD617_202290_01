@@ -79,3 +79,4 @@ die(
       makeStatement($data),
       JSON_NUMERIC_CHECK
     )
+);

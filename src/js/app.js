@@ -103,7 +103,7 @@ $(() => {
         $("#add-modal-cuisine").removeClass("active");
     })
 
-    // Remove country
+    // Remove cuisine
     .on("click", "#remove-modal-cuisine", function(){
         // Make modal disappear.
         $("#add-modal-cuisine").removeClass("active");
@@ -124,15 +124,15 @@ $(() => {
 
     //Add dish
     .on("click", "#add-dish", function(){
-        const cuisine = $("#cuisine-input").val();
+        const dish = $(".dish-name-input").val();
         // Add new item.
-        console.log(cuisine)
+        console.log(dish)
         $(".dishlist").append(`
             <div class="dishlist-item">
-                <a href="#dish-page"><img src="src/img/boba.png" alt="cuisine"></a>
+                <a href="#dish-detial-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
                 <br>
-                <div class="country-name">
-                    <p>${cuisine}</p>
+                <div class="dish-name">
+                    <p>${dish}</p>
                 </div>
             </div>
         `)
@@ -141,7 +141,7 @@ $(() => {
     })
 
 
-      // Remove cuisine
+      // Remove dish
       .on("click", "#remove-modal-dish", function(){
         // Make modal disappear.
         $("#add-modal-dish").removeClass("active");

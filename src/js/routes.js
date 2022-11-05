@@ -23,7 +23,7 @@ export const CuisineListPage = async() => {
     
         console.log(cuisines)
     
-        $("#cuisine-list-page .cuisineslist").html(makeCuisineListPage(cuisines))
+        $("#dish-page .dishlist").html(makeCuisineListPage(cuisines))
     }
 
 export const CuisineDetailPage = async() => {}

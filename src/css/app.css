@@ -287,8 +287,8 @@ h2{
 }
 
 /* COUNTRY and CUNSINE */
-.countrylist,
-.cuisineslist {
+.cuisinelist,
+.dishlist {
     position: relative;
     padding: 1em;
     display: grid;
@@ -296,8 +296,8 @@ h2{
     grid-gap: 1em;
     padding-top: 1em;
 }
-.countrylist-item,
-.cuisineslist-item{
+.cuisinelist-item,
+.dishlist-item{
     display: flex;
     flex-direction: column;
     column-count: 2;
@@ -307,7 +307,7 @@ h2{
 }
 
 .country-name,
-.cuisine-name {
+.dish-name {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -317,7 +317,7 @@ h2{
 }
 
 .country-name p,
-.cuisine-name p{
+.dish-name p{
     margin: 0px auto;
 }
 
@@ -515,7 +515,7 @@ input#img {
 }
 
 /*CUISINE DETAIL PAGE*/
-.cuisine-detail h4{
+.dish-detail h4{
     font-weight: 700;
     font-size: 16px;
     line-height: 21px;
@@ -523,7 +523,7 @@ input#img {
     margin: 2em 1em;
 }
 
-.cuisine-detail h6{
+.dish-detail h6{
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
@@ -531,7 +531,7 @@ input#img {
     margin: 0em 3em;
 }
 
-input#changecuisineimage{
+input#changedishimage{
     height: 9rem;
     width: 9rem;
     background-image: url("../img/boba.png");

@@ -150,35 +150,35 @@
             <ul>
                 <li><a href="#" data-activate="#modal-drawer-cuisine"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#add-modal-country"><img src="src/img/plusicon.png"></a></li>
+                <li><a href="#" data-activate="#add-modal-cuisine"><img src="src/img/plusicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
-            <div class="countrylist">
-                <div class="countrylist-item">
-                    <a href="#cuisine-list-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
+            <div class="cuisinelist">
+                <div class="cuisinelist-item">
+                    <a href="#dish-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Taiwan</p>
                     </div>
                 </div>
-                <div class="countrylist-item">
-                    <a href="#cuisine-list-page"><img src="src/img/country/United States of America (US).png"
+                <div class="cuisinelist-item">
+                    <a href="#dish-page"><img src="src/img/country/United States of America (US).png"
                             alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>United States</p>
                     </div>
                 </div>
-                <div class="countrylist-item">
-                    <a href="#cuisine-list-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
+                <div class="cuisinelist-item">
+                    <a href="#dish-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Italy</p>
                     </div>
                 </div>
-                <div class="countrylist-item">
-                    <a href="#cuisine-list-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
+                <div class="cuisinelist-item">
+                    <a href="#dish-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
                     <br>
                     <div class="country-name">
                         <p>Japan</p>
@@ -187,8 +187,8 @@
             </div>
         </div>
 
-        <div id="add-modal-country" class="modal">
-            <div class="modal-back" data-deactivate="#add-modal-country"></div>
+        <div id="add-modal-cuisine" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-cuisine"></div>
             <div class="modal-popup">
                 <div data-role="modal-header" class="modal-head modal-title">
                     <p>ADD A NEW TYPE OF CUISINE</p>
@@ -198,9 +198,9 @@
                 </div>
                 <div data-role="modal-footer" class="modal-foot">
                     <ul>
-                        <li id="remove-modal-country"><button class="cancelbtn">cancel</button></li>
+                        <li id="remove-modal-cuisine"><button class="cancelbtn">cancel</button></li>
                         <li class="flex-stretch"></li>
-                        <li id="add-country"><button class="addbtn">Add</button></li>
+                        <li id="add-cuisine"><button class="addbtn">Add</button></li>
                     </ul>
                 </div>
             </div>
@@ -224,54 +224,54 @@
 
 
 
-    <!-- CUISINE LIST PAGE -->
-    <section data-role="page" id="cuisine-list-page">
+    <!-- DISH PAGE -->
+    <section data-role="page" id="dish-page">
         <header data-role="header">
             <h1>Taiwan</h1>
             <ul>
                 <li><a href="#cuisine-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#add-modal-cuisine"><img src="src/img/plusicon.png"></a></li>
+                <li><a href="#" data-activate="#add-modal-dish"><img src="src/img/plusicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
-            <div class="cuisineslist">
-                <div class="cuisineslist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/boba.png" alt="boba"></a>
+            <div class="dishlist">
+                <div class="dishlist-item">
+                    <a href="#dish-detial-page"><img src="src/img/boba.png" alt="boba"></a>
                     <br>
-                    <div class="cuisine-name">
+                    <div class="dish-name">
                         <p>Boba milk tea</p>
                     </div>
                 </div>
-                <div class="cuisineslist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
+                <div class="dishlist-item">
+                    <a href="#dish-detial-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
                     <br>
-                    <div class="cuisine-name">
+                    <div class="dish-name">
                         <p>Hot Pot</p>
                     </div>
                 </div>
-                <div class="cuisineslist-item">
-                    <a href="#cuisine-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
+                <div class="dishlist-item">
+                    <a href="#dish-detial-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
                     <br>
-                    <div class="cuisine-name">
+                    <div class="dish-name">
                         <p>Dumpling</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="add-modal-cuisine" class="modal">
-            <div class="modal-back" data-deactivate="#add-modal-cuisine"></div>
+        <div id="add-modal-dish" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-dish"></div>
             <div class="modal-popup">
                 <div data-role="modal-header" class="modal-head modal-title">
-                    <p>ADD A NEW CUISINE</p>
+                    <p>ADD A NEW DISH</p>
                 </div>
                 <div class="modal-body">
                     <div class="inputspace">
-                        <label class="form-label" for="img">Select image of the cuisine</label>
+                        <label class="form-label" for="img">Select image of the dishes</label>
                         <input class="form-input" type="file" id="img" name="img" accept="image/*">
                     </div>
                     <div class="inputspace">
-                        <label class="form-label" for="popup">Name of the cuisine</label>
+                        <label class="form-label" for="popup">Name of the dishes</label>
                         <input class="form-input" type="text" data-role="none"
                             placeholder="ex: boba milk tea.">
                     </div>
@@ -283,9 +283,9 @@
                 </div>
                 <div data-role="modal-footer" class="modal-foot">
                     <ul>
-                        <li id="remove-modal-cuisine"><button class="cancelbtn">cancel</button></li>
+                        <li id="remove-modal-dish"><button class="cancelbtn">cancel</button></li>
                         <li class="flex-stretch"></li>
-                        <li id="add-cuisine"><button class="addbtn">Add</button></li>
+                        <li id="add-dish"><button class="addbtn">Add</button></li>
                     </ul>
                 </div>
             </div>
@@ -294,34 +294,34 @@
 
 
 
-    <!-- CUISINE DETAIL PAGE -->
-    <section data-role="page" id="cuisine-detail-page">
+    <!-- DISH DETAIL PAGE -->
+    <section data-role="page" id="dish-detial-page">
         <header data-role="header">
             <ul>
-                <li><a href="#cuisine-list-page"><img src="src/img/leftarrowicon.png"></a></li>
+                <li><a href="#dish-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#edit-modal-cuisine"><img src="src/img/settingicon.png"></a></li>
+                <li><a href="#" data-activate="#edit-modal-dish"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
-        <div data-role="main" class="cuisine-detail">
+        <div data-role="main" class="dish-detail">
             <img src="src/img/bobadetail.png" alt="boba">
             <h4>Boba milk tea</h4>
             <h6>This is my favorite boba shop in the bay area.</h6>
         </div>
 
-        <div id="edit-modal-cuisine" class="modal">
-            <div class="modal-back" data-deactivate="#edit-modal-cuisine"></div>
+        <div id="edit-modal-dish" class="modal">
+            <div class="modal-back" data-deactivate="#edit-modal-dish"></div>
             <div class="modal-popup">
                 <div data-role="modal-header" class="modal-head modal-title">
-                    <p>EDIT YOUR CUISINE</p>
+                    <p>EDIT YOUR DISHES</p>
                 </div>
                 <div class="modal-body">
                     <div class="inputspace">
-                        <label class="form-label" for="img">Change image of your cuisine</label>
-                        <input class="form-input" type="file" id="changecuisineimage" name="img" accept="image/*">
+                        <label class="form-label" for="img">Change image of your dishes</label>
+                        <input class="form-input" type="file" id="changedishimage" name="img" accept="image/*">
                     </div>
                     <div class="inputspace">
-                         <label class="form-label" for="popup">Name of the cuisine</label>
+                         <label class="form-label" for="popup">Name of the dishes</label>
                          <form>
                              <textarea>Boba milk tea</textarea>
                          </form>
@@ -335,9 +335,9 @@
                 </div>
                 <div data-role="modal-footer" class="modal-foot">
                     <ul>
-                        <li id="cancel-cuisine"><button class="cancelbtn">cancel</button></li>
+                        <li id="cancel-dish"><button class="cancelbtn">cancel</button></li>
                         <li class="flex-stretch"></li>
-                        <li id="save-cuisine"><button class="savebtn">Save</button></li>
+                        <li id="save-dish"><button class="savebtn">Save</button></li>
                     </ul>
                 </div>
             </div>

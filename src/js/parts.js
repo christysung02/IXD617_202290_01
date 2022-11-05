@@ -1,12 +1,12 @@
 import { templater } from "./functions.js";
 
 export const makeCuisineListPage = templater(({id,country,popularcuisines,description,img})=>`
-<a class="cuisineslist-item cuisines-jump" href="#cuisine-list-page" data-id="${id}">
-    <div class="cuisineslist-image"><img src="${img}"></div>
-    <div class="cuisineslist-body">
-        <div class="cuisineslist-country">${country}</div>
-        <div class="cuisineslist-popularcuisines">${popularcuisines}</div>
-            <div class="cuisineslist-description">${description}</div>
+<a class="dishlist-item cuisines-jump" href="#dish-page" data-id="${id}">
+    <div class="dishlist-image"><img src="${img}"></div>
+    <div class="dishlist-body">
+        <div class="dishlist-country">${country}</div>
+        <div class="dishlist-popularcuisines">${popularcuisines}</div>
+            <div class="dishlist-description">${description}</div>
     </div>
 </a>
 `)

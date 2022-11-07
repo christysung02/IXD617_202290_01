@@ -583,7 +583,7 @@ input#changedishimage{
     padding: 0px;
 }
 
-.countrow{
+.count-row{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -593,7 +593,7 @@ input#changedishimage{
     gap: 32px;
 }
 
-.countrowlist{
+.count-row-list{
     width: 6em;
     height: 6em;
     background-color: #ffffff8e;
@@ -605,7 +605,7 @@ input#changedishimage{
     text-align: center;
 }
 
-.countrowlist p{
+.count-row-list p{
     font-weight: 700;
     font-size: 16px;
     color: var(--color-main-gray);
@@ -613,12 +613,17 @@ input#changedishimage{
     margin: 4px auto;
 }
 
-.countrowlist h2{
+.count-row-list h2{
     font-weight: 700;
     font-size: 32px;
     color: var(--color-main-black);
     padding: 0px;
     margin: 8px auto;
+}
+
+.photoandname img{
+    border-radius: 100px;
+    box-shadow: 5px var(--color-main-transgray);
 }
 
 .profilephotos{
@@ -635,6 +640,10 @@ input#changedishimage{
     grid-gap: 1em;
     padding-top: 1em;
 } 
+
+.profilephotoslist img{
+    border-radius: 10px;
+}
 
 
 /* width */

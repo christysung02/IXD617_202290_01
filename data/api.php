@@ -47,26 +47,24 @@ function makeStatement($data){
     switch($type){
         case "users_all":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_users`", $params);
+        case "dishes_all":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes`", $params);
         case "cuisines_all":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines`", $params);
         case "locations_all":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_locations`", $params);
-//new
-        case "users_by_id":
-            return makeQuery($conn, "SELECT id,name,email,username,img,date_create FROM `track_ixd617_users` WHERE `id`=?", $params);
-        case "cuisines_by_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `id`=?", $params);
-        case "locations_by_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_locations` WHERE `id`=?", $params);
 
-        case "cuisines_by_user_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);        
-        case "locations_by_cuisines_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_locations` WHERE `cuisines_id`=?", $params);
-
+        case "users_by_user_id":
+            error_log("run user query by id");
+            error_log("array length: ", count($params));
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_users` WHERE `user_id`=?", $params);
+        case "dishes_by_dish_id":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `dish_id`=?", $params);        
+        case "cuisines_by_cuisine_id":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `cuisine_id`=?", $params);      
 
         case "check_signin":
-            return makeQuery($conn, "SELECT `id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);
+            return makeQuery($conn, "SELECT `user_id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);
         default:
             return ["error"=>"No Match Type"];
     }

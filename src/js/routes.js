@@ -1,41 +1,37 @@
 import { query } from "./functions.js"
-import { makeMapPage,makeCuisineListPage,makeProfilePage } from "./parts.js";
+import { makeCuisine, makeProfile} from "./parts.js";
 
-export const MapPage = async() => {
+export const MapPage = async() => {}
 
-    let {result:locations} = await query({
-        type:"locations_by_cuisines_id",
+export const CuisinePage = async() => {
+    let {result:cuisine} = await query({
+        type:"cuisines_all",
+        params: [sessionStorage.cuisinesId]
+    });
+
+    $("#cuisine-page .cuisinelist-item").html(makeCuisine(cuisine))
+
+    console.log(cuisine)
+}
+
+export const DishPage = async() => {}
+
+export const DishDetailPage = async() => {}
+
+export const ProfilePage = async() => {
+    console.log('run profile page');
+    console.log(sessionStorage.userId);
+
+    console.log('userId: ', sessionStorage.userId);
+
+    let query_user = await query({
+        type: "users_by_user_id",
         params: [sessionStorage.userId]
     });
 
-    console.log(locations)
+    let profile_information = query_user.result;
 
-    $("#map-page [data-role='main']").html(makeMapPage(locations))
+    console.log(profile_information);
+
+    $("#profile-page [data-role='main']").html(makeProfile(profile_information))
 }
-
-export const CuisinePage = async() => {}
-
-export const CuisineListPage = async() => {
-    let {result:cuisines} = await query({
-            type:"cuisines_by_user_id",
-            params:[sessionStorage.userId]
-        });
-    
-        console.log(cuisines)
-    
-        $("#dish-page .dishlist").html(makeCuisineListPage(cuisines))
-    }
-
-export const CuisineDetailPage = async() => {}
-
-export const ProfilePage = async() => {
-    let {result:users} = await query({
-            type:"users_by_id",
-            params:[sessionStorage.userId]
-        });
-        let [user] = users;
-    
-        console.log(user)
-    
-        $("#profile-page [data-role='main']").html(makeProfilePage(user))
-    }

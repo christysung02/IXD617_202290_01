@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 01, 2022 at 12:46 PM
+-- Generation Time: Nov 07, 2022 at 12:03 AM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.3.32
 
@@ -29,12 +29,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `track_ixd617_users` (
-  `id` int(13) NOT NULL,
+  `user_id` int(13) NOT NULL,
   `name` varchar(64) NOT NULL,
   `username` varchar(64) NOT NULL,
   `password` varchar(128) NOT NULL,
   `email` varchar(32) NOT NULL,
-  `img` varchar(256) NOT NULL,
+  `img` varchar(150) NOT NULL,
+  `count_row_cuisines` varchar(10) NOT NULL,
+  `count_row_dishes` varchar(50) NOT NULL,
+  `count_row_post` varchar(200) NOT NULL,
   `date_create` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,17 +45,17 @@ CREATE TABLE `track_ixd617_users` (
 -- Dumping data for table `track_ixd617_users`
 --
 
-INSERT INTO `track_ixd617_users` (`id`, `name`, `username`, `password`, `email`, `img`, `date_create`) VALUES
-(1, 'Jesse Ortega', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/433x529/B47/fff/?text=Jesse Ortega', '2022-02-05 01:45:52'),
-(2, 'Travis Garrett', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/577x490/4A3/fff/?text=Travis Garrett', '2022-10-13 16:42:55'),
-(3, 'Leon Guerrero', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/423x547/838/fff/?text=Leon Guerrero', '2020-11-23 14:41:13'),
-(4, 'Garrett Duncan', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/484x550/736/fff/?text=Garrett Duncan', '2022-03-01 07:47:25'),
-(5, 'Mary Montgomery', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/592x557/A7A/fff/?text=Mary Montgomery', '2021-04-21 20:21:31'),
-(6, 'Susie Kelly', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/476x569/478/fff/?text=Susie Kelly', '2022-08-29 16:25:12'),
-(7, 'Glenn Keller', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/355x452/697/fff/?text=Glenn Keller', '2021-03-23 10:42:10'),
-(8, 'Cameron Gutierrez', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/492x509/467/fff/?text=Cameron Gutierrez', '2020-07-09 20:56:53'),
-(9, 'Roy Montgomery', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/490x382/A55/fff/?text=Roy Montgomery', '2020-09-02 09:10:20'),
-(10, 'Cordelia Lawson', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/418x546/334/fff/?text=Cordelia Lawson', '2022-02-20 20:08:34');
+INSERT INTO `track_ixd617_users` (`user_id`, `name`, `username`, `password`, `email`, `img`, `count_row_cuisines`, `count_row_dishes`, `count_row_post`, `date_create`) VALUES
+(1, 'Randy James', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/739/fff/?text=Randy James', '7', '8', '44', '2020-05-22 10:16:52'),
+(2, 'Zachary Hughes', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/497/fff/?text=Zachary Hughes', '3', '33', '11', '2022-08-23 08:00:24'),
+(3, 'Richard Ray', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/B63/fff/?text=Richard Ray', '4', '12', '108', '2020-05-29 05:07:09'),
+(4, 'Carrie Rowe', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/B99/fff/?text=Carrie Rowe', '8', '37', '102', '2020-07-19 16:29:24'),
+(5, 'Marguerite Simpson', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/97A/fff/?text=Marguerite Simpson', '8', '46', '147', '2022-10-28 13:41:51'),
+(6, 'Victoria Moss', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/588/fff/?text=Victoria Moss', '4', '38', '174', '2022-03-22 13:14:50'),
+(7, 'Fred Myers', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/A74/fff/?text=Fred Myers', '2', '21', '188', '2020-12-06 08:59:15'),
+(8, 'Margaret Hall', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/759/fff/?text=Margaret Hall', '9', '29', '66', '2022-07-04 22:20:48'),
+(9, 'Derek Beck', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/4A9/fff/?text=Derek Beck', '8', '14', '59', '2020-01-10 21:55:05'),
+(10, 'Leila Newman', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/6A3/fff/?text=Leila Newman', '8', '15', '98', '2021-08-13 00:17:14');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +65,7 @@ INSERT INTO `track_ixd617_users` (`id`, `name`, `username`, `password`, `email`,
 -- Indexes for table `track_ixd617_users`
 --
 ALTER TABLE `track_ixd617_users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -72,7 +75,7 @@ ALTER TABLE `track_ixd617_users`
 -- AUTO_INCREMENT for table `track_ixd617_users`
 --
 ALTER TABLE `track_ixd617_users`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

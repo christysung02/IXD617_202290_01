@@ -16,8 +16,9 @@ export const checkSigninForm = async() => {
     if (founduser.result.length > 0) {
         // Logged In
         console.log("Success");
-
-        sessionStorage.userId = founduser.result[0].id;
+        console.log('response: ',founduser.result);
+        
+        sessionStorage.userId = founduser.result[0].user_id;
 
         $("#signin-form")[0].reset();
     } else {
@@ -32,7 +33,7 @@ export const checkSigninForm = async() => {
     checkUserId();
 }
 
-export const checkUserId = () => {
+export const checkUserId =  async() => {
     // We updated the `sessionStorage.userId` in `checkSigninForm`.
     // Thus, we can read it to see it user is logged-in or not.
     if (sessionStorage.userId === undefined) {

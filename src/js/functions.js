@@ -15,3 +15,7 @@ export const query = async (options) => {
 export const templater = (f) => (a) => 
     (Array.isArray(a) ? a : [a])
     .reduce((r,o,i,a) => r+f(o,i,a), '');
+    //r= previous value
+    //o= current value
+    //i= index
+    //a= array

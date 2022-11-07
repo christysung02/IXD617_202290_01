@@ -1,4 +1,4 @@
-import { CuisineDetailPage, CuisineListPage, CuisinePage, MapPage, ProfilePage } from "./routes.js";
+import { DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage } from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -7,19 +7,17 @@ $(() => {
 
     $(document)
 
-    .on("onpagecontainerbeforeshow", function(event, ui) {
+    .on("pagecontainerbeforeshow", function(event, ui) {
 
         /* Page Routes*/
         switch(ui.toPage[0].id) {
             case "map-page": MapPage(); break;
             case "cuisine-page":CuisinePage(); break; 
-            case "dish-page":CuisineListPage(); break;
-            case "dish-detial-page":CuisineDetailPage(); break;
+            case "dish-page":DishPage(); break;
+            case "dish-detial-page":DishDetailPage(); break;
             case "profile-page":ProfilePage(); break;
         }
     })
-
-
 
     // EVENT DELEGATION
     .on("submit", "#signin-form", function(e) {
@@ -31,28 +29,6 @@ $(() => {
         sessionStorage.removeItem("userId");
         checkUserId();
     })
-//new
-    .on("click", ".cuisines-jump", function(e) {
-        let id = $(this).data("id");
-
-        sessionStorage.cuisinesId = id;
-    })
-    .on("click", ".locations-jump", function(e) {
-        let id = $(this).data("id");
-
-        sessionStorage.locationsId = id;
-    })
-
-
-    .on("click", ".nav-link", function(e) {
-        let id = $(this).index();
-        $(this).parent().next().children().eq(id)
-            .addClass("active")
-            .siblings().removeClass("active");
-        $(this).addClass("active")
-            .siblings().removeClass("active");
-    })
-//new end
 
     // ACTIVATE TOOLS
     .on("click", "[data-activate]", function(e) {
@@ -64,7 +40,6 @@ $(() => {
         $(target).removeClass("active");
     })
         
-
 
     //Close modal-drawer    
     .on("click", "#close-modal-drawer-map",function(){
@@ -83,6 +58,12 @@ $(() => {
     })
 
 
+
+   // .on("click", "#add-cuisine", function(e) {
+    //     let id = $(this).data("cuisinesId");
+
+    //     sessionStorage.cuisinesId = id;
+    // })
 
     // Add cuisine (country)
     .on("click", "#add-cuisine", function(){
@@ -165,4 +146,13 @@ $(() => {
     }).on("mouseup touchend",function(){
         clearTimeout(timer);
     })
+
+
+    //Read Data on Profile Page
+    .on("click", "#profile-page",function(e){
+        let id = $(this).data("userId");
+
+        sessionStorage.ProfilePageId = id;
+    })
+
 })

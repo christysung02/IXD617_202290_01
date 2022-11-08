@@ -57,15 +57,16 @@ const getCountryFlag= (cuisine_id) => {
 
 
 
-//makes data.
-//getUsers is something that we want to create some randomized data.
-//map is the function that loops through an array runs a function on every single item in the arrey. 
-//javascript array methods map
-//map(o,i) o=current object, i=current index
-//chance.name -> chance is the name library
-//md5 is a way of encoding strings //about password
-//'Single quote' means that this is a simple dumb string.
-//`Backticks` means that to do something interesting. //change line still connect together
+// Makes data.
+//
+// getUsers is something that we want to create some randomized data.
+// map is the function that loops through an array runs a function on every single item in the arrey. 
+// javascript array methods map
+// map(o,i) o=current object, i=current index
+// chance.name -> chance is the name library
+// md5 is a way of encoding strings //about password
+// 'Single quote' means that this is a simple dumb string.
+// `Backticks` means that to do something interesting. //change line still connect together
 const getUsers = () => (new Array(kTotalUserNum)).fill(0).map((o,i)=>{
     o = {};
     o.user_id = i + 1;
@@ -105,10 +106,7 @@ const getCuisines = () => {
             o = {};    
             o.cuisine_id = chance.natural({min:1, max:kTotalCuisineNum});
             o.user_id = chance.natural({min:1, max:kTotalUserNum});
-            o.cuisine_type = getCuisineType(o.cuisine_id);
-            o.countryflag = getCountryFlag(o.cuisine_id);
-            o.img = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=${o.cuisine_type}`;
-            o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
+         
             // If the [o.user_id, o.cuisine_id] combination already in the set. That means there is already
             // a row in the table with such combination. Thus, we can not use the same (user_id, cuisine_id)
             // combination but have to regenerate one until there is no such (user_id, cuisine_id) combination
@@ -118,6 +116,11 @@ const getCuisines = () => {
                 o.user_id = chance.natural({min:1, max:kTotalUserNum}); 
             }
 
+            o.cuisine_type = getCuisineType(o.cuisine_id);
+            o.countryflag = getCountryFlag(o.cuisine_id);
+            o.img = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=${o.cuisine_type}`;
+            o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
+            
             // After we make sure there is no such combination exists. We can safely generate a new row
             // with the given (user_id, cuisine_id). In addition, add the combination to the set so that
             // future generated row would not reuse such combination.
@@ -128,7 +131,7 @@ const getCuisines = () => {
     return JSON.parse(sessionStorage.cuisineTable);
 };
 
-//dish
+//   Dish
 const getDishes = () => (new Array(200)).fill(0).map((o,i)=>{
     let cuisine_table = getCuisines();
     // If an array is [1,2,3,4]. array[0] = 1, array[3] = 4.
@@ -150,7 +153,7 @@ const getDishes = () => (new Array(200)).fill(0).map((o,i)=>{
     return o;
 });
 
-//locations
+// Locations
 const getLocations = () => (new Array(250)).fill(0).map((o,i)=>{
     o = {};
     o.id = i + 1;
@@ -164,7 +167,7 @@ const getLocations = () => (new Array(250)).fill(0).map((o,i)=>{
 });
 
 
-//shows data
+// Shows data
 // \n = new line
 const exportAsJSON = (type,data) => {
     document.querySelector('.output').innerHTML = `
@@ -189,8 +192,8 @@ ${data.map((o)=>`(${JSON.stringify(Object.values(o)).slice(1,-1)})`).join(',\n')
 }
 
 
-//waits for a time to make some data and show it 
-//does the event handling of browser interaction of user interaction.
+//  Waits for a time to make some data and show it 
+//  does the event handling of browser interaction of user interaction.
 window.addEventListener('DOMContentLoaded',()=>{
     document.querySelector('.users-json').addEventListener('click',()=>{ exportAsJSON('Users',getUsers()); });
     document.querySelector('.dishes-json').addEventListener('click',()=>{ exportAsJSON('Dishes',getDishes()); });

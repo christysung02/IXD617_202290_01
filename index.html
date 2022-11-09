@@ -29,6 +29,13 @@
         });
     </script>
 
+    <!-- Maps Javascript API KEY -->
+    <!-- AIzaSyCFTPByXCXXObUhuhYmsmt6Mtye46uVCTM -->
+    <!-- https://developers.google.com/maps/documentation/javascript/overview -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFTPByXCXXObUhuhYmsmt6Mtye46uVCTM"
+        defer>
+    </script>
 
 </head>
 
@@ -79,7 +86,7 @@
                 <div class="form-control" style="flex: 2;">
                     <label class="form-label" for="signup-username">Username</label>
                     <input class="form-input" type="text" id="signup-username" data-role="none"
-                        placeholder="Enter your username" >
+                        placeholder="Enter your username">
                 </div>
                 <div class="form-control">
                     <label class="form-label" for="signup-password">Password</label>
@@ -106,8 +113,7 @@
 
     <!-- MAP PAGE -->
     <section data-role="page" id="map-page">
-        <div class="map"></div>
-        <header data-role="header">
+        <header data-role="header" style="background-color: rgba(255, 255, 255, 0.781);">
             <h1>MAP</h1>
             <ul>
                 <li><a href="#" data-activate="#modal-drawer-map"><img src="src/img/listicon.png"></a></li>
@@ -116,11 +122,8 @@
             </ul>
         </header>
         <div data-role="main">
-            <div class="mapimg">
-                <a href="#cuisine-page"><img src="src/img/mapdumpling.png"></a>
-                <a href="#cuisine-page"><img src="src/img/mapburger.png"></a>
-                <a href="#cuisine-page"><img src="src/img/mapsalad.png"></a>
-            </div>
+            <div class="map"></div>
+ 
             <div class="floater bottom right">
                 <a href="#"><img src="src/img/maptrackicon.png"></a>
             </div>
@@ -133,8 +136,12 @@
                 </div>
                 <div class="modal-body list" id="close-modal-drawer-map">
                     <h1 style="color: var(--color-main-black);">MAP</h1>
-                    <a href="#cuisine-page"><h1>CUISINE</h1></a>
-                    <a href="#profile-page"><h1>PROFILE</h1></a>
+                    <a href="#cuisine-page">
+                        <h1>CUISINE</h1>
+                    </a>
+                    <a href="#profile-page">
+                        <h1>PROFILE</h1>
+                    </a>
                     <a href="#" class="js-logout">LOG OUT</a>
                 </div>
             </div>
@@ -155,9 +162,9 @@
         </header>
         <div data-role="main">
             <div class="cuisinelist">
-                <div class="cuisinelist-item">
+                <!-- <div class="cuisinelist-item">
                     <a href="#dish-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
-                    <br>
+                    
                     <div class="country-name">
                         <p>Taiwan</p>
                     </div>
@@ -165,25 +172,25 @@
                 <div class="cuisinelist-item">
                     <a href="#dish-page"><img src="src/img/country/United States of America (US).png"
                             alt="flag"></a>
-                    <br>
+                    
                     <div class="country-name">
                         <p>United States</p>
                     </div>
                 </div>
                 <div class="cuisinelist-item">
                     <a href="#dish-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
-                    <br>
+                    
                     <div class="country-name">
                         <p>Italy</p>
                     </div>
                 </div>
                 <div class="cuisinelist-item">
                     <a href="#dish-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
-                    <br>
+                    
                     <div class="country-name">
                         <p>Japan</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -213,9 +220,13 @@
                     <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
                 </div>
                 <div class="modal-body list" id="close-modal-drawer-cuisine">
-                    <a href="#map-page"><h1>MAP</h1></a>
+                    <a href="#map-page">
+                        <h1>MAP</h1>
+                    </a>
                     <h1 style="color: var(--color-main-black);">CUISINE</h1>
-                    <a href="#profile-page"><h1>PROFILE</h1></a>
+                    <a href="#profile-page">
+                        <h1>PROFILE</h1>
+                    </a>
                     <a href="#" class="js-logout">LOG OUT</a>
                 </div>
             </div>
@@ -227,7 +238,7 @@
     <!-- DISH PAGE -->
     <section data-role="page" id="dish-page">
         <header data-role="header">
-            <h1>Taiwan</h1>
+            <h1>Dishes</h1>
             <ul>
                 <li><a href="#cuisine-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
@@ -236,29 +247,30 @@
         </header>
         <div data-role="main">
             <div class="dishlist">
-                <div class="dishlist-item">
+                <!-- <div class="dishlist-item">
                     <a href="#dish-detial-page"><img src="src/img/boba.png" alt="boba"></a>
-                    <br>
+                    
                     <div class="dish-name">
                         <p>Boba milk tea</p>
                     </div>
                 </div>
                 <div class="dishlist-item">
                     <a href="#dish-detial-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
-                    <br>
+                    
                     <div class="dish-name">
                         <p>Hot Pot</p>
                     </div>
                 </div>
                 <div class="dishlist-item">
                     <a href="#dish-detial-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
-                    <br>
+                    
                     <div class="dish-name">
                         <p>Dumpling</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
+        <div class="map"></div>
         <div id="add-modal-dish" class="modal">
             <div class="modal-back" data-deactivate="#add-modal-dish"></div>
             <div class="modal-popup">
@@ -321,10 +333,10 @@
                         <input class="form-input" type="file" id="changedishimage" name="img" accept="image/*">
                     </div>
                     <div class="inputspace">
-                         <label class="form-label" for="popup">Name of the dishes</label>
-                         <form>
-                             <textarea>Boba milk tea</textarea>
-                         </form>
+                        <label class="form-label" for="popup">Name of the dishes</label>
+                        <form>
+                            <textarea>Boba milk tea</textarea>
+                        </form>
                     </div>
                     <div class="inputspace">
                         <label class="form-label" for="popup">Description</label>
@@ -395,8 +407,12 @@
                     <img id="close-modal-drawer-profile" src="src/img/leftarrowicon.png">
                 </div>
                 <div class="modal-body list" id="close-modal-drawer-profile">
-                    <a href="#map-page"><h1>MAP</h1></a>
-                    <a href="#cuisine-page"><h1>CUISINE</h1></a>
+                    <a href="#map-page">
+                        <h1>MAP</h1>
+                    </a>
+                    <a href="#cuisine-page">
+                        <h1>CUISINE</h1>
+                    </a>
                     <h1 style="color: var(--color-main-black);">PROFILE</h1>
                     <a href="#" class="js-logout">LOG OUT</a>
                 </div>

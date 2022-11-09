@@ -157,7 +157,7 @@ const getDishes = () => (new Array(200)).fill(0).map((o,i)=>{
 const getLocations = () => (new Array(250)).fill(0).map((o,i)=>{
     o = {};
     o.id = i + 1;
-    o.user_id = chance.natural({min:1, max:10});
+    o.dish_location_id = chance.natural({min:1, max:200});
     o.lat = chance.latitude({min:37.67, max:37.80});
     o.lng = chance.longitude({min:-122.50, max:-122.37});
     o.photo = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=CUISINE`;

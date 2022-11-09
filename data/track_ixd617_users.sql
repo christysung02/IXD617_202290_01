@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 07, 2022 at 12:03 AM
+-- Generation Time: Nov 08, 2022 at 01:34 AM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.3.32
 
@@ -46,16 +46,16 @@ CREATE TABLE `track_ixd617_users` (
 --
 
 INSERT INTO `track_ixd617_users` (`user_id`, `name`, `username`, `password`, `email`, `img`, `count_row_cuisines`, `count_row_dishes`, `count_row_post`, `date_create`) VALUES
-(1, 'Randy James', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/739/fff/?text=Randy James', '7', '8', '44', '2020-05-22 10:16:52'),
-(2, 'Zachary Hughes', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/497/fff/?text=Zachary Hughes', '3', '33', '11', '2022-08-23 08:00:24'),
-(3, 'Richard Ray', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/B63/fff/?text=Richard Ray', '4', '12', '108', '2020-05-29 05:07:09'),
-(4, 'Carrie Rowe', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/B99/fff/?text=Carrie Rowe', '8', '37', '102', '2020-07-19 16:29:24'),
-(5, 'Marguerite Simpson', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/97A/fff/?text=Marguerite Simpson', '8', '46', '147', '2022-10-28 13:41:51'),
-(6, 'Victoria Moss', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/588/fff/?text=Victoria Moss', '4', '38', '174', '2022-03-22 13:14:50'),
-(7, 'Fred Myers', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/A74/fff/?text=Fred Myers', '2', '21', '188', '2020-12-06 08:59:15'),
-(8, 'Margaret Hall', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/759/fff/?text=Margaret Hall', '9', '29', '66', '2022-07-04 22:20:48'),
-(9, 'Derek Beck', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/4A9/fff/?text=Derek Beck', '8', '14', '59', '2020-01-10 21:55:05'),
-(10, 'Leila Newman', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/6A3/fff/?text=Leila Newman', '8', '15', '98', '2021-08-13 00:17:14');
+(1, 'Bill Sims', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/B33/fff/?text=Bill Sims', '10', '34', '130', '2020-11-03 00:11:06'),
+(2, 'Hattie Mitchell', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/A58/fff/?text=Hattie Mitchell', '2', '39', '62', '2020-04-27 11:29:08'),
+(3, 'Kyle McLaughlin', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/365/fff/?text=Kyle McLaughlin', '10', '20', '102', '2020-06-24 08:02:34'),
+(4, 'Irene Flowers', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/A9A/fff/?text=Irene Flowers', '3', '20', '24', '2022-07-31 20:09:50'),
+(5, 'Dollie Snyder', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/A76/fff/?text=Dollie Snyder', '2', '43', '21', '2021-02-18 23:46:59'),
+(6, 'Angel Green', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/786/fff/?text=Angel Green', '7', '44', '136', '2020-12-12 21:14:48'),
+(7, 'Lena Page', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/3A7/fff/?text=Lena Page', '3', '33', '91', '2020-06-22 10:44:27'),
+(8, 'Elijah Stokes', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/645/fff/?text=Elijah Stokes', '8', '46', '51', '2020-11-21 22:25:55'),
+(9, 'Roxie Porter', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/BAB/fff/?text=Roxie Porter', '2', '7', '152', '2021-03-23 18:11:53'),
+(10, 'Terry Wells', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/745/fff/?text=Terry Wells', '10', '1', '79', '2020-06-27 22:47:43');
 
 --
 -- Indexes for dumped tables

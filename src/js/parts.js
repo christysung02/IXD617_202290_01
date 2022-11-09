@@ -1,16 +1,23 @@
 import { templater } from "./functions.js";
 
-export const makeCuisine = templater(({cuisines_type,img})=>`
+export const makeCuisine = templater(({cuisine_type,countryflag,cuisine_id})=>`
     <div class="cuisinelist-item">
-        <a href="#dish-page" #add-cuisine="${cuisinesId}">
-            <img src="${img}" alt="${cuisines_type}"">
-        </a>
-        <br>
+        <a href="#dish-page" class="${cuisine_id}"><img src="${countryflag}" alt="${cuisine_type}"></a>
         <div class="country-name">
-            <p>${cuisines_type}"</p>
+            <p>${cuisine_type}</p>
         </div>
     </div>
 `)
+
+export const makeDish = templater(({dish_name,img,cuisine_id})=>`
+    <div class="dishlist-item">
+        <a href="#dish-detial-page" class="${cuisine_id}"><img src="${img}" alt="${dish_name}"></a>
+        <div class="dish-name">
+            <p>${dish_name}</p>
+        </div>
+    </div>
+`)
+
 
 export const makeProfile = templater(({name,email,img,count_row_cuisines,count_row_dishes,count_row_post})=>`
 

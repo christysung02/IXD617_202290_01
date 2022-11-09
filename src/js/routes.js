@@ -1,20 +1,78 @@
 import { query } from "./functions.js"
-import { makeCuisine, makeProfile} from "./parts.js";
+import { makeMap, makeMarkers } from "./maps.js";
+import { makeCuisine, makeProfile, makeDish} from "./parts.js";
 
-export const MapPage = async() => {}
+export const MapPage = async() => {
+    // let {result:dishes_locations} = await query({
+    //     type:"dishes_locations_by_user_id",
+    //     params:[sessionStorage.userId]
+    // });
 
-export const CuisinePage = async() => {
-    let {result:cuisine} = await query({
-        type:"cuisines_all",
-        params: [sessionStorage.cuisinesId]
+    // console.log(dishes_locations);
+
+    // let my_dish_ids = [...new Set(dishes_locations.map(o=>o.dish_location_id))];
+    // console.log(my_dish_ids);
+    // let last_locations = my_dish_ids.map(id=>{
+    //     let locations = dishes.filter(o=>id===o.dish_location_id);
+    //     locations.sort((a,b) => {
+    //         if (a.date_create > b.date_create) {
+    //             return 1;
+    //         }
+    //         if (a.date_create < b.date_create) {
+    //             return -1;
+    //         }
+    //         return 0;
+    //     });
+    //     return locations.slice(-1)[0];
+    // })
+    // console.log(last_locations)
+
+    let {result:dishes_locations} = await query({
+        type:"recent_dish_locations",
+        params:[sessionStorage.userId]
     });
+    console.log(dishes_locations);
 
-    $("#cuisine-page .cuisinelist-item").html(makeCuisine(cuisine))
+    let valid_dishes = dishes_locations.reduce((r,o)=>{
+        o.icon = o.img;
+        if (o.lat && o.lng) r.push(o);
+        return r;
+    },[])
 
-    console.log(cuisine)
+    let map_el = await makeMap("#map-page .map");
+    makeMarkers(map_el,valid_dishes);
 }
 
-export const DishPage = async() => {}
+export const CuisinePage = async() => {
+    console.log('run cuisine page');
+    console.log('userId: ', sessionStorage.userId);
+
+    let query_cuisine = await query({
+        type:"cuisines_by_cuisine_id",
+        params: [sessionStorage.userId]
+    });
+
+    let cuisine_information = query_cuisine.result;
+
+    console.log(cuisine_information);
+    $("#cuisine-page .cuisinelist").html(makeCuisine(cuisine_information))
+}
+
+export const DishPage = async() => {
+    console.log('run dish page');
+    console.log('userId: ', sessionStorage.userId);
+    console.log('cuisineId: ', sessionStorage.cuisine_id);
+
+    let query_dish = await query({
+        type: "dishes_by_user_id_cuisine_id",
+        params: [sessionStorage.userId,sessionStorage.cuisine_id]
+    });
+
+    let dish_information = query_dish.result;
+
+    console.log(dish_information);
+    $("#dish-page .dishlist").html(makeDish(dish_information))
+}
 
 export const DishDetailPage = async() => {}
 

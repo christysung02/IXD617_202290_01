@@ -7,6 +7,7 @@ $(() => {
 
     $(document)
 
+    // This event is triggered before the actual transition animation is kicked off.
     .on("pagecontainerbeforeshow", function(event, ui) {
 
         /* Page Routes*/
@@ -41,7 +42,7 @@ $(() => {
     })
         
 
-    //Close modal-drawer    
+    // Close modal-drawer    
     .on("click", "#close-modal-drawer-map",function(){
         // Make modal disappear.
         $("#modal-drawer-map").removeClass("active");
@@ -59,13 +60,8 @@ $(() => {
 
 
 
-   // .on("click", "#add-cuisine", function(e) {
-    //     let id = $(this).data("cuisinesId");
-
-    //     sessionStorage.cuisinesId = id;
-    // })
-
-    // Add cuisine (country)
+// Add cuisine (country)
+//
     .on("click", "#add-cuisine", function(){
         // const country = $("#country-input").val();
         const country=$('#country-selected option:selected').attr('value');
@@ -73,7 +69,7 @@ $(() => {
         console.log(country)
         $(".cuisinelist").append(`
             <div class="cuisinelist-item">
-                <a href="#dish-page"><img src="src/img/country/Australia (AU).png" alt="flag"></a>
+                <a href="#dish-page"><img src="${countryflag}" alt="${country}"></a>
                 <br>
                 <div class="country-name">
                     <p>${country}</p>
@@ -101,9 +97,17 @@ $(() => {
         clearTimeout(timer);
     })
 
+    // Define cuisine_id
+    .on("click", ".cuisinelist-item", function(){
+        sessionStorage.cuisine_id = $(this).closest('#dish-page').attr("class");
+        console.log($(this).closest('#dish-page').attr("class"))
+    })
 
 
-    //Add dish
+
+
+// Add dish
+//
     .on("click", "#add-dish", function(){
         const dish = $(".dish-name-input").val();
         // Add new item.
@@ -129,7 +133,7 @@ $(() => {
     })
 
 
-    //Back to edit-modal-dish page
+    // Back to edit-modal-dish page
     .on("click", "#cancel-dish",function(){
         // Make modal disappear.
         $("#edit-modal-dish").removeClass("active");
@@ -145,14 +149,6 @@ $(() => {
         },500);
     }).on("mouseup touchend",function(){
         clearTimeout(timer);
-    })
-
-
-    //Read Data on Profile Page
-    .on("click", "#profile-page",function(e){
-        let id = $(this).data("userId");
-
-        sessionStorage.ProfilePageId = id;
     })
 
 })

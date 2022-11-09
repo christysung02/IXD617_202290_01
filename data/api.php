@@ -49,14 +49,14 @@ function makeStatement($data){
         case "users_by_user_id":
             error_log("run user query by id");
             error_log("array length: ", count($params));
-            return makeQuery($conn, "SELECT id, name, email, username, img, date_create FROM `track_ixd617_users` WHERE `user_id`=?", $params);
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_users` WHERE `user_id`=?", $params);
 
         case "dishes_by_user_id_cuisine_id":
             error_log("run dishes query by user_id_cuisine_id");
             return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `user_id`=? AND `cuisine_id`=?`", $params);      
         
         case "cuisines_by_cuisine_id":
-        return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);      
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);      
 
 
         case "dishes_locations_by_user_id":

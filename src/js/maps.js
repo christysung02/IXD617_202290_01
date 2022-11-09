@@ -1,7 +1,7 @@
 import { checkData } from "./functions.js";
 
 
-export const makeMap = async(target, center={lat:37.786038, lng:-122.399342}) => {
+export const makeMap = async(target, center={lat:37.737261, lng:-122.422178}) => {
     await checkData(()=>window.google);
 
     let map_el = $(target);

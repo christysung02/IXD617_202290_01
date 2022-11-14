@@ -118,8 +118,9 @@ const getCuisines = () => {
 
             o.cuisine_type = getCuisineType(o.cuisine_id);
             o.countryflag = getCountryFlag(o.cuisine_id);
-            o.img = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=${o.cuisine_type}`;
+            o.img = `https://via.placeholder.com/150/${hex()}/fff/?text=${o.cuisine_type}`;
             o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
+            o.icon = `https://via.placeholder.com/56/${hex()}/fff/?text=${o.cuisine_type}`;
             
             // After we make sure there is no such combination exists. We can safely generate a new row
             // with the given (user_id, cuisine_id). In addition, add the combination to the set so that
@@ -148,21 +149,18 @@ const getDishes = () => (new Array(200)).fill(0).map((o,i)=>{
 
     o.dish_name = dishestype(o.cuisine_id);
     o.description = chance.sentence();
-    o.img = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=${o.dish_name}`;
+    o.img = `https://via.placeholder.com/150/${hex()}/fff/?text=${o.dish_name}`;
     o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
     return o;
 });
 
 // Locations
-const getLocations = () => (new Array(250)).fill(0).map((o,i)=>{
+const getLocations = () => (new Array(200)).fill(0).map((o,i)=>{
     o = {};
-    o.id = i + 1;
-    o.dish_id = chance.natural({min:1, max:10});
+    o.location_id = i + 1;
+    o.dish_id = i + 1;
     o.lat = chance.latitude({min:37.67, max:37.80});
     o.lng = chance.longitude({min:-122.50, max:-122.37});
-    o.photo = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=CUISINE`;
-    o.icon = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=COUNTRY`;
-    o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
     return o;
 });
 

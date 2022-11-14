@@ -1,40 +1,17 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makeCuisine, makeProfile, makeDish} from "./parts.js";
+import { makeCuisine, makeProfile, makeDish, makeDishDetail} from "./parts.js";
 
 export const MapPage = async() => {
-    // let {result:dishes_locations} = await query({
-    //     type:"dishes_locations_by_user_id",
-    //     params:[sessionStorage.userId]
-    // });
-
-    // console.log(dishes_locations);
-
-    // let my_dish_ids = [...new Set(dishes_locations.map(o=>o.dish_location_id))];
-    // console.log(my_dish_ids);
-    // let last_locations = my_dish_ids.map(id=>{
-    //     let locations = dishes.filter(o=>id===o.dish_location_id);
-    //     locations.sort((a,b) => {
-    //         if (a.date_create > b.date_create) {
-    //             return 1;
-    //         }
-    //         if (a.date_create < b.date_create) {
-    //             return -1;
-    //         }
-    //         return 0;
-    //     });
-    //     return locations.slice(-1)[0];
-    // })
-    // console.log(last_locations)
+    console.log("user_id = ",sessionStorage.userId);
 
     let {result:dishes_locations} = await query({
-        type:"recent_dish_locations",
+        type:"dish_locations_by_user_id",
         params:[sessionStorage.userId]
     });
-    console.log(dishes_locations);
+    console.log("result: ", dishes_locations);
 
     let valid_dishes = dishes_locations.reduce((r,o)=>{
-        o.icon = o.img;
         if (o.lat && o.lng) r.push(o);
         return r;
     },[])
@@ -68,13 +45,30 @@ export const DishPage = async() => {
         params: [sessionStorage.userId,sessionStorage.cuisine_id]
     });
 
+    console.log("dish query:", query_dish);
+
     let dish_information = query_dish.result;
 
-    console.log(dish_information);
+    console.log("dish query info:", dish_information);
     $("#dish-page .dishlist").html(makeDish(dish_information))
 }
 
-export const DishDetailPage = async() => {}
+export const DishDetailPage = async() => {
+    console.log('run dish detail page');
+    console.log('dishId: ', sessionStorage.dish_id);
+
+    let query_dish = await query({
+        type: "dish_detail_by_dish_id",
+        params: [sessionStorage.dish_id]
+    });
+
+    console.log("dish detail query:", query_dish);
+
+    let dish_information = query_dish.result;
+
+    console.log("dish detail query info:", dish_information);
+    $("#dish-detail-page .dish-detail").html(makeDishDetail(dish_information))
+}
 
 export const ProfilePage = async() => {
     console.log('run profile page');

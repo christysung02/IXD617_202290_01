@@ -15,7 +15,7 @@ $(() => {
             case "map-page": MapPage(); break;
             case "cuisine-page":CuisinePage(); break; 
             case "dish-page":DishPage(); break;
-            case "dish-detial-page":DishDetailPage(); break;
+            case "dish-detail-page":DishDetailPage(); break;
             case "profile-page":ProfilePage(); break;
         }
     })
@@ -97,10 +97,8 @@ $(() => {
         clearTimeout(timer);
     })
 
-    // Define cuisine_id
     .on("click", ".cuisinelist-item", function(){
-        sessionStorage.cuisine_id = $(this).closest('#dish-page').attr("class");
-        console.log($(this).closest('#dish-page').attr("class"))
+        sessionStorage.cuisine_id = parseInt($(this).find('a').attr("data-cuisine-id"));
     })
 
 
@@ -114,7 +112,7 @@ $(() => {
         console.log(dish)
         $(".dishlist").append(`
             <div class="dishlist-item">
-                <a href="#dish-detial-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
+                <a href="#dish-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
                 <br>
                 <div class="dish-name">
                     <p>${dish}</p>
@@ -149,6 +147,10 @@ $(() => {
         },500);
     }).on("mouseup touchend",function(){
         clearTimeout(timer);
+    })
+
+    .on("click", ".dishlist-item", function(){
+        sessionStorage.dish_id = parseInt($(this).find('a').attr("data-dish-id"));
     })
 
 })

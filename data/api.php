@@ -45,57 +45,31 @@ function makeStatement($data){
     $params = @$data->params;
 //switch similar with if/else does, simplify language
     switch($type){
-    
         case "users_by_user_id":
-            error_log("run user query by id");
-            error_log("array length: ", count($params));
             return makeQuery($conn, "SELECT * FROM `track_ixd617_users` WHERE `user_id`=?", $params);
-
+        
         case "dishes_by_user_id_cuisine_id":
-            error_log("run dishes query by user_id_cuisine_id");
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `user_id`=? AND `cuisine_id`=?`", $params);      
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `user_id`=? AND `cuisine_id`=?", $params);
         
         case "cuisines_by_cuisine_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);      
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);
+       
+        case "dish_detail_by_dish_id":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `dish_id`=?", $params);         
 
-
-        case "dishes_locations_by_user_id":
-            return makeQuery($conn, "SELECT * 
-            FROM `track_ixd617_dishes` d 
-            JOIN (
-                SELECT * FROM `track_ixd617_locations`
-            ) l
-            ON d.dish_id = l.dish_location_id
-            WHERE `user_id`=?
-            ", $params);
-
-
-        // d -> rename the dish table
-        // Join -> two table links data
-        // Join the dish table on the the locations table
-        // rename `track_ixd617_dishes` as table d (dish)
-        // rename the Join selection as table l 
-        // On -> when the dish "dish_id" match the location "id"
-        // lg = location global. It just the name of the `track_ixd617_locations`
-        case "recent_dish_locations":
-            return makeQuery($conn, "SELECT *
-            FROM `track_ixd617_dishes` d
-            JOIN (
-                SELECT lg.*
-                FROM `track_ixd617_locations` lg
-                WHERE lg.id = (
-                    SELECT lt.id
-                    FROM `track_ixd617_locations` lt
-                    WHERE lt.dish_location_id = lg.dish_location_id
-                    ORDER BY lt.date_create DESC
-                    LIMIT 1
-                )
-            ) l
-            ON d.dish_id = l.dish_location_id
-            WHERE `user_id`=?
-            ORDER BY l.dish_location_id, l.date_create DESC
-            ", $params);
-
+        case "dish_locations_by_user_id":
+            error_log("dish_locations_by_user_id");
+            error_log(print_r($params,true));
+            return makeQuery($conn, 
+                "SELECT *
+                    FROM `track_ixd617_dishes` AS d
+                    JOIN `track_ixd617_locations` AS l
+                        ON d.dish_id = l.dish_id
+                    JOIN `track_ixd617_cuisines` AS c
+                        ON d.cuisine_id = c.cuisine_id AND d.user_id=c.user_id
+                    WHERE d.user_id=?
+                    ORDER BY l.dish_id, d.date_create DESC
+                ", $params);
 
         case "check_signin":
             return makeQuery($conn, "SELECT `user_id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 13, 2022 at 02:35 AM
+-- Generation Time: Nov 14, 2022 at 08:08 PM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.3.32
 
@@ -46,16 +46,16 @@ CREATE TABLE `track_ixd617_users` (
 --
 
 INSERT INTO `track_ixd617_users` (`user_id`, `name`, `username`, `password`, `email`, `img`, `count_row_cuisines`, `count_row_dishes`, `count_row_post`, `date_create`) VALUES
-(1, 'Jesus Walsh', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/A35/fff/?text=Jesus Walsh', '9', '46', '124', '2020-07-02 17:41:56'),
-(2, 'Mable Leonard', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/543/fff/?text=Mable Leonard', '8', '1', '110', '2021-02-20 03:41:52'),
-(3, 'Kyle Soto', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/9A4/fff/?text=Kyle Soto', '4', '10', '114', '2020-03-17 16:10:06'),
-(4, 'Rosie Watson', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/445/fff/?text=Rosie Watson', '10', '46', '63', '2020-05-15 20:36:55'),
-(5, 'Ryan Collins', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/5B3/fff/?text=Ryan Collins', '3', '39', '85', '2020-11-28 04:29:54'),
-(6, 'Charlotte Payne', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/3A4/fff/?text=Charlotte Payne', '10', '37', '81', '2020-08-01 06:11:27'),
-(7, 'Keith Bishop', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/A94/fff/?text=Keith Bishop', '1', '4', '82', '2021-09-12 10:18:53'),
-(8, 'Leona Bush', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/A78/fff/?text=Leona Bush', '9', '47', '6', '2021-02-04 14:12:59'),
-(9, 'Teresa Mason', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/63A/fff/?text=Teresa Mason', '1', '17', '197', '2021-06-30 16:50:26'),
-(10, 'Dorothy Morrison', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/84A/fff/?text=Dorothy Morrison', '6', '30', '100', '2020-04-18 14:23:16');
+(1, 'Mabel Watkins', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/7A9/fff/?text=Mabel Watkins', '9', '44', '125', '2020-03-05 04:37:03'),
+(2, 'Verna Garner', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/776/fff/?text=Verna Garner', '2', '41', '176', '2020-10-05 04:32:26'),
+(3, 'Jackson Jenkins', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/543/fff/?text=Jackson Jenkins', '1', '21', '189', '2020-07-20 01:32:31'),
+(4, 'Micheal Page', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/495/fff/?text=Micheal Page', '7', '37', '183', '2021-10-19 22:31:57'),
+(5, 'Leona Sherman', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/985/fff/?text=Leona Sherman', '9', '49', '185', '2021-11-07 03:06:14'),
+(6, 'Emilie Flores', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/895/fff/?text=Emilie Flores', '2', '21', '169', '2021-10-21 05:36:47'),
+(7, 'Johnny Morton', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/885/fff/?text=Johnny Morton', '2', '14', '103', '2020-01-23 21:33:44'),
+(8, 'Brent Boone', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/534/fff/?text=Brent Boone', '9', '11', '70', '2021-10-11 22:22:10'),
+(9, 'Oscar Castro', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/435/fff/?text=Oscar Castro', '1', '24', '123', '2021-04-16 16:42:13'),
+(10, 'Catherine Wise', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/369/fff/?text=Catherine Wise', '9', '29', '156', '2020-10-15 11:02:49');
 
 --
 -- Indexes for dumped tables

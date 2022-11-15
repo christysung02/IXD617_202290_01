@@ -314,10 +314,25 @@
                 <li><a href="#" data-activate="#edit-modal-dish"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
-        <div data-role="main" class="dish-detail">
-            <!-- <img src="src/img/bobadetail.png" alt="boba">
-            <h4>Boba milk tea</h4>
-            <h6>This is my favorite boba shop in the bay area.</h6> -->
+        <div data-role="main" class="dish-detail display-flex flex-column">
+            <!-- <div style="flex: 1;"> 
+                <div class="dish-detail-img">
+                    <img src="${img}" alt="${dish_name}">
+                </div>
+                <h4>Description</h4>
+                <div>
+                    <h5>Dish's name:</h5>
+                    <h6>${dish_name}</h6>
+                </div>
+                <div>
+                    <h5>Comment:</h5>
+                    <h6>${description}</h6>
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <h4>Location</h4>
+                <div class="map"></div>
+            </div> -->
         </div>
 
         <div id="edit-modal-dish" class="modal">
@@ -388,7 +403,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="profilephotos" style="flex:1">
                 <div class="profilephotoslist">
                     <img src="src/img/profile1.png">

@@ -55,6 +55,22 @@ const getCountryFlag= (cuisine_id) => {
     return types[cuisine_id];
 }
 
+const getCountryMark= (cuisine_id) => {
+    let types = {
+        1:'src/img/mark/China (CN).png',
+        2:'src/img/mark/France (FR).png',
+        3:'src/img/mark/Hong Kong (HK).png',
+        4:'src/img/mark/Italy (IT).png',
+        5:'src/img/mark/Japan (JP).png',
+        6:'src/img/mark/South Korea (KR).png',
+        7:'src/img/mark/Taiwan (TW).png',
+        8:'src/img/mark/United Kingdom (GB).png',
+        9:'src/img/mark/United States of America (US).png',
+        10:'src/img/mark/Vietnam (VN).png'
+    }
+    return types[cuisine_id];
+}
+
 
 
 // Makes data.
@@ -118,9 +134,9 @@ const getCuisines = () => {
 
             o.cuisine_type = getCuisineType(o.cuisine_id);
             o.countryflag = getCountryFlag(o.cuisine_id);
-            o.img = `https://via.placeholder.com/150/${hex()}/fff/?text=${o.cuisine_type}`;
+            o.countrymark = getCountryMark(o.cuisine_id);
+            o.img = `https://via.placeholder.com/${num()}x${num()}/fff/?text=${o.cuisine_type}`;
             o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
-            o.icon = `https://via.placeholder.com/56/${hex()}/fff/?text=${o.cuisine_type}`;
             
             // After we make sure there is no such combination exists. We can safely generate a new row
             // with the given (user_id, cuisine_id). In addition, add the combination to the set so that

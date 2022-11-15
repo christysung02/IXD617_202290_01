@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 13, 2022 at 02:35 AM
+-- Generation Time: Nov 14, 2022 at 08:09 PM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.3.32
 
@@ -33,46 +33,46 @@ CREATE TABLE `track_ixd617_cuisines` (
   `user_id` int(13) NOT NULL,
   `cuisine_type` varchar(64) NOT NULL,
   `countryflag` varchar(150) NOT NULL,
+  `countrymark` varchar(60) NOT NULL,
   `img` varchar(256) NOT NULL,
-  `date_create` datetime NOT NULL,
-  `icon` varchar(56) NOT NULL
+  `date_create` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `track_ixd617_cuisines`
 --
 
-INSERT INTO `track_ixd617_cuisines` (`cuisine_id`, `user_id`, `cuisine_type`, `countryflag`, `img`, `date_create`, `icon`) VALUES
-(1, 1, 'China (CN)', 'src/img/country/China (CN).png', 'https://via.placeholder.com/150/358/fff/?text=China (CN)', '2020-04-24 00:40:33', 'https://via.placeholder.com/56/94A/fff/?text=China (CN)'),
-(1, 10, 'China (CN)', 'src/img/country/China (CN).png', 'https://via.placeholder.com/150/7BB/fff/?text=China (CN)', '2022-05-30 15:13:03', 'https://via.placeholder.com/56/347/fff/?text=China (CN)'),
-(2, 1, 'France (FR)', 'src/img/country/France (FR).png', 'https://via.placeholder.com/150/8B6/fff/?text=France (FR)', '2020-08-29 19:03:41', 'https://via.placeholder.com/56/8B9/fff/?text=France (FR)'),
-(2, 4, 'France (FR)', 'src/img/country/France (FR).png', 'https://via.placeholder.com/150/A84/fff/?text=France (FR)', '2021-12-10 13:01:42', 'https://via.placeholder.com/56/757/fff/?text=France (FR)'),
-(2, 8, 'France (FR)', 'src/img/country/France (FR).png', 'https://via.placeholder.com/150/9B6/fff/?text=France (FR)', '2020-11-20 10:46:47', 'https://via.placeholder.com/56/977/fff/?text=France (FR)'),
-(2, 10, 'France (FR)', 'src/img/country/France (FR).png', 'https://via.placeholder.com/150/8B4/fff/?text=France (FR)', '2020-10-04 13:02:18', 'https://via.placeholder.com/56/783/fff/?text=France (FR)'),
-(3, 2, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'https://via.placeholder.com/150/445/fff/?text=Hong Kong (HK)', '2022-04-27 14:53:56', 'https://via.placeholder.com/56/4B9/fff/?text=Hong Kong ('),
-(3, 7, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'https://via.placeholder.com/150/A6A/fff/?text=Hong Kong (HK)', '2021-07-18 04:41:47', 'https://via.placeholder.com/56/7A6/fff/?text=Hong Kong ('),
-(3, 9, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'https://via.placeholder.com/150/A64/fff/?text=Hong Kong (HK)', '2021-10-12 12:01:13', 'https://via.placeholder.com/56/468/fff/?text=Hong Kong ('),
-(4, 1, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'https://via.placeholder.com/150/B6B/fff/?text=Italy (IT)', '2020-12-31 03:25:44', 'https://via.placeholder.com/56/9B3/fff/?text=Italy (IT)'),
-(4, 6, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'https://via.placeholder.com/150/335/fff/?text=Italy (IT)', '2022-01-31 01:24:35', 'https://via.placeholder.com/56/679/fff/?text=Italy (IT)'),
-(4, 10, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'https://via.placeholder.com/150/8A5/fff/?text=Italy (IT)', '2022-02-23 14:14:11', 'https://via.placeholder.com/56/AB8/fff/?text=Italy (IT)'),
-(5, 3, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'https://via.placeholder.com/150/847/fff/?text=Japan (JP)', '2022-06-13 03:23:59', 'https://via.placeholder.com/56/836/fff/?text=Japan (JP)'),
-(5, 7, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'https://via.placeholder.com/150/387/fff/?text=Japan (JP)', '2020-08-17 01:15:12', 'https://via.placeholder.com/56/48B/fff/?text=Japan (JP)'),
-(5, 9, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'https://via.placeholder.com/150/395/fff/?text=Japan (JP)', '2022-08-05 22:59:30', 'https://via.placeholder.com/56/8B6/fff/?text=Japan (JP)'),
-(5, 10, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'https://via.placeholder.com/150/B57/fff/?text=Japan (JP)', '2022-01-27 14:04:43', 'https://via.placeholder.com/56/B9A/fff/?text=Japan (JP)'),
-(6, 2, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'https://via.placeholder.com/150/7A3/fff/?text=South Korea (KR)', '2022-08-04 09:08:26', 'https://via.placeholder.com/56/756/fff/?text=South Korea'),
-(6, 4, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'https://via.placeholder.com/150/8B4/fff/?text=South Korea (KR)', '2020-10-14 22:37:53', 'https://via.placeholder.com/56/A59/fff/?text=South Korea'),
-(6, 5, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'https://via.placeholder.com/150/8AB/fff/?text=South Korea (KR)', '2020-10-17 19:05:34', 'https://via.placeholder.com/56/4AB/fff/?text=South Korea'),
-(6, 6, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'https://via.placeholder.com/150/B53/fff/?text=South Korea (KR)', '2020-08-19 10:18:16', 'https://via.placeholder.com/56/366/fff/?text=South Korea'),
-(6, 10, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'https://via.placeholder.com/150/567/fff/?text=South Korea (KR)', '2020-08-02 02:22:21', 'https://via.placeholder.com/56/A73/fff/?text=South Korea'),
-(7, 3, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'https://via.placeholder.com/150/469/fff/?text=Taiwan (TW)', '2021-09-05 05:38:58', 'https://via.placeholder.com/56/887/fff/?text=Taiwan (TW)'),
-(7, 5, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'https://via.placeholder.com/150/5BA/fff/?text=Taiwan (TW)', '2020-10-18 16:14:50', 'https://via.placeholder.com/56/746/fff/?text=Taiwan (TW)'),
-(7, 6, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'https://via.placeholder.com/150/453/fff/?text=Taiwan (TW)', '2022-03-10 19:37:24', 'https://via.placeholder.com/56/385/fff/?text=Taiwan (TW)'),
-(8, 4, 'United Kingdom (GB)', 'src/img/country/United Kingdom (GB).png', 'https://via.placeholder.com/150/667/fff/?text=United Kingdom (GB)', '2021-12-31 01:59:33', 'https://via.placeholder.com/56/549/fff/?text=United King'),
-(8, 10, 'United Kingdom (GB)', 'src/img/country/United Kingdom (GB).png', 'https://via.placeholder.com/150/7B3/fff/?text=United Kingdom (GB)', '2022-05-10 06:22:56', 'https://via.placeholder.com/56/754/fff/?text=United King'),
-(9, 3, 'United States of America (US)', 'src/img/country/United States of America (US).png', 'https://via.placeholder.com/150/83A/fff/?text=United States of America (US)', '2022-04-13 13:08:50', 'https://via.placeholder.com/56/565/fff/?text=United Stat'),
-(9, 7, 'United States of America (US)', 'src/img/country/United States of America (US).png', 'https://via.placeholder.com/150/36A/fff/?text=United States of America (US)', '2021-06-18 18:53:22', 'https://via.placeholder.com/56/747/fff/?text=United Stat'),
-(10, 5, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'https://via.placeholder.com/150/869/fff/?text=Vietnam (VN)', '2021-08-31 03:23:10', 'https://via.placeholder.com/56/536/fff/?text=Vietnam (VN'),
-(10, 8, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'https://via.placeholder.com/150/A99/fff/?text=Vietnam (VN)', '2021-04-04 07:44:37', 'https://via.placeholder.com/56/93B/fff/?text=Vietnam (VN');
+INSERT INTO `track_ixd617_cuisines` (`cuisine_id`, `user_id`, `cuisine_type`, `countryflag`, `countrymark`, `img`, `date_create`) VALUES
+(1, 3, 'China (CN)', 'src/img/country/China (CN).png', 'src/img/mark/China (CN).png', 'https://via.placeholder.com/400x578/fff/?text=China (CN)', '2020-10-16 07:57:01'),
+(1, 8, 'China (CN)', 'src/img/country/China (CN).png', 'src/img/mark/China (CN).png', 'https://via.placeholder.com/501x572/fff/?text=China (CN)', '2020-09-25 18:05:33'),
+(2, 5, 'France (FR)', 'src/img/country/France (FR).png', 'src/img/mark/France (FR).png', 'https://via.placeholder.com/479x364/fff/?text=France (FR)', '2021-12-05 11:31:44'),
+(2, 6, 'France (FR)', 'src/img/country/France (FR).png', 'src/img/mark/France (FR).png', 'https://via.placeholder.com/382x468/fff/?text=France (FR)', '2020-05-28 02:36:09'),
+(3, 4, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'src/img/mark/Hong Kong (HK).png', 'https://via.placeholder.com/589x526/fff/?text=Hong Kong (HK)', '2022-10-20 18:06:24'),
+(3, 8, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'src/img/mark/Hong Kong (HK).png', 'https://via.placeholder.com/415x376/fff/?text=Hong Kong (HK)', '2022-08-20 13:49:31'),
+(3, 9, 'Hong Kong (HK)', 'src/img/country/Hong Kong (HK).png', 'src/img/mark/Hong Kong (HK).png', 'https://via.placeholder.com/416x430/fff/?text=Hong Kong (HK)', '2020-10-17 20:38:38'),
+(4, 1, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'src/img/mark/Italy (IT).png', 'https://via.placeholder.com/442x526/fff/?text=Italy (IT)', '2022-10-01 04:31:36'),
+(4, 2, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'src/img/mark/Italy (IT).png', 'https://via.placeholder.com/592x453/fff/?text=Italy (IT)', '2022-10-14 01:18:20'),
+(4, 4, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'src/img/mark/Italy (IT).png', 'https://via.placeholder.com/528x370/fff/?text=Italy (IT)', '2022-07-07 22:15:02'),
+(4, 7, 'Italy (IT)', 'src/img/country/Italy (IT).png', 'src/img/mark/Italy (IT).png', 'https://via.placeholder.com/583x552/fff/?text=Italy (IT)', '2022-05-04 20:09:05'),
+(5, 2, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'src/img/mark/Japan (JP).png', 'https://via.placeholder.com/407x469/fff/?text=Japan (JP)', '2020-06-03 15:13:28'),
+(5, 8, 'Japan (JP)', 'src/img/country/Japan (JP).png', 'src/img/mark/Japan (JP).png', 'https://via.placeholder.com/568x401/fff/?text=Japan (JP)', '2022-07-21 00:09:32'),
+(6, 1, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'src/img/mark/South Korea (KR).png', 'https://via.placeholder.com/372x420/fff/?text=South Korea (KR)', '2021-04-03 19:09:29'),
+(6, 2, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'src/img/mark/South Korea (KR).png', 'https://via.placeholder.com/500x580/fff/?text=South Korea (KR)', '2021-01-14 18:57:55'),
+(6, 3, 'South Korea (KR)', 'src/img/country/South Korea (KR).png', 'src/img/mark/South Korea (KR).png', 'https://via.placeholder.com/488x362/fff/?text=South Korea (KR)', '2020-09-21 08:35:10'),
+(7, 2, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'src/img/mark/Taiwan (TW).png', 'https://via.placeholder.com/425x528/fff/?text=Taiwan (TW)', '2020-02-06 22:38:05'),
+(7, 5, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'src/img/mark/Taiwan (TW).png', 'https://via.placeholder.com/499x358/fff/?text=Taiwan (TW)', '2022-03-06 09:44:57'),
+(7, 6, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'src/img/mark/Taiwan (TW).png', 'https://via.placeholder.com/453x591/fff/?text=Taiwan (TW)', '2020-03-30 21:35:50'),
+(7, 7, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'src/img/mark/Taiwan (TW).png', 'https://via.placeholder.com/477x494/fff/?text=Taiwan (TW)', '2021-07-17 00:06:18'),
+(7, 8, 'Taiwan (TW)', 'src/img/country/Taiwan (TW).png', 'src/img/mark/Taiwan (TW).png', 'https://via.placeholder.com/577x586/fff/?text=Taiwan (TW)', '2021-12-15 21:40:40'),
+(8, 2, 'United Kingdom (GB)', 'src/img/country/United Kingdom (GB).png', 'src/img/mark/United Kingdom (GB).png', 'https://via.placeholder.com/517x375/fff/?text=United Kingdom (GB)', '2020-07-07 01:55:27'),
+(8, 8, 'United Kingdom (GB)', 'src/img/country/United Kingdom (GB).png', 'src/img/mark/United Kingdom (GB).png', 'https://via.placeholder.com/482x505/fff/?text=United Kingdom (GB)', '2021-01-29 01:45:11'),
+(9, 5, 'United States of America (US)', 'src/img/country/United States of America (US).png', 'src/img/mark/United States of America (US).png', 'https://via.placeholder.com/586x530/fff/?text=United States of America (US)', '2022-01-30 17:34:11'),
+(9, 6, 'United States of America (US)', 'src/img/country/United States of America (US).png', 'src/img/mark/United States of America (US).png', 'https://via.placeholder.com/374x372/fff/?text=United States of America (US)', '2021-03-02 08:54:37'),
+(9, 9, 'United States of America (US)', 'src/img/country/United States of America (US).png', 'src/img/mark/United States of America (US).png', 'https://via.placeholder.com/462x597/fff/?text=United States of America (US)', '2022-04-12 17:40:26'),
+(10, 1, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'src/img/mark/Vietnam (VN).png', 'https://via.placeholder.com/472x544/fff/?text=Vietnam (VN)', '2021-10-26 22:16:42'),
+(10, 3, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'src/img/mark/Vietnam (VN).png', 'https://via.placeholder.com/600x498/fff/?text=Vietnam (VN)', '2021-07-28 13:43:18'),
+(10, 5, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'src/img/mark/Vietnam (VN).png', 'https://via.placeholder.com/548x527/fff/?text=Vietnam (VN)', '2020-09-28 15:41:29'),
+(10, 7, 'Vietnam (VN)', 'src/img/country/Vietnam (VN).png', 'src/img/mark/Vietnam (VN).png', 'https://via.placeholder.com/484x591/fff/?text=Vietnam (VN)', '2020-06-17 19:09:15');
 
 --
 -- Indexes for dumped tables

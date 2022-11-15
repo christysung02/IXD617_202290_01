@@ -68,6 +68,15 @@ export const DishDetailPage = async() => {
 
     console.log("dish detail query info:", dish_information);
     $("#dish-detail-page .dish-detail").html(makeDishDetail(dish_information))
+
+    let {result:locations} = await query({
+        type:"dish_locations_by_user_id",
+        params:[sessionStorage.userId]
+    });
+    console.log(locations)
+
+    let map_el = await makeMap("#dish-detail-page .map");
+    makeMarkers(map_el,locations);
 }
 
 export const ProfilePage = async() => {

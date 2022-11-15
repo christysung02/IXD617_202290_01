@@ -18,6 +18,29 @@ export const makeDish = templater(({dish_name,img, dish_id})=>`
     </div>
 `)
 
+export const makeDishMapDescription = templater(({img,countryflag,dish_name,cuisine_type})=>`
+    <div class="dish-map-description">
+        <div class="dish-map-image">
+            <img src="${img}">
+        </div>
+        </div>
+        <div class="dish-map-body">
+            <div class="dish-map-image-flag">
+                <img src="${countryflag}" alt="${dish_name}">
+            </div>
+            <div class="dish-map-content">
+                <div> 
+                    <h5>Dish's name:</h5>
+                    <h6>${dish_name}</h6>
+                </div>
+                <div>
+                    <h5>Cuisine's type:</h5>
+                    <h6>${cuisine_type}</h6>
+                </div> 
+        </div>
+    </div>
+`)
+
 export const makeDishDetail = templater(({dish_name,img, description})=>`
     <div style="flex: 1;"> 
         <div class="dish-detail-img">

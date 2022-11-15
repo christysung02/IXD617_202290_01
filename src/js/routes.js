@@ -1,6 +1,6 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makeCuisine, makeProfile, makeDish, makeDishDetail} from "./parts.js";
+import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription} from "./parts.js";
 
 export const MapPage = async() => {
     console.log("user_id = ",sessionStorage.userId);
@@ -18,6 +18,19 @@ export const MapPage = async() => {
 
     let map_el = await makeMap("#map-page .map");
     makeMarkers(map_el,valid_dishes);
+
+    map_el.data("markers").forEach((m,i)=>{
+        console.log(m)
+        m.addListener("click",function(e){
+            console.log(e)
+            let dish = valid_dishes[i];
+            console.log(dish)
+            $("#map-recent-modal")
+                .addClass("active")
+                .find(".island-modal-body")
+                .html(makeDishMapDescription(dish))
+        })
+    });
 }
 
 export const CuisinePage = async() => {

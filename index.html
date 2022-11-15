@@ -127,9 +127,38 @@
             <div class="floater bottom right">
                 <a href="#"><img src="src/img/maptrackicon.png"></a>
             </div>
+
+            <div id="map-recent-modal" class="modal">
+                <div class="modal-back transparent" data-deactivate="#map-recent-modal"></div>
+                <div class="modal-drawer island bottom">
+                    <div class="island-modal-body"> 
+                        <!-- <div class="dish-map-description">
+                            <div class="dish-map-image">
+                                <img src="${img}">
+                            </div>
+                        </div>
+                        <div class="dish-map-body">
+                            <div class="dish-map-image-flag">
+                                <img src="${countryflag}" alt="${dish_name}">
+                            </div>
+                            <div class="dish-map-content">
+                                <div> 
+                                    <h5>Dish's name:</h5>
+                                    <h6>${dish_name}</h6>
+                                </div>
+                                <div>
+                                    <h5>Cuisine's type:</h5>
+                                    <h6>${cuisine_type}</h6>
+                                </div> 
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div id="modal-drawer-map" class="modal">
-            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-back transparent" data-deactivate="#modal-drawer-map"></div>
             <div class="modal-drawer left">
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-map" src="src/img/leftarrowicon.png">
@@ -214,7 +243,7 @@
         </div>
 
         <div id="modal-drawer-cuisine" class="modal">
-            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-back transparent" data-deactivate="#modal-drawer-cuisine"></div>
             <div class="modal-drawer left">
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
@@ -247,19 +276,7 @@
         </header>
         <div data-role="main">
             <div class="dishlist">
-                <!-- <div class="dishlist-item">
-                    <a href="#dish-detail-page"><img src="src/img/boba.png" alt="boba"></a>
-                    <div class="dish-name">
-                        <p>Boba milk tea</p>
-                    </div>
-                </div>
-                <div class="dishlist-item">
-                    <a href="#dish-detail-page"><img src="src/img/hot pot.png" alt="hot pot"></a>
-                    
-                    <div class="dish-name">
-                        <p>Hot Pot</p>
-                    </div>
-                </div>
+                <!-- 
                 <div class="dishlist-item">
                     <a href="#dish-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
                     
@@ -414,7 +431,7 @@
         </div>
 
         <div id="modal-drawer-profile" class="modal">
-            <div class="modal-back transparent" data-deactivate="#modal-drawer"></div>
+            <div class="modal-back transparent" data-deactivate="#modal-drawer-profile"></div>
             <div class="modal-drawer left">
                 <div class="modal-head maplistleftarrow">
                     <img id="close-modal-drawer-profile" src="src/img/leftarrowicon.png">

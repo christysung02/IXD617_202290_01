@@ -134,7 +134,7 @@ a {
 .overscroll { overflow: auto; }
 
 
-/* Onboarding */
+/* ONBOARDING */
 #onboarding-page {
     background-image: url('../img/onboardingpage.png');
     background-size:cover;
@@ -273,6 +273,96 @@ h2{
     color: var(--color-main-red);
     position: absolute;
     bottom: 5em;
+}
+
+
+/* 
+                        <div class="dish-map-description">
+                            <div class="dish-map-image">
+                                <img src="${img}">
+                            </div>
+                        </div>
+                        <div class="dish-map-body">
+                            <div class="dish-map-image-flag">
+                                <img src="${countryflag}" alt="${dish_name}">
+                            </div>
+                            <div class="dish-map-content">
+                                <div> 
+                                    <h5>Dish's name:</h5>
+                                    <h6>${dish_name}</h6>
+                                </div>
+                                <div>
+                                    <h5>Cuisine's type:</h5>
+                                    <h6>${cuisine_type}</h6>
+                                </div> 
+                            </div>
+                        < /div> */
+
+.island-modal-body{
+    background-color: white;
+    padding: 1em 0.5em;
+}
+
+.modal-drawer.island {
+    box-shadow: initial;
+}
+.modal-drawer.island .island-modal-body {
+    margin:1em;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius:1em;
+}
+
+.dish-map-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-map-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dish-map-image img{
+    width: 100%;
+    height: 100px;
+    object-fit:cover;
+    border-radius:1em;
+    padding: 0em 0.5em;
+}
+
+.dish-map-image-flag img{
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    vertical-align: middle;
+    object-fit:cover;
+}
+
+.dish-map-body{
+    padding: 1em;
+}
+
+.dish-map-content {
+    padding-left: 1em;
+}
+
+.dish-map-content h5{
+    color: var(--color-main-gray);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    margin: 0.5em 1em;
+}
+
+.dish-map-content h6{
+    color: var(--color-main-black);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: left;
+    margin: 0.5em 1em;
 }
 
 /* COUNTRY and CUNSINE */

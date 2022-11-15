@@ -135,7 +135,6 @@ const getCuisines = () => {
             o.cuisine_type = getCuisineType(o.cuisine_id);
             o.countryflag = getCountryFlag(o.cuisine_id);
             o.countrymark = getCountryMark(o.cuisine_id);
-            o.img = `https://via.placeholder.com/${num()}x${num()}/fff/?text=${o.cuisine_type}`;
             o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
             
             // After we make sure there is no such combination exists. We can safely generate a new row

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 14, 2022 at 08:08 PM
+-- Generation Time: Nov 14, 2022 at 11:19 PM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.3.32
 
@@ -46,16 +46,16 @@ CREATE TABLE `track_ixd617_users` (
 --
 
 INSERT INTO `track_ixd617_users` (`user_id`, `name`, `username`, `password`, `email`, `img`, `count_row_cuisines`, `count_row_dishes`, `count_row_post`, `date_create`) VALUES
-(1, 'Mabel Watkins', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/7A9/fff/?text=Mabel Watkins', '9', '44', '125', '2020-03-05 04:37:03'),
-(2, 'Verna Garner', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/776/fff/?text=Verna Garner', '2', '41', '176', '2020-10-05 04:32:26'),
-(3, 'Jackson Jenkins', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/543/fff/?text=Jackson Jenkins', '1', '21', '189', '2020-07-20 01:32:31'),
-(4, 'Micheal Page', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/495/fff/?text=Micheal Page', '7', '37', '183', '2021-10-19 22:31:57'),
-(5, 'Leona Sherman', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/985/fff/?text=Leona Sherman', '9', '49', '185', '2021-11-07 03:06:14'),
-(6, 'Emilie Flores', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/895/fff/?text=Emilie Flores', '2', '21', '169', '2021-10-21 05:36:47'),
-(7, 'Johnny Morton', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/885/fff/?text=Johnny Morton', '2', '14', '103', '2020-01-23 21:33:44'),
-(8, 'Brent Boone', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/534/fff/?text=Brent Boone', '9', '11', '70', '2021-10-11 22:22:10'),
-(9, 'Oscar Castro', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/435/fff/?text=Oscar Castro', '1', '24', '123', '2021-04-16 16:42:13'),
-(10, 'Catherine Wise', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/369/fff/?text=Catherine Wise', '9', '29', '156', '2020-10-15 11:02:49');
+(1, 'Alfred Osborne', 'user1', '1a1dc91c907325c69271ddf0c944bc72', 'user1@gmail.com', 'https://via.placeholder.com/150/86B/fff/?text=Alfred Osborne', '7', '5', '69', '2020-04-10 01:53:59'),
+(2, 'Nora Bryant', 'user2', '1a1dc91c907325c69271ddf0c944bc72', 'user2@gmail.com', 'https://via.placeholder.com/150/8A9/fff/?text=Nora Bryant', '1', '2', '154', '2022-03-01 04:58:18'),
+(3, 'Dennis Saunders', 'user3', '1a1dc91c907325c69271ddf0c944bc72', 'user3@gmail.com', 'https://via.placeholder.com/150/44B/fff/?text=Dennis Saunders', '1', '16', '198', '2020-07-12 19:26:24'),
+(4, 'Jonathan Mann', 'user4', '1a1dc91c907325c69271ddf0c944bc72', 'user4@gmail.com', 'https://via.placeholder.com/150/893/fff/?text=Jonathan Mann', '5', '2', '63', '2022-07-12 09:01:34'),
+(5, 'Josie Hines', 'user5', '1a1dc91c907325c69271ddf0c944bc72', 'user5@gmail.com', 'https://via.placeholder.com/150/399/fff/?text=Josie Hines', '1', '43', '136', '2021-02-14 15:36:52'),
+(6, 'Cordelia Hicks', 'user6', '1a1dc91c907325c69271ddf0c944bc72', 'user6@gmail.com', 'https://via.placeholder.com/150/AA5/fff/?text=Cordelia Hicks', '4', '41', '150', '2021-09-02 17:24:07'),
+(7, 'Luke Reeves', 'user7', '1a1dc91c907325c69271ddf0c944bc72', 'user7@gmail.com', 'https://via.placeholder.com/150/5B8/fff/?text=Luke Reeves', '2', '36', '38', '2022-11-13 19:57:01'),
+(8, 'Johnny Sandoval', 'user8', '1a1dc91c907325c69271ddf0c944bc72', 'user8@gmail.com', 'https://via.placeholder.com/150/8B9/fff/?text=Johnny Sandoval', '9', '50', '67', '2022-05-28 21:12:42'),
+(9, 'Norman Stokes', 'user9', '1a1dc91c907325c69271ddf0c944bc72', 'user9@gmail.com', 'https://via.placeholder.com/150/AB6/fff/?text=Norman Stokes', '6', '8', '200', '2021-04-18 05:02:08'),
+(10, 'Carlos Glover', 'user10', '1a1dc91c907325c69271ddf0c944bc72', 'user10@gmail.com', 'https://via.placeholder.com/150/74A/fff/?text=Carlos Glover', '10', '28', '47', '2021-01-28 19:30:11');
 
 --
 -- Indexes for dumped tables

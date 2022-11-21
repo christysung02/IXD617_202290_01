@@ -58,6 +58,13 @@ $(() => {
         $("#modal-drawer-profile").removeClass("active");
     })
 
+    // Click island-modal-body to the dish-detail page
+    .on("click", ".island-modal-body",function(){
+        sessionStorage.dish_id = parseInt($(this).find('.dish-map-description').attr("data-dish-id"));
+        sessionStorage.cuisine_id = parseInt($(this).find('.dish-map-description').attr("data-cuisine-id"));
+        location.href = "#dish-detail-page";
+    })
+
 
 
 // Add cuisine (country)

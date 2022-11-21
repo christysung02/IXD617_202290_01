@@ -71,6 +71,19 @@ function makeStatement($data){
                     ORDER BY l.dish_id, d.date_create DESC
                 ", $params);
 
+        case "dish_locations_by_dish_id":
+            error_log("dish_locations_by_dish_id");
+            error_log(print_r($params,true));
+            return makeQuery($conn, 
+                "SELECT *
+                    FROM `track_ixd617_dishes` AS d
+                    JOIN `track_ixd617_locations` AS l
+                        ON d.dish_id = l.dish_id
+                    JOIN `track_ixd617_cuisines` AS c
+                        ON d.cuisine_id = c.cuisine_id AND d.user_id=c.user_id
+                    WHERE d.dish_id=?
+                ", $params);
+
         case "check_signin":
             return makeQuery($conn, "SELECT `user_id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);
         default:

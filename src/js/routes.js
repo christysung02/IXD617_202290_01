@@ -82,14 +82,15 @@ export const DishDetailPage = async() => {
     console.log("dish detail query info:", dish_information);
     $("#dish-detail-page .dish-detail").html(makeDishDetail(dish_information))
 
-    let {result:locations} = await query({
-        type:"dish_locations_by_user_id",
-        params:[sessionStorage.userId]
+    let {result:location} = await query({
+        type:"dish_locations_by_dish_id",
+        params:[sessionStorage.dish_id]
     });
-    console.log(locations)
+    console.log(location)
+    console.log("dish_id = ",sessionStorage.dish_id);
 
     let map_el = await makeMap("#dish-detail-page .map");
-    makeMarkers(map_el,locations);
+    makeMarkers(map_el,location);
 }
 
 export const ProfilePage = async() => {

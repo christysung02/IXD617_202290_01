@@ -1,6 +1,6 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeEditProfileForm, makeDishDetailEditForm} from "./parts.js";
+import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeProfileEditForm, makeDishDetailEditForm} from "./parts.js";
 
 export const MapPage = async() => {
     console.log("user_id = ",sessionStorage.userId);
@@ -133,5 +133,5 @@ export const ProfileEditPage = async() => {
     });
     let [user] = users;
 
-    $("#profile-edit-page .body").html(makeEditProfileForm(user));
+    $("#profile-edit-page .body").html(makeProfileEditForm(user));
 }

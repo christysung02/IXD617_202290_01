@@ -24,8 +24,8 @@ export const checkProfileEditForm = () => {
 
 
 export const checkDishDetailEditForm = () => {
-    let dish_name = $("#dish-detail-edit-dish_name").val();
-    let description = $("#dish-detail-edit-description").val();
+    let dish_name = $("#dish_detail_edit-dish_name").val();
+    let description = $("#dish_detail_edit-description").val();
 
     query({
         type: 'update_dish_detail',

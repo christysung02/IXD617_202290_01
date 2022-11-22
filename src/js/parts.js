@@ -102,7 +102,7 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
     </div>
 `)
 
-export const makeEditProfileForm = ({name,username,email}) => {
+export const makeProfileEditForm = ({name,username,email}) => {
 
     return `<div class="form-control">
         <label class="form-label" for="profile-edit-username">Username</label>

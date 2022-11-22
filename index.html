@@ -358,7 +358,7 @@
                 <div data-role="modal-header" class="modal-head modal-title">
                     <p>EDIT YOUR DISHES</p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" data-ajax="false" id="edit-dish-form">
                     <div class="inputspace">
                         <label class="form-label" for="img">Change image of your dishes</label>
                         <input class="form-input" type="file" id="changedishimage" name="img" accept="image/*">
@@ -398,6 +398,7 @@
                     <ul>
                         <li><a href="#" data-activate="#modal-drawer-profile"><img src="src/img/listicon.png"></a></li>
                         <li class="flex-stretch"></li>
+                        <li><a href="#profile-settings-page"><img src="src/img/settingicon.png"></a></li>
                     </ul>
                 </header>
                 <div class="photoandname">
@@ -448,6 +449,41 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- PROFILE SETTING PAGE -->
+    <section data-role="page" id="profile-settings-page">
+        <header data-role="header">
+            <h1>SETTING</h1>
+            <ul>
+                <li><a href="#profile-page"><img src="src/img/leftarrowicon.png"></a></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="settings">
+                <li><a href="#profile-edit-page">Edit User<img src="src/img/rightarrow.png"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PROFILE EDIT PAGE -->
+    <section data-role="page" id="profile-edit-page">
+        <header data-role="header">
+            <h1>EDIT USER</h1>
+            <ul>
+                <li><a href="#profile-settings-page"><img src="src/img/leftarrowicon.png"></a></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="profile-edit-form" class="padded display-flex flex-column full overscroll">
+            <div class="body"></div>
+            <div class="flex-stretch"></div>
+            
+            <div class="form-control">
+                <input class="form-button" type="submit" data-role="none" value="Submit">
+            </div>
+        </form>
     </section>
 
 </body>

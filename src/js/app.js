@@ -1,5 +1,6 @@
-import { DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage } from "./routes.js";
+import { DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
+import { checkProfileEditForm } from "./forms.js";
 
 // Document Ready
 $(() => {
@@ -15,8 +16,12 @@ $(() => {
             case "map-page": MapPage(); break;
             case "cuisine-page":CuisinePage(); break; 
             case "dish-page":DishPage(); break;
+
             case "dish-detail-page":DishDetailPage(); break;
+            case "edit-modal-dish":EditModalDish(); break;
+
             case "profile-page":ProfilePage(); break;
+            case "profile-edit-page":ProfileEditPage(); break;
         }
     })
 
@@ -26,9 +31,18 @@ $(() => {
         checkSigninForm();
     })
 
+    .on("submit", "#profile-edit-form", function(e) {
+        e.preventDefault();
+        checkProfileEditForm();
+    })
+
     .on("click", ".js-logout", function(e) {
         sessionStorage.removeItem("userId");
         checkUserId();
+    })
+
+    .on("click", ".js-submit-profile-edit-form", function(e) {
+        checkProfileEditForm();
     })
 
     // ACTIVATE TOOLS

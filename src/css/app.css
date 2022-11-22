@@ -287,6 +287,7 @@ h2{
     margin:1em;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     border-radius:1em;
+    border: solid 1px white;
 }
 
 .dish-map-description{
@@ -573,7 +574,7 @@ input#img {
     object-fit: cover;
     aspect-ratio:1/1;
     border-radius: 50%;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
 }
 
 .dishlist-item p{
@@ -678,6 +679,11 @@ input#changedishimage{
     padding: 0px;
 }
 
+.photoandname p{
+    margin: 0em;
+    margin-bottom: 2em;
+}
+
 .count-row{
     display: flex;
     flex-direction: row;
@@ -740,6 +746,40 @@ input#changedishimage{
     border-radius: 10px;
 }
 
+
+/* PROFILE SETTING */
+.settings {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.settings a {
+    padding: 0em;
+    color: var(--color-main-black);
+}
+
+.settings li {
+    margin: 1em 2em;
+    padding: 1em;
+    border-bottom: 0.1px solid var(--color-main-red);
+}
+
+.settings li~li {
+    border-bottom: 0.1px solid var(--color-main-red);
+}
+
+.settings img{
+    position: absolute;
+    height: 1rem;
+    width: auto;
+    right: 3rem;
+}
+
+/* PROFILE EDIT PAGE */
+form#profile-edit-form {
+    padding: 1rem 2rem;
+}
 
 /* width */
 ::-webkit-scrollbar {

@@ -69,6 +69,7 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
             <ul>
                 <li><a href="#" data-activate="#modal-drawer-profile"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>
+                <li><a href="#profile-settings-page"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
         <div class="photoandname">
@@ -100,3 +101,35 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
         </div>
     </div>
 `)
+
+export const makeEditProfileForm = ({name,username,email}) => {
+
+    return `<div class="form-control">
+        <label class="form-label" for="profile-edit-username">Username</label>
+        <input class="form-input" type="text" id="profile-edit-username" data-role="none" placeholder="Type your Username" value="${username}">
+    </div>
+    <div class="form-control">
+        <label class="form-label" for="profile-edit-name">Name</label>
+        <input class="form-input" type="text" id="profile-edit-name" data-role="none" placeholder="Type your Name" value="${name}">
+    </div>
+    <div class="form-control">
+        <label class="form-label" for="profile-edit-email">Email</label>
+        <input class="form-input" type="text" id="profile-edit-email" data-role="none" placeholder="Type your Email" value="${email}">
+    </div>`
+}
+
+
+
+
+const FormControlInput = ({namespace,name,displayname,type,placeholder,value}) => {
+    return `<div class="form-control">
+        <label class="form-label" for="${namespace}-${name}">${displayname}</label>
+        <input class="form-input" type="${type}" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}" value="${value}">
+    </div>`
+}
+const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => {
+    return `<div class="form-control">
+        <label class="form-label" for="${namespace}-${name}">${displayname}</label>
+        <textarea class="form-input" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}">${value}</textarea>
+    </div>`
+}

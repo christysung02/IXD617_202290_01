@@ -45,18 +45,37 @@ function makeStatement($data){
     $params = @$data->params;
 //switch similar with if/else does, simplify language
     switch($type){
+        // Profile Page
         case "users_by_user_id":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_users` WHERE `user_id`=?", $params);
-        
+
+        // Cuisine Page
+        case "cuisines_by_cuisine_id":
+            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);
+
+        // Dish Page
         case "dishes_by_user_id_cuisine_id":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `user_id`=? AND `cuisine_id`=?", $params);
         
-        case "cuisines_by_cuisine_id":
-            return makeQuery($conn, "SELECT * FROM `track_ixd617_cuisines` WHERE `user_id`=?", $params);
-       
+        // Dish-Detail Page
         case "dish_detail_by_dish_id":
             return makeQuery($conn, "SELECT * FROM `track_ixd617_dishes` WHERE `dish_id`=?", $params);         
-
+        
+        // Dish-detail-page -Map
+        case "dish_locations_by_dish_id":
+            error_log("dish_locations_by_dish_id");
+            error_log(print_r($params,true));
+            return makeQuery($conn, 
+                "SELECT *
+                    FROM `track_ixd617_dishes` AS d
+                    JOIN `track_ixd617_locations` AS l
+                        ON d.dish_id = l.dish_id
+                    JOIN `track_ixd617_cuisines` AS c
+                        ON d.cuisine_id = c.cuisine_id AND d.user_id=c.user_id
+                    WHERE d.dish_id=?
+                ", $params);
+                
+        // Map Page
         case "dish_locations_by_user_id":
             error_log("dish_locations_by_user_id");
             error_log(print_r($params,true));
@@ -70,20 +89,8 @@ function makeStatement($data){
                     WHERE d.user_id=?
                     ORDER BY l.dish_id, d.date_create DESC
                 ", $params);
-
-        case "dish_locations_by_dish_id":
-            error_log("dish_locations_by_dish_id");
-            error_log(print_r($params,true));
-            return makeQuery($conn, 
-                "SELECT *
-                    FROM `track_ixd617_dishes` AS d
-                    JOIN `track_ixd617_locations` AS l
-                        ON d.dish_id = l.dish_id
-                    JOIN `track_ixd617_cuisines` AS c
-                        ON d.cuisine_id = c.cuisine_id AND d.user_id=c.user_id
-                    WHERE d.dish_id=?
-                ", $params);
-
+                
+        // Signin Page
         case "check_signin":
             return makeQuery($conn, "SELECT `user_id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);
         default:

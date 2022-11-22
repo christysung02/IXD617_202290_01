@@ -1,4 +1,4 @@
-import { DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage} from "./routes.js";
+import { DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 import { checkProfileEditForm } from "./forms.js";
 
@@ -18,7 +18,7 @@ $(() => {
             case "dish-page":DishPage(); break;
 
             case "dish-detail-page":DishDetailPage(); break;
-            case "edit-modal-dish":EditModalDish(); break;
+            case "dish-detail-edit-page":DishDetailEditPage(); break;
 
             case "profile-page":ProfilePage(); break;
             case "profile-edit-page":ProfileEditPage(); break;
@@ -152,10 +152,10 @@ $(() => {
     })
 
 
-    // Back to edit-modal-dish page
-    .on("click", "#cancel-dish",function(){
+    // Back to edit-dish-detail-page page
+    .on("click", "#cancel-editdishdetail",function(){
         // Make modal disappear.
-        $("#edit-modal-dish").removeClass("active");
+        $("#edit-dish-detail-page").removeClass("active");
     })
 
 

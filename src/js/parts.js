@@ -52,7 +52,7 @@ export const makeDishDetail = templater(({dish_name,img, description})=>`
             <h6>${dish_name}</h6>
         </div>
         <div>
-            <h5>Comment:</h5>
+            <h5>Description:</h5>
             <h6>${description}</h6>
         </div>
     </div>
@@ -132,4 +132,24 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => 
         <label class="form-label" for="${namespace}-${name}">${displayname}</label>
         <textarea class="form-input" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}">${value}</textarea>
     </div>`
+}
+
+export const makeDishDetailEditForm = ({dish_detail_edit,namespace}) => {
+    return `
+    ${FormControlInput({
+        namespace,
+        name: "dish_name",
+        displayname: "Dish's name",
+        type: "text",
+        placeholder: "Type a Dish's name",
+        value: dish_detail_edit.dish_name
+    })}
+    ${FormControlTextarea({
+        namespace,
+        name: "description",
+        displayname: "Description",
+        placeholder: "Type a Description",
+        value: dish_detail_edit.description
+    })}
+    `;
 }

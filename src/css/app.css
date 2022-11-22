@@ -650,6 +650,22 @@ input#changedishimage{
     resize: none;
 }
 
+/* DISH DETAIL EDIT PAGE */
+form#dish-detail-edit-form {
+    padding: 1rem 2rem;
+}
+
+textarea#dish_detail_edit-description {
+    height: 10em;
+    border: 1px solid var(--color-main-red);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    padding-top: 0.6em;
+}
+
+
 /*PROFILE*/
 .profileupper{
     background-size:cover;

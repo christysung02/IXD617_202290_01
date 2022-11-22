@@ -131,28 +131,7 @@
             <div id="map-recent-modal" class="modal">
                 <div class="modal-back transparent" data-deactivate="#map-recent-modal"></div>
                 <div class="modal-drawer island bottom">
-                    <button class="island-modal-body"> 
-                        <!-- <div class="dish-map-description">
-                            <div class="dish-map-image">
-                                <img src="${img}">
-                            </div>
-                        </div>
-                        <div class="dish-map-body">
-                            <div class="dish-map-image-flag">
-                                <img src="${countryflag}" alt="${dish_name}">
-                            </div>
-                            <div class="dish-map-content">
-                                <div> 
-                                    <h5>Dish's name:</h5>
-                                    <h6>${dish_name}</h6>
-                                </div>
-                                <div>
-                                    <h5>Cuisine's type:</h5>
-                                    <h6>${cuisine_type}</h6>
-                                </div> 
-                            </div>
-                        </div> -->
-                    </button>
+                    <button class="island-modal-body"></button>
                 </div>
             </div>
         </div>
@@ -190,37 +169,7 @@
             </ul>
         </header>
         <div data-role="main">
-            <div class="cuisinelist">
-                <!-- <div class="cuisinelist-item">
-                    <a href="#dish-page"><img src="src/img/country/Taiwan (TW).png" alt="flag"></a>
-                    
-                    <div class="country-name">
-                        <p>Taiwan</p>
-                    </div>
-                </div>
-                <div class="cuisinelist-item">
-                    <a href="#dish-page"><img src="src/img/country/United States of America (US).png"
-                            alt="flag"></a>
-                    
-                    <div class="country-name">
-                        <p>United States</p>
-                    </div>
-                </div>
-                <div class="cuisinelist-item">
-                    <a href="#dish-page"><img src="src/img/country/Italy (IT).png" alt="flag"></a>
-                    
-                    <div class="country-name">
-                        <p>Italy</p>
-                    </div>
-                </div>
-                <div class="cuisinelist-item">
-                    <a href="#dish-page"><img src="src/img/country/Japan (JP).png" alt="flag"></a>
-                    
-                    <div class="country-name">
-                        <p>Japan</p>
-                    </div>
-                </div> -->
-            </div>
+            <div class="cuisinelist"></div>
         </div>
 
         <div id="add-modal-cuisine" class="modal">
@@ -275,16 +224,7 @@
             </ul>
         </header>
         <div data-role="main">
-            <div class="dishlist">
-                <!-- 
-                <div class="dishlist-item">
-                    <a href="#dish-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
-                    
-                    <div class="dish-name">
-                        <p>Dumpling</p>
-                    </div>
-                </div> -->
-            </div>
+            <div class="dishlist"></div>
         </div>
         <div class="map"></div>
         <div id="add-modal-dish" class="modal">
@@ -328,108 +268,37 @@
             <ul>
                 <li><a href="#dish-page"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#edit-modal-dish"><img src="src/img/settingicon.png"></a></li>
+                <li><a href="#dish-detail-edit-page"><img src="src/img/settingicon.png"></a></li>
             </ul>
         </header>
-        <div data-role="main" class="dish-detail display-flex flex-column">
-            <!-- <div style="flex: 1;"> 
-                <div class="dish-detail-img">
-                    <img src="${img}" alt="${dish_name}">
-                </div>
-                <h4>Description</h4>
-                <div>
-                    <h5>Dish's name:</h5>
-                    <h6>${dish_name}</h6>
-                </div>
-                <div>
-                    <h5>Comment:</h5>
-                    <h6>${description}</h6>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <h4>Location</h4>
-                <div class="map"></div>
-            </div> -->
-        </div>
+        <div data-role="main" class="dish-detail display-flex flex-column"></div>
+    </section>
 
-        <div id="edit-modal-dish" class="modal">
-            <div class="modal-back" data-deactivate="#edit-modal-dish"></div>
-            <div class="modal-popup">
-                <div data-role="modal-header" class="modal-head modal-title">
-                    <p>EDIT YOUR DISHES</p>
-                </div>
-                <div class="modal-body" data-ajax="false" id="edit-dish-form">
-                    <div class="inputspace">
-                        <label class="form-label" for="img">Change image of your dishes</label>
-                        <input class="form-input" type="file" id="changedishimage" name="img" accept="image/*">
-                    </div>
-                    <div class="inputspace">
-                        <label class="form-label" for="popup">Name of the dishes</label>
-                        <form>
-                            <textarea>Boba milk tea</textarea>
-                        </form>
-                    </div>
-                    <div class="inputspace">
-                        <label class="form-label" for="popup">Description</label>
-                        <form>
-                            <textarea>This is my favorite boba shop in the bay area.</textarea>
-                        </form>
-                    </div>
-                </div>
-                <div data-role="modal-footer" class="modal-foot">
-                    <ul>
-                        <li id="cancel-dish"><button class="cancelbtn">cancel</button></li>
-                        <li class="flex-stretch"></li>
-                        <li id="save-dish"><button class="savebtn">Save</button></li>
-                    </ul>
-                </div>
+
+    <!-- DISH DERAIL EDIT PAGE -->
+    <section data-role="page" id="dish-detail-edit-page">
+        <header data-role="header">
+            <h1>EDIT DISH DETAIL</h1>
+            <ul>
+                <li><a href="#dish-detail-page"><img src="src/img/leftarrowicon.png"></a></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="dish-detail-edit-form" class="padded display-flex flex-column full overscroll">
+            <div class="body"></div>
+            <div class="flex-stretch"></div>
+
+            <div class="form-control">
+                <input class="form-button" type="submit" data-role="none" value="Save">
             </div>
-        </div>
+        </form>
     </section>
 
 
 
     <!-- PROFILE PAGE -->
     <section data-role="page" id="profile-page">
-        <div data-role="main" class="display-flex flex-column">
-            <!-- <div class="profileupper" style="flex: 1.5;">
-                <header data-role="header">
-                    <h1>PROFILE</h1>
-                    <ul>
-                        <li><a href="#" data-activate="#modal-drawer-profile"><img src="src/img/listicon.png"></a></li>
-                        <li class="flex-stretch"></li>
-                        <li><a href="#profile-settings-page"><img src="src/img/settingicon.png"></a></li>
-                    </ul>
-                </header>
-                <div class="photoandname">
-                    <img src="src/img/head.png" alt="head">
-                    <h2>Christy</h2>
-                    <p>ysung6@gmail.com</p>
-                    <div class="count-row">
-                        <div class="count-row-list">
-                            <p>Cuisines</p>
-                            <h2>6</h2>
-                        </div>
-                        <div class="count-row-list">
-                            <p>Dishes</p>
-                            <h2>23</h2>
-                        </div>
-                        <div class="count-row-list">
-                            <p>Post</p>
-                            <h2>5</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="profilephotos" style="flex:1">
-                <div class="profilephotoslist">
-                    <img src="src/img/profile1.png">
-                    <img src="src/img/profile2.png">
-                    <img src="src/img/profile3.png">
-                    <img src="src/img/profile4.png">
-                </div>
-            </div> -->
-        </div>
+        <div data-role="main" class="display-flex flex-column"> </div>
 
         <div id="modal-drawer-profile" class="modal">
             <div class="modal-back transparent" data-deactivate="#modal-drawer-profile"></div>
@@ -451,6 +320,8 @@
         </div>
     </section>
 
+
+
     <!-- PROFILE SETTING PAGE -->
     <section data-role="page" id="profile-settings-page">
         <header data-role="header">
@@ -467,6 +338,8 @@
         </div>
     </section>
 
+
+
     <!-- PROFILE EDIT PAGE -->
     <section data-role="page" id="profile-edit-page">
         <header data-role="header">
@@ -481,7 +354,7 @@
             <div class="flex-stretch"></div>
             
             <div class="form-control">
-                <input class="form-button" type="submit" data-role="none" value="Submit">
+                <input class="form-button" type="submit" data-role="none" value="Save">
             </div>
         </form>
     </section>

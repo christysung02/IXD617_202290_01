@@ -1,6 +1,6 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeEditProfileForm} from "./parts.js";
+import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeEditProfileForm, makeDishDetailEditForm} from "./parts.js";
 
 export const MapPage = async() => {
     console.log("user_id = ",sessionStorage.userId);
@@ -91,6 +91,21 @@ export const DishDetailPage = async() => {
 
     let map_el = await makeMap("#dish-detail-page .map");
     makeMarkers(map_el,location);
+}
+
+
+export const DishDetailEditPage = async() => {
+    let {result:dish_detail_edits} = await query({
+        type:"dish_detail_by_dish_id",
+        params:[sessionStorage.dish_id]
+    });
+
+    let [dish_detail_edit] = dish_detail_edits;
+
+    $("#dish-detail-edit-page .body").html(makeDishDetailEditForm({
+        dish_detail_edit,
+        namespace:'dish_detail_edit'
+    }));
 }
 
 export const ProfilePage = async() => {

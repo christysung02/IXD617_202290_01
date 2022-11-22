@@ -1,6 +1,6 @@
 import { DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm, checkDishDetailEditForm, checkPasswordEditForm } from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm } from "./forms.js";
 
 // Document Ready
 $(() => {
@@ -29,6 +29,12 @@ $(() => {
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
         checkSigninForm();
+    })
+
+    .on("submit", "#signup-form", function(e) {
+        console.log("signup", e)
+        e.preventDefault();
+        checkSignupForm();
     })
 
     .on("submit", "#profile-edit-form", function(e) {

@@ -1,5 +1,35 @@
 import { query } from "./functions.js";
 
+export const checkSignupForm = () => {
+    let username = $("#signup-username").val();
+    let email = $("#signup-email").val();
+    let password = $("#signup-password").val();
+    let confirm = $("#signup-confirm").val();
+
+    if (password !== confirm) {
+        // tell user to try again
+        throw("password failed, show the user");
+        return;
+    }
+
+    query({
+        type: 'insert_user',
+        params: [
+            username,
+            email,
+            password
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+            // We should show how they failed to them
+        } else {
+            sessionStorage.userId = data.user_id;
+            $.mobile.navigate("#list-page");
+        }
+    })
+}
+
 export const checkProfileEditForm = () => {
     let name = $("#profile-edit-name").val();
     let username = $("#profile-edit-username").val();
@@ -21,6 +51,7 @@ export const checkProfileEditForm = () => {
         }
     })
 }
+
 
 export const checkPasswordEditForm = () => {
     let password = $("#password-edit-password").val();

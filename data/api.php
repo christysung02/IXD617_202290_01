@@ -89,7 +89,40 @@ function makeStatement($data){
                     WHERE d.user_id=?
                     ORDER BY l.dish_id, d.date_create DESC
                 ", $params);
-                
+
+
+        //Insert
+
+
+        //Update
+        case "update_user":
+            $result = makeQuery($conn, "UPDATE
+            `track_ixd617_users`
+            SET
+                `name` = ?,
+                `username` = ?,
+                `email` = ?
+            WHERE `user_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+        case "update_dish_detail":
+            $result = makeQuery($conn, "UPDATE
+            `track_ixd617_dishes`
+            SET
+                `dish_name` = ?,
+                `description` = ?
+            WHERE `dish_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+
+        //Delete
+
         // Signin Page
         case "check_signin":
             return makeQuery($conn, "SELECT `user_id` FROM `track_ixd617_users` WHERE `username`=? AND `password` = md5(?)", $params);

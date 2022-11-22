@@ -265,16 +265,6 @@ h2{
     padding: 0em 1em;
 }
 
-.js-logout{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-decoration-line: underline;
-    color: var(--color-main-red);
-    position: absolute;
-    bottom: 5em;
-}
-
 .island-modal-body{
     background-color: white;
     padding: 1em 0.5em;
@@ -663,6 +653,18 @@ textarea#dish_detail_edit-description {
     line-height: 21px;
     font-weight: 400;
     padding-top: 0.6em;
+}
+
+a.js-logout.ui-link{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: var(--color-main-red);
+    position: absolute;
+    bottom: 4em;
+    left: 30%;
+    right: 30%;
 }
 
 

@@ -22,6 +22,30 @@ export const checkProfileEditForm = () => {
     })
 }
 
+export const checkPasswordEditForm = () => {
+    let password = $("#password-edit-password").val();
+    let confirm = $("#password-edit-confirm").val();
+
+    if (password !== confirm) {
+        // tell user to try again
+        return;
+    }
+
+    query({
+        type: 'update_password',
+        params: [
+            password,
+            sessionStorage.userId
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.go(-1);
+        }
+    })
+}
+
 
 export const checkDishDetailEditForm = () => {
     let dish_name = $("#dish_detail_edit-dish_name").val();

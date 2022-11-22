@@ -120,6 +120,17 @@ function makeStatement($data){
             if (isset($result['error'])) return $result;
             return ["result"=>"Success"];
 
+        case "update_password":
+            $result = makeQuery($conn, "UPDATE
+            `track_ixd617_users`
+            SET
+                `password` = md5(?)
+            WHERE `user_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
 
         //Delete
 

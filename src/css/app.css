@@ -667,6 +667,11 @@ a.js-logout.ui-link{
     right: 30%;
 }
 
+/* PASSWORD EDIT PAGE */
+form#password-edit-form {
+    padding: 1rem 2rem;
+}
+
 
 /*PROFILE*/
 .profileupper{

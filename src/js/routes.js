@@ -124,6 +124,19 @@ export const ProfilePage = async() => {
     console.log(profile_information);
 
     $("#profile-page [data-role='main']").html(makeProfile(profile_information))
+
+// profile page post
+    let {result:dishes_locations} = await query({
+        type:"dish_locations_by_user_id",
+        params:[sessionStorage.userId]
+    });
+    console.log("result: ", dishes_locations);
+
+
+    let dish_information = dishes_locations;
+
+    console.log("dish query info:", dish_information);
+    $("#profile-page .profilephotoslist").html(makeDish(dish_information))
 }
 
 export const ProfileEditPage = async() => {

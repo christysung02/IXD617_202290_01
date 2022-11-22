@@ -94,10 +94,7 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
     </div>
     <div class="profilephotos" style="flex:1">
         <div class="profilephotoslist">
-            <img src="src/img/profile1.png">
-            <img src="src/img/profile2.png">
-            <img src="src/img/profile3.png">
-            <img src="src/img/profile4.png">
+            <img src="${img}">
         </div>
     </div>
 `)

@@ -108,6 +108,16 @@ export const DishDetailEditPage = async() => {
     }));
 }
 
+export const DishAddPage = async() => {
+    $("#dish-add-page .body").html(makeDishDetailEditForm({
+        dish_detail_edit:{
+            dish_name:'',
+            description:'',
+        },
+        namespace:'dish_add'
+    }));
+}
+
 export const ProfilePage = async() => {
     console.log('run profile page');
     console.log(sessionStorage.userId);

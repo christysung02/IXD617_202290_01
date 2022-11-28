@@ -92,6 +92,27 @@ function makeStatement($data){
 
 
         //Insert
+        case "insert_dish":
+            $result = makeQuery($conn, "INSERT INTO
+            `track_ixd617_dishes`
+            (
+                `dish_name`,
+                `description`,
+                `img`,
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                'https://via.placeholder.com/150/${hex()}/fff/?text=${o.dish_name}',
+                NOW()
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+
         case "insert_user":
             $result = makeQuery($conn, "SELECT `user_id`
             FROM `track_ixd617_users`

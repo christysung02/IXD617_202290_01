@@ -507,7 +507,7 @@ label {
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 5rem;
+    width: 7rem;
     height: 40px;
     font-weight: 500;
     font-size: 13px;
@@ -522,7 +522,7 @@ label {
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 10rem;
+    width: 12rem;
     height: 40px;
     font-weight: 700;
     font-size: 13px;
@@ -639,6 +639,12 @@ input#changedishimage{
     background-color: var(--color-main-white);
     resize: none;
 }
+
+/* DISH ADD PAGE */
+form#dish-add-form {
+    padding: 1rem 2rem;
+}
+
 
 /* DISH DETAIL EDIT PAGE */
 form#dish-detail-edit-form {

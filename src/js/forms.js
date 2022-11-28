@@ -30,6 +30,48 @@ export const checkSignupForm = () => {
     })
 }
 
+
+export const checkDishAddForm = () => {
+    let dish_name = $("#dish_add-dish_name").val();
+    let description = $("#dish_add-description").val();
+
+    query({
+        type: 'insert_dish',
+        params: [
+            sessionStorage.dish_id,
+            dish_name,
+            description
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.back();
+        }
+    })
+}
+
+export const checkDishDetailEditForm = () => {
+    let dish_name = $("#dish_detail_edit-dish_name").val();
+    let description = $("#dish_detail_edit-description").val();
+
+    query({
+        type: 'update_dish_detail',
+        params: [
+            dish_name,
+            description,
+            sessionStorage.dish_id
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.back();
+        }
+    })
+}
+
+
 export const checkProfileEditForm = () => {
     let name = $("#profile-edit-name").val();
     let username = $("#profile-edit-username").val();
@@ -73,27 +115,6 @@ export const checkPasswordEditForm = () => {
             throw(data.error);
         } else {
             window.history.go(-1);
-        }
-    })
-}
-
-
-export const checkDishDetailEditForm = () => {
-    let dish_name = $("#dish_detail_edit-dish_name").val();
-    let description = $("#dish_detail_edit-description").val();
-
-    query({
-        type: 'update_dish_detail',
-        params: [
-            dish_name,
-            description,
-            sessionStorage.dish_id
-        ]
-    }).then((data)=>{
-        if (data.error) {
-            throw(data.error);
-        } else {
-            window.history.back();
         }
     })
 }

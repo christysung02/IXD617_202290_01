@@ -30,25 +30,81 @@ export const checkSignupForm = () => {
     })
 }
 
+export const checkLocationAddForm = () => {
+    let location_id = $("#location-location_id").val();
+    let lat = $("#location-lat").val();
+    let lng = $("#location-lng").val();
+    let description = $("#location-description").val();
 
-export const checkDishAddForm = () => {
-    let dish_name = $("#dish_add-dish_name").val();
-    let description = $("#dish_add-description").val();
+    let back = +$("#location-back").val();
+
 
     query({
-        type: 'insert_dish',
+        type:"insert_location",
+        params:[location_id,lat,lng,description]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.go(back);
+        }
+    })
+}
+
+const countTotalDishes = async () => {
+    let num_dishes = await query({
+        type: 'count_total_dishes',
+        params: []
+    });
+    console.log("Total dish: ", num_dishes.result[0].count);
+    return num_dishes.result[0].count;
+}
+
+const insertLocation = async (location_id, lat, lng, description) => {
+    await query({
+        type: 'insert_location',
         params: [
-            sessionStorage.dish_id,
-            dish_name,
+            location_id,
+            lat,
+            lng,
             description
         ]
     }).then((data)=>{
         if (data.error) {
             throw(data.error);
         } else {
-            window.history.back();
+            console.log("Add location succeed.");
         }
     })
+}
+
+export const checkDishAddForm = async () => {
+    let dish_name = $("#dish_add-dish_name").val();
+    let description = $("#dish_add-description").val();
+
+    console.log("New dish ID: ", await countTotalDishes() + 1);
+    const dish_id = await countTotalDishes() + 1;
+
+    await query({
+        type: 'insert_dish',
+        params: [
+            dish_id,
+            dish_name,
+            description,
+            sessionStorage.cuisine_id,
+            sessionStorage.userId,
+            'https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name,
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("Add dish succeed.");          
+        }
+    })
+
+    // location_id is the same as dish_id.
+    await insertLocation(dish_id, dish_id, 37.70687, -122.49103)
 }
 
 export const checkDishDetailEditForm = () => {

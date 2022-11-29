@@ -1,6 +1,6 @@
-import { DishAddPage,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm } from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm} from "./forms.js";
 
 // Document Ready
 $(() => {
@@ -16,14 +16,19 @@ $(() => {
             case "map-page": MapPage(); break;
             case "cuisine-page":CuisinePage(); break; 
 
-            case "dish-page":DishPage(); break;
-            case "dish-add-page":DishAddPage();break;
+            case "dish-page":
+                DishPage(); 
+                DishAddForm();
+                break;
 
             case "dish-detail-page":DishDetailPage(); break;
             case "dish-detail-edit-page":DishDetailEditPage(); break;
 
             case "profile-page":ProfilePage(); break;
             case "profile-edit-page":ProfileEditPage(); break;
+
+            case "choose-location-page": ChooseLocationPage(); break;
+            case "location-edit-page": break;
         }
     })
 
@@ -53,11 +58,6 @@ $(() => {
         checkPasswordEditForm();
     })
 
-    .on("submit", "#submit-dish-add-form", function(e) {
-        e.preventDefault();
-        checkDishAddForm();
-    })
-
     .on("click", ".js-logout", function(e) {
         sessionStorage.removeItem("userId");
         checkUserId();
@@ -65,6 +65,11 @@ $(() => {
 
     .on("click", "#submit-password-edit-form", function(e) {
         checkPasswordEditForm();
+        $(target).removeClass("active");
+    })
+
+    .on("click", ".js-submit-location-add-form", function(e) {
+        checkLocationAddForm();
     })
 
     // ACTIVATE TOOLS
@@ -145,33 +150,26 @@ $(() => {
     })
 
 
+    
 
 
-// // Add dish
-// //
-//     .on("click", "#add-dish", function(){
-//         const dish = $(".dish-name-input").val();
-//         // Add new item.
-//         console.log(dish)
-//         $(".dishlist").append(`
-//             <div class="dishlist-item">
-//                 <a href="#dish-detail-page"><img src="src/img/dumpling.png" alt="dumpling"></a>
-//                 <br>
-//                 <div class="dish-name">
-//                     <p>${dish}</p>
-//                 </div>
-//             </div>
-//         `)
-//         // Make modal disappear.
-//         $("#add-modal-dish").removeClass("active");
-//     })
+    // Add dish
+    .on("click", "#submit-dish-add-form", function(e){
+        e.preventDefault();
+        const dish_name = $("#dish_add-dish_name").val();
+        console.log("dish: ", dish_name);
+        checkDishAddForm();
+        
+        // Make modal disappear.
+        $("#add-modal-dish").removeClass("active");
+    })
 
 
-//       // Remove dish
-//       .on("click", "#remove-modal-dish", function(){
-//         // Make modal disappear.
-//         $("#add-modal-dish").removeClass("active");
-//     })
+      // Remove dish
+      .on("click", "#remove-modal-dish", function(){
+        // Make modal disappear.
+        $("#add-modal-dish").removeClass("active");
+    })
 
 
 //     // Back to edit-dish-detail-page page

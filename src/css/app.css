@@ -645,6 +645,13 @@ form#dish-add-form {
     padding: 1rem 2rem;
 }
 
+textarea#dish_add-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
 
 /* DISH DETAIL EDIT PAGE */
 form#dish-detail-edit-form {

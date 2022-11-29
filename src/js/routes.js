@@ -33,6 +33,17 @@ export const MapPage = async() => {
     });
 }
 
+export const ChooseLocationPage = async() => {
+    let map_el = await makeMap("#choose-location-page .map");
+    makeMarkers(map_el,[]);
+    map_el.data("map").addListener("click",function(e){
+        console.log(e)
+        $("#location-lat").val(e.latLng.lat());
+        $("#location-lng").val(e.latLng.lng());
+        makeMarkers(map_el,[e.latLng]);
+    })
+}
+
 export const CuisinePage = async() => {
     console.log('run cuisine page');
     console.log('userId: ', sessionStorage.userId);
@@ -108,8 +119,8 @@ export const DishDetailEditPage = async() => {
     }));
 }
 
-export const DishAddPage = async() => {
-    $("#dish-add-page .body").html(makeDishDetailEditForm({
+export const DishAddForm = async() => {
+    $("#dish-add-form .body").html(makeDishDetailEditForm({
         dish_detail_edit:{
             dish_name:'',
             description:'',

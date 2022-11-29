@@ -1,5 +1,6 @@
 import { templater } from "./functions.js";
 
+
 export const makeCuisine = templater(({cuisine_type,countryflag,cuisine_id})=>`
     <div class="cuisinelist-item">
         <a href="#dish-page" data-cuisine-id="${cuisine_id}"><img src="${countryflag}" alt="${cuisine_type}"></a>

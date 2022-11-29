@@ -74,7 +74,14 @@ function makeStatement($data){
                         ON d.cuisine_id = c.cuisine_id AND d.user_id=c.user_id
                     WHERE d.dish_id=?
                 ", $params);
-                
+
+        case "count_total_dishes":
+            return makeQuery($conn, 
+            "SELECT
+                COUNT(*) AS count
+            FROM `track_ixd617_dishes`
+            ", $params);
+
         // Map Page
         case "dish_locations_by_user_id":
             error_log("dish_locations_by_user_id");
@@ -96,15 +103,22 @@ function makeStatement($data){
             $result = makeQuery($conn, "INSERT INTO
             `track_ixd617_dishes`
             (
+                `dish_id`,
                 `dish_name`,
                 `description`,
+                `cuisine_id`,
+                `user_id`,
                 `img`,
+                `date_create`
             )
             VALUES
             (
                 ?,
                 ?,
-                'https://via.placeholder.com/150/${hex()}/fff/?text=${o.dish_name}',
+                ?,
+                ?,
+                ?,
+                ?,
                 NOW()
             )
             ", $params, false);
@@ -142,6 +156,27 @@ function makeStatement($data){
 
             if (isset($result['error'])) return $result;
             return ["id" => $conn->lastInsertId()];
+
+        case "insert_location":
+            $result = makeQuery($conn, "INSERT INTO
+            `track_ixd617_locations`
+            (
+                `location_id`,
+                `dish_id`,
+                `lat`,
+                `lng`
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
 
         //Update
@@ -183,6 +218,14 @@ function makeStatement($data){
 
 
         //Delete
+        case "delete_location":
+            $result = makeQuery($conn, "DELETE FROM
+            `track_ixd617_locations
+            WHERE `location_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
         // Signin Page
         case "check_signin":

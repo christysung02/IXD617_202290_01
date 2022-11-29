@@ -171,25 +171,18 @@ $(() => {
         $("#add-modal-dish").removeClass("active");
     })
 
+    // Long click
+    var timer
+    $('body').on("mousedown touchstart",'.dishlist-item',function(e){
+        timer = setTimeout(() => {
+            console.log("Long click");
+            $(this).remove()
+        },500);
+    }).on("mouseup touchend",function(){
+        clearTimeout(timer);
+    })
 
-//     // Back to edit-dish-detail-page page
-//     .on("click", "#cancel-editdishdetail",function(){
-//         // Make modal disappear.
-//         $("#edit-dish-detail-page").removeClass("active");
-//     })
-
-
-//     // Long click
-//     var timer
-//     $('body').on("mousedown touchstart",'.dishlist-item',function(e){
-//         timer = setTimeout(() => {
-//             console.log("Long click");
-//             $(this).remove()
-//         },500);
-//     }).on("mouseup touchend",function(){
-//         clearTimeout(timer);
-//     })
-
+    //Click dishlist-item to the dish-detail page
     .on("click", ".dishlist-item", function(){
         sessionStorage.dish_id = parseInt($(this).find('a').attr("data-dish-id"));
     })

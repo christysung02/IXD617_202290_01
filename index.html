@@ -273,34 +273,11 @@
                 <li><a href="#" data-activate="#add-modal-dish"><img src="src/img/plusicon.png"></a></li>
             </ul>
         </header>
-        <div data-role="main">
+        <div data-role="main" class="body">
             <div class="dishlist"></div>
         </div>
     </section>
 
-
-    <!-- DISH ADD PAGE -->
-    <!-- <section data-role="page" id="dish-add-page">
-        <header data-role="header">
-            <h1>ADD A NEW DISH</h1>
-            <ul>
-                <li><a href="#dish-page"><img src="src/img/leftarrowicon.png"></a></li>
-                <li class="flex-stretch"></li>
-            </ul>
-        </header>
-        <form data-role="main" data-ajax="false" id="dish-add-form" class="padded display-flex flex-column full overscroll">
-            <div class="body"></div>
-            <div class="flex-stretch"></div>
-
-            <div class="form-control">
-                <ul>
-                    <li><input class="form-button cancelbtn" type="submit" data-role="none" value="Cancel"></li>
-                    <li class="flex-stretch"></li>
-                    <li><input class="form-button addbtn" id="submit-dish-add-form" type="submit" data-role="none" value="Save"></li>
-                </ul>
-            </div>
-        </form>
-    </section> -->
     <div id="add-modal-dish" class="modal">
         <div class="modal-back" data-deactivate="#add-modal-dish"></div>
         <div class="modal-popup">
@@ -316,7 +293,6 @@
                 <ul>
                     <li id="remove-modal-dish"><button class="cancelbtn">cancel</button></li>
                     <li class="flex-stretch"></li>
-                    <!-- <li><input class="form-button addbtn" id="submit-dish-add-form" type="submit" data-role="none" value="Save"></li> -->
                     <li id="submit-dish-add-form"><button class="savebtn">Save</button></li>
                 </ul>
             </div>

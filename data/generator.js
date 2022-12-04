@@ -25,48 +25,48 @@ const dishestype = (cuisine_id) => {
 
 const getCuisineType= (cuisine_id) => {
     let types = {
-        1:'China (CN)',
-        2:'France (FR)',
-        3:'Hong Kong (HK)',
-        4:'Italy (IT)',
-        5:'Japan (JP)',
-        6:'South Korea (KR)',
-        7:'Taiwan (TW)',
-        8:'United Kingdom (GB)',
-        9:'United States of America (US)',
-        10:'Vietnam (VN)'
+        1:'China',
+        2:'France',
+        3:'Hong Kong',
+        4:'Italy',
+        5:'Japan',
+        6:'South Korea',
+        7:'Taiwan',
+        8:'United Kingdom',
+        9:'United States of America',
+        10:'Vietnam'
     }
     return types[cuisine_id];
 }
 
 const getCountryFlag= (cuisine_id) => {
     let types = {
-        1:'src/img/country/China (CN).png',
-        2:'src/img/country/France (FR).png',
-        3:'src/img/country/Hong Kong (HK).png',
-        4:'src/img/country/Italy (IT).png',
-        5:'src/img/country/Japan (JP).png',
-        6:'src/img/country/South Korea (KR).png',
-        7:'src/img/country/Taiwan (TW).png',
-        8:'src/img/country/United Kingdom (GB).png',
-        9:'src/img/country/United States of America (US).png',
-        10:'src/img/country/Vietnam (VN).png'
+        1:'src/img/country/China.png',
+        2:'src/img/country/France.png',
+        3:'src/img/country/Hong Kong.png',
+        4:'src/img/country/Italy.png',
+        5:'src/img/country/Japan.png',
+        6:'src/img/country/South Korea.png',
+        7:'src/img/country/Taiwan.png',
+        8:'src/img/country/United Kingdom.png',
+        9:'src/img/country/United States of America.png',
+        10:'src/img/country/Vietnam.png'
     }
     return types[cuisine_id];
 }
 
 const getCountryMark= (cuisine_id) => {
     let types = {
-        1:'src/img/mark/China (CN).png',
-        2:'src/img/mark/France (FR).png',
-        3:'src/img/mark/Hong Kong (HK).png',
-        4:'src/img/mark/Italy (IT).png',
-        5:'src/img/mark/Japan (JP).png',
-        6:'src/img/mark/South Korea (KR).png',
-        7:'src/img/mark/Taiwan (TW).png',
-        8:'src/img/mark/United Kingdom (GB).png',
-        9:'src/img/mark/United States of America (US).png',
-        10:'src/img/mark/Vietnam (VN).png'
+        1:'src/img/country/China.png',
+        2:'src/img/country/France.png',
+        3:'src/img/country/Hong Kong.png',
+        4:'src/img/country/Italy.png',
+        5:'src/img/country/Japan.png',
+        6:'src/img/country/South Korea.png',
+        7:'src/img/country/Taiwan.png',
+        8:'src/img/country/United Kingdom.png',
+        9:'src/img/country/United States of America.png',
+        10:'src/img/country/Vietnam.png'
     }
     return types[cuisine_id];
 }
@@ -91,9 +91,6 @@ const getUsers = () => (new Array(kTotalUserNum)).fill(0).map((o,i)=>{
     o.password = md5('pass');
     o.email = o.username+'@gmail.com';
     o.img = `https://via.placeholder.com/150/${hex()}/fff/?text=${o.name}`;
-    o.count_row_cuisines = chance.natural({min:1, max:10});
-    o.count_row_dishes = chance.natural({min:1, max:50});
-    o.count_row_post = chance.natural({min:1, max:200});
     o.date_create = getdate(Date.parse('2020/01/01'),Date.now());
     return o;
 });

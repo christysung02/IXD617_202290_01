@@ -64,7 +64,7 @@ export const makeDishDetail = templater(({dish_name,img, description})=>`
 `)
 
 export const makeProfile = templater(({name,email,img,count_row_cuisines,count_row_dishes,count_row_post})=>`
-     <div class="profileupper" style="flex: 1.5;">
+     <div class="profileupper" style="flex: 1;">
         <header data-role="header">
             <h1>PROFILE</h1>
             <ul>
@@ -77,23 +77,9 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
             <img src="${img}" alt="${name}">
             <h2>${name}</h2>
             <p>${email}</p>
-            <div class="count-row">
-                <div class="count-row-list">
-                    <p>Cuisines</p>
-                    <h2>${count_row_cuisines}</h2>
-                </div>
-                <div class="count-row-list">
-                    <p>Dishes</p>
-                    <h2>${count_row_dishes}</h2>
-                </div>
-                <div class="count-row-list">
-                    <p>Post</p>
-                    <h2>${count_row_post}</h2>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="profilephotos" style="flex:1">
+    <div class="profilephotos" style="flex:1.5">
         <div class="profilephotoslist">
             <img src="${img}">
         </div>

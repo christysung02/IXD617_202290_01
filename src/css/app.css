@@ -235,6 +235,22 @@ h2{
     text-align: center;
 }
 
+.signupwarning p{
+    color: red;
+    font-size: 10px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.signuppasswordwarning p{
+    color: red;
+    font-size: 10px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-align: center;
+}
+
 
 /* MAP */
 
@@ -331,6 +347,15 @@ h2{
     line-height: 21px;
     text-align: left;
     margin: 0.5em 1em;
+}
+
+/* CHOOSE DESCRIPTION PAGE */
+form#dish-add-form {
+    padding: 1rem 2rem;
+}
+
+.modal-popup #dish-add-form{
+    padding: 0rem;
 }
 
 /* COUNTRY and CUNSINE */
@@ -507,7 +532,7 @@ label {
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 7rem;
+    width: 4.6rem;
     height: 40px;
     font-weight: 500;
     font-size: 13px;
@@ -515,8 +540,35 @@ label {
     color: var(--color-main-white);
 }
 
-.addbtn,
-.savebtn{
+.addbtn{
+    background-color: var(--color-main-red);
+    border-width: 0;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 8rem;
+    height: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-main-white);
+}
+
+input.form-button.cancelbtn {
+    background-color: var(--color-main-gray);
+    border-width: 0;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 8rem;
+    height: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-main-white);
+}
+
+input.form-button.addbtn{
     background-color: var(--color-main-red);
     border-width: 0;
     border-radius: 20px;
@@ -563,7 +615,7 @@ input#img {
     width: 100%;
     object-fit: cover;
     aspect-ratio:1/1;
-    border-radius: 50%;
+    border-radius: 10%;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
 }
 
@@ -640,16 +692,12 @@ input#changedishimage{
     resize: none;
 }
 
-/* DISH ADD PAGE */
-form#dish-add-form {
-    padding: 1rem 2rem;
-}
-
 textarea#dish_add-description {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
+    border: 0.5px solid var(--color-main-red);
 }
 
 
@@ -660,7 +708,7 @@ form#dish-detail-edit-form {
 
 textarea#dish_detail_edit-description {
     height: 10em;
-    border: 1px solid var(--color-main-red);
+    border: 0.5px solid var(--color-main-red);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 21px;
@@ -692,8 +740,8 @@ form#password-edit-form {
     background-size:cover;
     background-position:center;
     background-image: url("../img/profilebackground.png");
-    border-radius: 0px 0px 20px 20px;
-    box-shadow: 0px 4px 10px var(--color-main-gray);
+    border-radius: 0px 0px 60px 60px;
+    box-shadow: 0px 4px 10px var(--color-main-transgray);
 }
 
 .photoandname{
@@ -701,7 +749,7 @@ form#password-edit-form {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 3em;
 }
 
 .photoandname h2{
@@ -716,44 +764,6 @@ form#password-edit-form {
 .photoandname p{
     margin: 0em;
     margin-bottom: 2em;
-}
-
-.count-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    gap: 32px;
-}
-
-.count-row-list{
-    width: 6em;
-    height: 6em;
-    background-color: #ffffff8e;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.count-row-list p{
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--color-main-gray);
-    padding: 0px;
-    margin: 4px auto;
-}
-
-.count-row-list h2{
-    font-weight: 700;
-    font-size: 32px;
-    color: var(--color-main-black);
-    padding: 0px;
-    margin: 8px auto;
 }
 
 .photoandname img{

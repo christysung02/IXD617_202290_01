@@ -1,4 +1,4 @@
-import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm} from "./forms.js";
 
@@ -27,6 +27,7 @@ $(() => {
             case "profile-page":ProfilePage(); break;
             case "profile-edit-page":ProfileEditPage(); break;
 
+            case "choose-description-page": ChooseDescriptionPage();break;
             case "choose-location-page": ChooseLocationPage(); break;
             case "location-edit-page": break;
         }
@@ -148,9 +149,6 @@ $(() => {
     .on("click", ".cuisinelist-item", function(){
         sessionStorage.cuisine_id = parseInt($(this).find('a').attr("data-cuisine-id"));
     })
-
-
-    
 
 
     // Add dish

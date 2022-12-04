@@ -2,6 +2,8 @@ import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
 import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeProfileEditForm, makeDishDetailEditForm} from "./parts.js";
 
+// MAP PAGE
+//
 export const MapPage = async() => {
     console.log("user_id = ",sessionStorage.userId);
 
@@ -16,9 +18,11 @@ export const MapPage = async() => {
         return r;
     },[])
 
+    //Make map and markers
     let map_el = await makeMap("#map-page .map");
     makeMarkers(map_el,valid_dishes);
 
+    //Click dish-detail pop-up may link to the specific dish-detail page.
     map_el.data("markers").forEach((m,i)=>{
         console.log(m)
         m.addListener("click",function(e){
@@ -33,6 +37,21 @@ export const MapPage = async() => {
     });
 }
 
+// CHOOSE DESCRIPTION PAGE
+//
+export const ChooseDescriptionPage = async() => {
+    $("#dish-add-form .body").html(makeDishDetailEditForm({
+        dish_detail_edit:{
+            dish_name:'',
+            description:'',
+        },
+        namespace:'dish_add'
+    }));
+}
+
+
+// CHOOSE LOCATION PAGE
+//
 export const ChooseLocationPage = async() => {
     let map_el = await makeMap("#choose-location-page .map");
     makeMarkers(map_el,[]);
@@ -44,6 +63,9 @@ export const ChooseLocationPage = async() => {
     })
 }
 
+
+// CUISINE PAGE
+//
 export const CuisinePage = async() => {
     console.log('run cuisine page');
     console.log('userId: ', sessionStorage.userId);
@@ -59,6 +81,9 @@ export const CuisinePage = async() => {
     $("#cuisine-page .cuisinelist").html(makeCuisine(cuisine_information))
 }
 
+
+// DISH PAGE
+//
 export const DishPage = async() => {
     console.log('run dish page');
     console.log('userId: ', sessionStorage.userId);
@@ -77,6 +102,8 @@ export const DishPage = async() => {
     $("#dish-page .dishlist").html(makeDish(dish_information))
 }
 
+//DISH DETAIL PAGE
+//
 export const DishDetailPage = async() => {
     console.log('run dish detail page');
     console.log('dishId: ', sessionStorage.dish_id);
@@ -104,7 +131,8 @@ export const DishDetailPage = async() => {
     makeMarkers(map_el,location);
 }
 
-
+//DISH DETAIL EDIT PAGE
+//
 export const DishDetailEditPage = async() => {
     let {result:dish_detail_edits} = await query({
         type:"dish_detail_by_dish_id",
@@ -119,8 +147,11 @@ export const DishDetailEditPage = async() => {
     }));
 }
 
+
+//DISH ADD FORM
+//
 export const DishAddForm = async() => {
-    $("#dish-add-form .body").html(makeDishDetailEditForm({
+    $("#dish-add-form .modal-body").html(makeDishDetailEditForm({
         dish_detail_edit:{
             dish_name:'',
             description:'',
@@ -129,6 +160,8 @@ export const DishAddForm = async() => {
     }));
 }
 
+//PROFILE PAGE
+//
 export const ProfilePage = async() => {
     console.log('run profile page');
     console.log(sessionStorage.userId);
@@ -146,7 +179,7 @@ export const ProfilePage = async() => {
 
     $("#profile-page [data-role='main']").html(makeProfile(profile_information))
 
-// profile page post
+    // profile page dish-list
     let {result:dishes_locations} = await query({
         type:"dish_locations_by_user_id",
         params:[sessionStorage.userId]
@@ -160,6 +193,8 @@ export const ProfilePage = async() => {
     $("#profile-page .profilephotoslist").html(makeDish(dish_information))
 }
 
+//PROFILE EDIT PAGE
+//
 export const ProfileEditPage = async() => {
     let {result:users} = await query({
         type:"users_by_user_id",

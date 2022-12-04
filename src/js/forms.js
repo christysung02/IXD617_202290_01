@@ -8,6 +8,8 @@ export const checkSignupForm = () => {
 
     if (password !== confirm) {
         // tell user to try again
+        $(".signuppasswordwarning").css("display", "block");
+        setTimeout(()=>{$(".signuppasswordwarning").css("display", "none");},3000)
         throw("password failed, show the user");
         return;
     }

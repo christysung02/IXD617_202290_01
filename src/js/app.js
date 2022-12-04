@@ -62,22 +62,16 @@ $(() => {
         checkLocationAddForm();
     })
 
-    // DISH
-    .on("submit", "#dish-detail-edit-form", function(e) {
-        e.preventDefault();
+    // DISH DETAIL EDIT
+    .on("click", "#save-dish-detail-edit-page", function(e) {
         checkDishDetailEditForm();
+        $("#dish-detail-edit-page").removeClass("active");
     })
     
     // PROFILE
     .on("click", "#save-profile-edit", function(e) {
         e.preventDefault();
         checkProfileEditForm();
-    })
-
-    .on("click", "#remove-profile-edit-page", function(){
-        // Make modal disappear.
-        console.log("Go back.")
-        window.location.href= "#profile-settings-page";
     })
 
 
@@ -110,14 +104,6 @@ $(() => {
         checkPasswordEditForm();
         $("#profile-edit-page").removeClass("active");
     })
-
-    .on("click", "#remove-password-edit-form", function(){
-        // Make modal disappear.
-        console.log("Go back.")
-        window.location.href= "#profile-settings-page";
-    })
-
-
 
     // ACTIVATE TOOLS
     .on("click", "[data-activate]", function(e) {

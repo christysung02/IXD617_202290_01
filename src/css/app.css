@@ -227,6 +227,10 @@ h2{
     text-decoration: none;
 }
 
+.form-button-footer {
+    padding: 2rem;
+}
+
 /* Warning */
 .warning p{
     color: red;
@@ -552,32 +556,25 @@ label {
     color: var(--color-main-white);
 }
 
-input.form-button.cancelbtn {
-    background-color: var(--color-main-gray);
-    border-width: 0;
-    border-radius: 20px;
-    padding: 0.5em 1em;
-    display: inline-block;
-    width: 8rem;
-    height: 40px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-    color: var(--color-main-white);
-}
-
-input.form-button.addbtn{
+.form-button.addbtn{
     background-color: var(--color-main-red);
     border-width: 0;
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 12rem;
+    width: 100%;
     height: 40px;
     font-weight: 700;
     font-size: 13px;
     line-height: 18px;
     color: var(--color-main-white);
+}
+
+li#save-dish-detail-edit-page,
+li#save-profile-edit,
+li#submit-password-edit-form
+ {
+    width: 100%;
 }
 
 .inputspace{

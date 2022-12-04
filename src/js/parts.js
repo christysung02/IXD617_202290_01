@@ -66,7 +66,7 @@ export const makeDishDetail = templater(({dish_name,img, description})=>`
 export const makeProfile = templater(({name,email,img,count_row_cuisines,count_row_dishes,count_row_post})=>`
      <div class="profileupper" style="flex: 1;">
         <header data-role="header">
-            <h1>PROFILE</h1>
+            <h1>Profile</h1>
             <ul>
                 <li><a href="#" data-activate="#modal-drawer-profile"><img src="src/img/listicon.png"></a></li>
                 <li class="flex-stretch"></li>

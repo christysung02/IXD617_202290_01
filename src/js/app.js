@@ -1,6 +1,7 @@
-import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm} from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm} from "./forms.js";
+import { checkUpload} from "./functions.js";
 
 // Document Ready
 $(() => {
@@ -24,7 +25,10 @@ $(() => {
             case "dish-detail-page":DishDetailPage(); break;
             case "dish-detail-edit-page":DishDetailEditPage(); break;
 
-            case "profile-page":ProfilePage(); break;
+            case "profile-page":
+                 ProfilePage(); 
+                 UserEditPhotoForm();
+                 break;
             case "profile-edit-page":ProfileEditPage(); break;
 
             case "choose-description-page": ChooseDescriptionPage();break;
@@ -33,30 +37,19 @@ $(() => {
         }
     })
 
-    // EVENT DELEGATION
+// EVENT DELEGATION
+
+    // SIGN IN
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
         checkSigninForm();
     })
 
+    // SIGN UP
     .on("submit", "#signup-form", function(e) {
         console.log("signup", e)
         e.preventDefault();
         checkSignupForm();
-    })
-
-    .on("submit", "#profile-edit-form", function(e) {
-        e.preventDefault();
-        checkProfileEditForm();
-    })
-
-    .on("submit", "#dish-detail-edit-form", function(e) {
-        e.preventDefault();
-        checkDishDetailEditForm();
-    })
-
-    .on("click", "#submit-password-edit-form", function(e) {
-        checkPasswordEditForm();
     })
 
     .on("click", ".js-logout", function(e) {
@@ -69,8 +62,51 @@ $(() => {
         $(target).removeClass("active");
     })
 
+    // LOCATION
     .on("click", ".js-submit-location-add-form", function(e) {
         checkLocationAddForm();
+    })
+
+    // DISH
+    .on("submit", "#dish-detail-edit-form", function(e) {
+        e.preventDefault();
+        checkDishDetailEditForm();
+    })
+    
+    // PROFILE
+    .on("click", "#save-profile-edit", function(e) {
+        e.preventDefault();
+        checkProfileEditForm();
+    })
+
+    .on("click", "#remove-profile-edit-page", function(){
+        // Make modal disappear.
+        console.log("Go back.")
+        window.location.href= "#profile-settings-page";
+    })
+
+
+    // PROFILE USER EDIT PHOTO
+    // User-edit-photo to user page
+    .on("click", "#remove-modal-user-edit-photo", function(){
+        // Make modal disappear.
+        $("#user-edit-photo").removeClass("active");
+    })
+
+    .on("submit", ".js-submit-user-edit-photo-form", function(e) {
+        checkUserEditPhotoForm();
+    })
+
+    .on("change", ".imagepicker input", function(e) {
+        checkUpload(this.files[0])
+        .then((d) => {
+            console.log(d);
+            let filename = `uploads/${d.result}`;
+            $(this).parent().prev().val(filename);
+            $(this).parent().css({
+                "background-image": `url('${filename}')`
+            })
+        })
     })
 
     // ACTIVATE TOOLS
@@ -151,7 +187,8 @@ $(() => {
     })
 
 
-    // Add dish
+// Add dish
+//
     .on("click", "#submit-dish-add-form", function(e){
         e.preventDefault();
         const dish_name = $("#dish_add-dish_name").val();
@@ -168,6 +205,7 @@ $(() => {
         // Make modal disappear.
         $("#add-modal-dish").removeClass("active");
     })
+
 
     // Long click
     var timer

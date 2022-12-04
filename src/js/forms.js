@@ -129,6 +129,23 @@ export const checkDishDetailEditForm = () => {
     })
 }
 
+export const checkUserEditPhotoForm = () => {
+    let photo = $("#user-edit-photo-image").val();
+
+    query({
+        type: 'update_user_photo',
+        params: [
+            photo,
+            sessionStorage.userId
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.go(-1);
+        }
+    })
+}
 
 export const checkProfileEditForm = () => {
     let name = $("#profile-edit-name").val();
@@ -147,7 +164,7 @@ export const checkProfileEditForm = () => {
         if (data.error) {
             throw(data.error);
         } else {
-            window.history.back();
+            window.location.href= "#profile-page";
         }
     })
 }

@@ -132,6 +132,7 @@ a {
 .flex-column { flex-direction:column; }
 
 .overscroll { overflow: auto; }
+.hidden { display: none; }
 
 
 /* ONBOARDING */
@@ -349,13 +350,9 @@ h2{
     margin: 0.5em 1em;
 }
 
-/* CHOOSE DESCRIPTION PAGE 
-form#dish-add-form {
-    padding: 0rem;
-}
-
-.modal-popup #dish-add-form{
-    padding: 0rem;
+/* CHOOSE DESCRIPTION PAGE */
+#choose-description-page .body {
+    padding: 1rem 2rem;
 }
 
 /* COUNTRY and CUNSINE */
@@ -533,7 +530,7 @@ label {
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 4.6rem;
+    width: 5rem;
     height: 40px;
     font-weight: 500;
     font-size: 13px;
@@ -547,7 +544,7 @@ label {
     border-radius: 20px;
     padding: 0.5em 1em;
     display: inline-block;
-    width: 8rem;
+    width: 11rem;
     height: 40px;
     font-weight: 700;
     font-size: 13px;
@@ -791,6 +788,15 @@ form#password-edit-form {
     border-radius: 10px;
 }
 
+#user-edit-photo-form .body {
+    height:150px;
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    box-shadow: 5px var(--color-main-transgray);
+}
+
 
 /* PROFILE SETTING */
 .settings {
@@ -820,6 +826,8 @@ form#password-edit-form {
     width: auto;
     right: 3rem;
 }
+
+
 
 /* PROFILE EDIT PAGE */
 form#profile-edit-form {

@@ -37,6 +37,20 @@ function makeQuery($conn,$prep,$params,$makeResults=true) {
     }
 }
 
+//upload photo
+function makeUpload($file, $folder) {
+    $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+    if (@move_uploaded_file(
+        $_FILES[$file]['tmp_name'],
+        $folder.$filename
+    )) return ["result"=>$filename];
+    else return [
+        "error"=>"File Upload Failed",
+        "filename"=>$filename
+    ];
+}
+
 
 //make a funciton and define variables=$data
 function makeStatement($data){
@@ -217,6 +231,19 @@ function makeStatement($data){
             return ["result"=>"Success"];
 
 
+
+        /* UPLOAD */
+        case "update_user_photo":
+            $result = makeQuery($conn, "UPDATE
+            `track_ixd617_users`
+            SET `img` = ?
+            WHERE `user_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+
         //Delete
         case "delete_location":
             $result = makeQuery($conn, "DELETE FROM
@@ -233,6 +260,11 @@ function makeStatement($data){
         default:
             return ["error"=>"No Match Type"];
     }
+}
+
+if (!empty($_FILES)) {
+    $result = makeUpload("image","../uploads/");
+    die(json_encode($result));
 }
 
 $data = json_decode(file_get_contents("php://input"));

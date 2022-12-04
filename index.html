@@ -164,7 +164,7 @@
         <header data-role="header">
             <h1>Type your dish details</h1>
             <ul>
-                <li><a href="#" data-rel="back"><img src="src/img/leftarrowicon.png"></a></li>
+                <li><a href="#" data-rel="back"><img src="src/img/cancelicon.png"></a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#choose-location-page"><img src="src/img/rightarrowicon.png"></a></li>
             </ul>
@@ -181,7 +181,7 @@
             <ul>
                 <li><a href="#" data-rel="back"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-location-add-form">Save</a></li>
+                <li><a href="#" class="js-submit-location-add-form"><img src="src/img/clickicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -341,6 +341,28 @@
                 </div>
             </div>
         </div>
+
+        <div id="user-edit-photo" class="modal">
+            <div class="modal-back" data-deactivate="#user-edit-photo"></div>
+            <div class="modal-popup">
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>EDIT YOUR PHOTO</p>
+                </div>
+                <form data-ajax="false" id="user-edit-photo-form" class="padded display-flex flex-column overscroll">
+                    <input type="hidden" id="user-edit-photo-image">
+                    <label class="body imagepicker replace">
+                    <input type="file" id="user-edit-photo-input" data-role="none" class="hidden">
+                    </label>
+                </form>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="remove-modal-user-edit-photo"><button class="cancelbtn">cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="js-submit-user-edit-photo-form"><button class="addbtn">Submit</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -377,15 +399,14 @@
         <form data-role="main" data-ajax="false" id="profile-edit-form" class="padded display-flex flex-column full overscroll">
             <div class="body"></div>
             <div class="flex-stretch"></div>
-            
-            <div class="form-control">
-                <ul>
-                    <li><input class="form-button cancelbtn" type="submit" data-role="none" value="Cancel"></li>
-                    <li class="flex-stretch"></li>
-                    <li><input class="form-button addbtn" type="submit" data-role="none" value="Save"></li>
-                </ul>
-            </div>
         </form>
+        <div class="form-control">
+            <ul>
+                <li id="remove-profile-edit-page"><button class="form-button cancelbtn">Cancel</button></li>
+                <li class="flex-stretch"></li>
+                <li id="save-profile-edit"><button class="form-button addbtn">Save</button></li>
+            </ul>
+        </div>
     </section>
 
 

@@ -74,7 +74,7 @@ export const makeProfile = templater(({name,email,img,count_row_cuisines,count_r
             </ul>
         </header>
         <div class="photoandname">
-            <img src="${img}" alt="${name}">
+            <a href="#" data-activate="#user-edit-photo"><img src="${img}" alt="${name}"></a>
             <h2>${name}</h2>
             <p>${email}</p>
         </div>

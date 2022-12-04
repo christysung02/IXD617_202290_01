@@ -204,3 +204,17 @@ export const ProfileEditPage = async() => {
 
     $("#profile-edit-page .body").html(makeProfileEditForm(user));
 }
+
+
+export const UserEditPhotoForm  = async() => {
+    let {result:users} = await query({
+        type:"users_by_user_id",
+        params:[sessionStorage.userId]
+    });
+    console.log(users);
+    let [user] = users;
+
+    $("#user-edit-photo .body").css({
+        "background-image": `url('${user.img}')`
+    });
+}

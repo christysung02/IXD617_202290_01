@@ -349,9 +349,9 @@ h2{
     margin: 0.5em 1em;
 }
 
-/* CHOOSE DESCRIPTION PAGE */
+/* CHOOSE DESCRIPTION PAGE 
 form#dish-add-form {
-    padding: 1rem 2rem;
+    padding: 0rem;
 }
 
 .modal-popup #dish-add-form{
@@ -441,6 +441,7 @@ form#dish-add-form {
     opacity: 0;
     z-index: 10;
 }
+
 .modal.active {
     opacity: 1;
     pointer-events: initial;
@@ -457,17 +458,17 @@ form#dish-add-form {
 
 .modal-popup {
     position: absolute;
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: var(--color-main-white);
     width: 80vw;
     max-height: 80vh;
     display:flex;
     flex-direction: column;
     border-radius: 1em;
-    overflow:hidden;
     transition: all 0.3s;
     padding: 1em;
+    background-color: var(--color-main-white);
 }
 
 .modal.active .modal-popup {

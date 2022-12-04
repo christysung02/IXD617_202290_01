@@ -93,8 +93,9 @@ $(() => {
         $("#user-edit-photo").removeClass("active");
     })
 
-    .on("submit", ".js-submit-user-edit-photo-form", function(e) {
+    .on("click", "#js-submit-user-edit-photo-form", function(e) {
         checkUserEditPhotoForm();
+        $("#user-edit-photo").removeClass("active");
     })
 
     .on("change", ".imagepicker input", function(e) {

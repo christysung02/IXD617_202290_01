@@ -131,6 +131,7 @@ export const checkDishDetailEditForm = () => {
 
 export const checkUserEditPhotoForm = () => {
     let photo = $("#user-edit-photo-image").val();
+    console.log("user-edit-photo-image val: ", photo)
 
     query({
         type: 'update_user_photo',
@@ -142,7 +143,7 @@ export const checkUserEditPhotoForm = () => {
         if (data.error) {
             throw(data.error);
         } else {
-            window.history.go(-1);
+            console.log("Update success.")
         }
     })
 }

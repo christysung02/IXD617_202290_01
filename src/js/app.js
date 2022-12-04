@@ -1,6 +1,6 @@
 import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm} from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId} from "./forms.js";
 import { checkUpload} from "./functions.js";
 
 // Document Ready
@@ -208,6 +208,9 @@ $(() => {
     $('body').on("mousedown touchstart",'.dishlist-item',function(e){
         timer = setTimeout(() => {
             console.log("Long click");
+            let dish_id = parseInt($(this).find('a').attr("data-dish-id"));
+            deleteLocationByLocationId(dish_id);
+            deleteDishByDishId(dish_id);
             $(this).remove()
         },500);
     }).on("mouseup touchend",function(){

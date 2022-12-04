@@ -80,6 +80,27 @@ const insertLocation = async (location_id, lat, lng, description) => {
     })
 }
 
+const insertDish = async (dish_id, dish_name, description,
+    cuisine_id, userId, dish_img) => {
+    await query({
+        type: 'insert_dish',
+        params: [
+            dish_id,
+            dish_name,
+            description,
+            cuisine_id,
+            userId,
+            dish_img
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("Add dish succeed.");
+        }
+    })
+}
+
 export const checkDishAddForm = async () => {
     let dish_name = $("#dish_add-dish_name").val();
     let description = $("#dish_add-description").val();
@@ -91,26 +112,43 @@ export const checkDishAddForm = async () => {
     $(".dishlist").append(makeDish([
         {dish_id:dish_id, dish_name:dish_name, img:dish_img}]));
 
-    query({
-        type: 'insert_dish',
+    insertDish(dish_id, dish_name, description,
+        sessionStorage.cuisine_id, sessionStorage.userId, dish_img)
+
+    // location_id is the same as dish_id.
+    insertLocation(dish_id, dish_id, 37.70687, -122.49103)
+}
+
+export const deleteLocationByLocationId = async (location_id) => {
+    await query({
+        type: 'delete_location_by_location_id',
         params: [
-            dish_id,
-            dish_name,
-            description,
-            sessionStorage.cuisine_id,
-            sessionStorage.userId,
-            dish_img,
+            location_id
         ]
     }).then((data)=>{
         if (data.error) {
             throw(data.error);
         } else {
-            console.log("Add dish succeed.");          
+            console.log("delete location with location id: ", location_id);
+        }
+    }) 
+}
+
+export const deleteDishByDishId = async (dish_id) => {
+    console.log("Start deleting dish, dish_id: ", dish_id);
+    await query({
+        type: 'delete_dish_by_dish_id',
+        params: [
+            dish_id
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("delete dish with dish id: ", dish_id);
         }
     })
-
-    // location_id is the same as dish_id.
-    insertLocation(dish_id, dish_id, 37.70687, -122.49103)
+    console.log("Finish deleting dish"); 
 }
 
 export const checkDishDetailEditForm = () => {

@@ -77,8 +77,7 @@ function makeStatement($data){
         
         // Dish-detail-page -Map
         case "dish_locations_by_dish_id":
-            error_log("dish_locations_by_dish_id");
-            error_log(print_r($params,true));
+            // error_log("dish_locations_by_dish_id");
             return makeQuery($conn, 
                 "SELECT *
                     FROM `track_ixd617_dishes` AS d
@@ -98,8 +97,8 @@ function makeStatement($data){
 
         // Map Page
         case "dish_locations_by_user_id":
-            error_log("dish_locations_by_user_id");
-            error_log(print_r($params,true));
+            // error_log("dish_locations_by_user_id");
+            // error_log(print_r($params,true));
             return makeQuery($conn, 
                 "SELECT *
                     FROM `track_ixd617_dishes` AS d
@@ -245,10 +244,20 @@ function makeStatement($data){
 
 
         //Delete
-        case "delete_location":
+        case "delete_location_by_location_id":
             $result = makeQuery($conn, "DELETE FROM
-            `track_ixd617_locations
+            `track_ixd617_locations`
             WHERE `location_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+        case "delete_dish_by_dish_id":
+            error_log("delete_dish_by_dish_id");
+            $result = makeQuery($conn, "DELETE FROM
+            `track_ixd617_dishes`
+            WHERE `dish_id` = ?
             ", $params, false);
 
             if (isset($result['error'])) return $result;

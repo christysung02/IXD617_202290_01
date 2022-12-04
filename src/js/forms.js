@@ -1,4 +1,5 @@
 import { query } from "./functions.js";
+import { makeDish } from "./parts.js";
 
 export const checkSignupForm = () => {
     let username = $("#signup-username").val();
@@ -53,13 +54,12 @@ export const checkLocationAddForm = () => {
     })
 }
 
-const countTotalDishes = async () => {
-    let num_dishes = await query({
-        type: 'count_total_dishes',
+const getMaxDishId = async () => {
+    let max_dish_id = await query({
+        type: 'max_dish_id',
         params: []
     });
-    console.log("Total dish: ", num_dishes.result[0].count);
-    return num_dishes.result[0].count;
+    return max_dish_id.result[0].max_id;
 }
 
 const insertLocation = async (location_id, lat, lng, description) => {
@@ -84,10 +84,14 @@ export const checkDishAddForm = async () => {
     let dish_name = $("#dish_add-dish_name").val();
     let description = $("#dish_add-description").val();
 
-    console.log("New dish ID: ", await countTotalDishes() + 1);
-    const dish_id = await countTotalDishes() + 1;
+    const dish_id = await getMaxDishId() + 1;
+    console.log("New dish ID: ", dish_id);
+    let dish_img='https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
 
-    await query({
+    $(".dishlist").append(makeDish([
+        {dish_id:dish_id, dish_name:dish_name, img:dish_img}]));
+
+    query({
         type: 'insert_dish',
         params: [
             dish_id,
@@ -95,7 +99,7 @@ export const checkDishAddForm = async () => {
             description,
             sessionStorage.cuisine_id,
             sessionStorage.userId,
-            'https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name,
+            dish_img,
         ]
     }).then((data)=>{
         if (data.error) {
@@ -106,7 +110,7 @@ export const checkDishAddForm = async () => {
     })
 
     // location_id is the same as dish_id.
-    await insertLocation(dish_id, dish_id, 37.70687, -122.49103)
+    insertLocation(dish_id, dish_id, 37.70687, -122.49103)
 }
 
 export const checkDishDetailEditForm = () => {

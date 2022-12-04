@@ -89,10 +89,10 @@ function makeStatement($data){
                     WHERE d.dish_id=?
                 ", $params);
 
-        case "count_total_dishes":
+        case "max_dish_id":
             return makeQuery($conn, 
             "SELECT
-                COUNT(*) AS count
+                MAX(dish_id) AS max_id
             FROM `track_ixd617_dishes`
             ", $params);
 

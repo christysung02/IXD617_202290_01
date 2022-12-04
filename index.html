@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- DRAWER -->
         <div id="modal-drawer-map" class="modal">
             <div class="modal-back transparent" data-deactivate="#modal-drawer-map"></div>
             <div class="modal-drawer left">
@@ -207,6 +207,26 @@
             <div class="cuisinelist"></div>
         </div>
 
+        <!-- DRAWER -->
+        <div id="modal-drawer-cuisine" class="modal">
+            <div class="modal-back transparent" data-deactivate="#modal-drawer-cuisine"></div>
+            <div class="modal-drawer left">
+                <div class="modal-head maplistleftarrow">
+                    <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
+                </div>
+                <div class="modal-body list" id="close-modal-drawer-cuisine">
+                    <a href="#map-page">
+                        <h1>Map</h1>
+                    </a>
+                    <h1 style="color: var(--color-main-black);">Cuisine</h1>
+                    <a href="#profile-page">
+                        <h1>Profile</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD CUISINE POP-UP -->
         <div id="add-modal-cuisine" class="modal">
             <div class="modal-back" data-deactivate="#add-modal-cuisine"></div>
             <div class="modal-popup">
@@ -222,23 +242,6 @@
                         <li class="flex-stretch"></li>
                         <li id="add-cuisine"><button class="addbtn">Add</button></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div id="modal-drawer-cuisine" class="modal">
-            <div class="modal-back transparent" data-deactivate="#modal-drawer-cuisine"></div>
-            <div class="modal-drawer left">
-                <div class="modal-head maplistleftarrow">
-                    <img id="close-modal-drawer-cuisine" src="src/img/leftarrowicon.png">
-                </div>
-                <div class="modal-body list" id="close-modal-drawer-cuisine">
-                    <a href="#map-page">
-                        <h1>Map</h1>
-                    </a>
-                    <h1 style="color: var(--color-main-black);">Cuisine</h1>
-                    <a href="#profile-page">
-                        <h1>Profile</h1>
-                    </a>
                 </div>
             </div>
         </div>
@@ -259,27 +262,27 @@
         <div data-role="main" class="body">
             <div class="dishlist"></div>
         </div>
-    </section>
 
-    <div id="add-modal-dish" class="modal">
-        <div class="modal-back" data-deactivate="#add-modal-dish"></div>
-        <div class="modal-popup">
-            <div data-role="modal-header" class="modal-head modal-title">
-                <p>Add a New Dish</p>
-            </div>
-            <form data-role="main" data-ajax="false" id="dish-add-form">
-                <div class="modal-body"></div>
-            </form>
-            <div data-role="modal-footer" class="modal-foot">
-                <ul>
-                    <li id="remove-modal-dish"><button class="cancelbtn">Cancel</button></li>
-                    <li class="flex-stretch"></li>
-                    <li id="submit-dish-add-form"><button class="addbtn">Add</button></li>
-                </ul>
+        <!-- ADD DISH POP-UP -->
+        <div id="add-modal-dish" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-dish"></div>
+            <div class="modal-popup">
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>Add a New Dish</p>
+                </div>
+                <form data-role="main" data-ajax="false" id="dish-add-form">
+                    <div class="modal-body"></div>
+                </form>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="remove-modal-dish"><button class="cancelbtn">Cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="submit-dish-add-form"><button class="addbtn">Add</button></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
 
 
@@ -320,7 +323,7 @@
     <!-- PROFILE PAGE -->
     <section data-role="page" id="profile-page">
         <div data-role="main" class="display-flex flex-column"> </div>
-
+        <!-- DRAWER -->
         <div id="modal-drawer-profile" class="modal">
             <div class="modal-back transparent" data-deactivate="#modal-drawer-profile"></div>
             <div class="modal-drawer left">
@@ -338,7 +341,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- EDIT USER PHOTO POP-UP -->
         <div id="user-edit-photo" class="modal">
             <div class="modal-back" data-deactivate="#user-edit-photo"></div>
             <div class="modal-popup">

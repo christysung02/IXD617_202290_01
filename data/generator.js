@@ -57,16 +57,16 @@ const getCountryFlag= (cuisine_id) => {
 
 const getCountryMark= (cuisine_id) => {
     let types = {
-        1:'src/img/country/China.png',
-        2:'src/img/country/France.png',
-        3:'src/img/country/Hong Kong.png',
-        4:'src/img/country/Italy.png',
-        5:'src/img/country/Japan.png',
-        6:'src/img/country/South Korea.png',
-        7:'src/img/country/Taiwan.png',
-        8:'src/img/country/United Kingdom.png',
-        9:'src/img/country/United States of America.png',
-        10:'src/img/country/Vietnam.png'
+        1:'src/img/mark/China.png',
+        2:'src/img/mark/France.png',
+        3:'src/img/mark/Hong Kong.png',
+        4:'src/img/mark/Italy.png',
+        5:'src/img/mark/Japan.png',
+        6:'src/img/mark/South Korea.png',
+        7:'src/img/mark/Taiwan.png',
+        8:'src/img/mark/United Kingdom.png',
+        9:'src/img/mark/United States of America.png',
+        10:'src/img/mark/Vietnam.png'
     }
     return types[cuisine_id];
 }

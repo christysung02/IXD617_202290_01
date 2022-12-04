@@ -137,3 +137,7 @@ export const makeDishDetailEditForm = ({dish_detail_edit,namespace}) => {
     })}
     `;
 }
+
+export const makeCountrySelectionOption = templater(({cuisine_id,cuisine_type})=>
+    `<option cuisine_id=${cuisine_id}>${cuisine_type}</option>`
+)

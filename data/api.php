@@ -112,6 +112,31 @@ function makeStatement($data){
 
 
         //Insert
+        case "insert_cuisine":
+            $result = makeQuery($conn, "INSERT INTO
+            `track_ixd617_cuisines`
+            (
+                `cuisine_id`,
+                `user_id`,
+                `cuisine_type`,
+                `countryflag`,
+                `countrymark`,
+                `date_create`
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,
+                NOW()
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
         case "insert_dish":
             $result = makeQuery($conn, "INSERT INTO
             `track_ixd617_dishes`
@@ -252,9 +277,26 @@ function makeStatement($data){
 
             if (isset($result['error'])) return $result;
             return ["result"=>"Success"];
+        
+        case "delete_cuisine_by_cuisine_id_user_id":
+            $result = makeQuery($conn, "DELETE FROM
+            `track_ixd617_cuisines`
+            WHERE `cuisine_id` = ? AND `user_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+        case "delete_all_dishes_by_cuisine_id_user_id":
+            $result = makeQuery($conn, "DELETE FROM
+            `track_ixd617_dishes`
+            WHERE `cuisine_id` = ? AND `user_id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
         case "delete_dish_by_dish_id":
-            error_log("delete_dish_by_dish_id");
             $result = makeQuery($conn, "DELETE FROM
             `track_ixd617_dishes`
             WHERE `dish_id` = ?

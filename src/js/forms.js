@@ -62,6 +62,25 @@ const getMaxDishId = async () => {
     return max_dish_id.result[0].max_id;
 }
 
+export const insertCuisine = async (cuisine_id, user_id, cuisine_type, countryflag, countrymark) => {
+    await query({
+        type: 'insert_cuisine',
+        params: [
+            cuisine_id, 
+            user_id, 
+            cuisine_type, 
+            countryflag, 
+            countrymark
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("Add cuisine succeed.");
+        }
+    })
+}
+
 const insertLocation = async (location_id, lat, lng, description) => {
     await query({
         type: 'insert_location',
@@ -149,6 +168,38 @@ export const deleteDishByDishId = async (dish_id) => {
         }
     })
     console.log("Finish deleting dish"); 
+}
+
+export const deleteCuisineByCuisineIdUserId = async (cuisine_id, user_id) => {
+    await query({
+        type: 'delete_cuisine_by_cuisine_id_user_id',
+        params: [
+            cuisine_id,
+            user_id
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("delete cuisine with cuisine id: ", cuisine_id);
+        }
+    })
+}
+
+export const deleteAllDishesByCuisineIdUserId = async (cuisine_id, user_id) => {
+    await query({
+        type: 'delete_all_dishes_by_cuisine_id_user_id',
+        params: [
+            cuisine_id,
+            user_id
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            console.log("delete all dishes with cuisine id: ", cuisine_id);
+        }
+    })
 }
 
 export const checkDishDetailEditForm = () => {

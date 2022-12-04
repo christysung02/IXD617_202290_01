@@ -1,7 +1,9 @@
-import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm, CountryDropdown} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId} from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId, insertCuisine, deleteCuisineByCuisineIdUserId, deleteAllDishesByCuisineIdUserId} from "./forms.js";
 import { checkUpload} from "./functions.js";
+import { GenerateCountryList } from "../../data/cuisine_data.js";
+import {makeCuisine} from "./parts.js"
 
 // Document Ready
 $(() => {
@@ -15,7 +17,10 @@ $(() => {
         /* Page Routes*/
         switch(ui.toPage[0].id) {
             case "map-page": MapPage(); break;
-            case "cuisine-page":CuisinePage(); break; 
+            case "cuisine-page":
+                CuisinePage();
+                CountryDropdown();
+                break; 
 
             case "dish-page":
                 DishPage(); 
@@ -145,18 +150,12 @@ $(() => {
 //
     .on("click", "#add-cuisine", function(){
         // const country = $("#country-input").val();
-        const country=$('#country-selected option:selected').attr('value');
+        const cuisine_id=$('#country-selected option:selected').attr('cuisine_id');
+        let country = GenerateCountryList().find(o => o.cuisine_id == cuisine_id);
         // Add new ite
         console.log(country)
-        $(".cuisinelist").append(`
-            <div class="cuisinelist-item">
-                <a href="#dish-page"><img src="${countryflag}" alt="${country}"></a>
-                <br>
-                <div class="country-name">
-                    <p>${country}</p>
-                </div>
-            </div>
-        `)
+        $(".cuisinelist").append(makeCuisine([country]));
+        insertCuisine(country.cuisine_id, sessionStorage.userId, country.cuisine_type, country.countryflag, country.countrymark);
         // Make modal disappear.
         $("#add-modal-cuisine").removeClass("active");
     })
@@ -172,7 +171,13 @@ $(() => {
     $('body').on("mousedown touchstart",'.cuisinelist-item',function(e){
         timer = setTimeout(() => {
             console.log("Long click");
-            $(this).remove()
+            let cuisine_id=parseInt($(this).find('a').attr("data-cuisine-id"));
+            $(this).remove();
+            // Delete the cuisine in the table for the user.
+            deleteCuisineByCuisineIdUserId(cuisine_id, sessionStorage.userId);
+
+            // Delete all dishes within the cuisine for the user.
+            deleteAllDishesByCuisineIdUserId(cuisine_id, sessionStorage.userId);
         },500);
     }).on("mouseup touchend",function(){
         clearTimeout(timer);

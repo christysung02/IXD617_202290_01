@@ -23,11 +23,11 @@
     <script src="src/js/app.js" type="module"></script>
     <!-- <script src="src/js/signin.js"></script> -->
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-    <script>
+    <!-- <script>
         $(function () {
             $("#country-dropdown").load("src/countrydropdown.html");
         });
-    </script>
+    </script> -->
 
     <!-- Maps Javascript API KEY -->
     <!-- AIzaSyCFTPByXCXXObUhuhYmsmt6Mtye46uVCTM -->
@@ -234,7 +234,13 @@
                     <p>Add a New Type of Cuisine</p>
                 </div>
                 <div class="modal-body">
-                    <div class="country-dropdown" id="country-dropdown"></div>
+                    <div class="country-dropdown" id="country-dropdown">
+                        <label for="country-selected">Country</label>
+                        <span style="color: red !important; display: inline; float: none;">*</span>
+                        <select id="country-selected" name="country" class="form-control">
+                            <!-- Options would be filled by `CountryDropdown` -->
+                        </select>
+                    </div>
                 </div>
                 <div data-role="modal-footer" class="modal-foot">
                     <ul>

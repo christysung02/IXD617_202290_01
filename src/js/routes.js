@@ -1,7 +1,7 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeProfileEditForm, makeDishDetailEditForm} from "./parts.js";
-
+import { makeCuisine, makeProfile, makeDish, makeDishDetail, makeDishMapDescription,makeProfileEditForm, makeDishDetailEditForm, makeCountrySelectionOption} from "./parts.js";
+import {GenerateCountryList} from "../../data/cuisine_data.js"
 // MAP PAGE
 //
 export const MapPage = async() => {
@@ -81,6 +81,10 @@ export const CuisinePage = async() => {
     $("#cuisine-page .cuisinelist").html(makeCuisine(cuisine_information))
 }
 
+export const CountryDropdown = async() =>{
+    console.log();
+    $("#country-selected").html(makeCountrySelectionOption(GenerateCountryList()));
+}
 
 // DISH PAGE
 //

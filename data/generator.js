@@ -1,3 +1,5 @@
+import {getCuisineType, getCountryFlag, getCountryMark} from "./cuisine_data.js";
+
 const hex = () => chance.string({length:3, pool:'3456789AB'});
 const num = () => chance.natural({min:350,max:600});
 const getdate = (d1,d2) => dayjs(new Date(chance.natural({min:d1,max:d2}))).format('YYYY-MM-DD HH:mm:ss');
@@ -22,56 +24,6 @@ const dishestype = (cuisine_id) => {
     }
     return chance.pickone(types[cuisine_id]);
 }
-
-const getCuisineType= (cuisine_id) => {
-    let types = {
-        1:'China',
-        2:'France',
-        3:'Hong Kong',
-        4:'Italy',
-        5:'Japan',
-        6:'South Korea',
-        7:'Taiwan',
-        8:'United Kingdom',
-        9:'United States of America',
-        10:'Vietnam'
-    }
-    return types[cuisine_id];
-}
-
-const getCountryFlag= (cuisine_id) => {
-    let types = {
-        1:'src/img/country/China.png',
-        2:'src/img/country/France.png',
-        3:'src/img/country/Hong Kong.png',
-        4:'src/img/country/Italy.png',
-        5:'src/img/country/Japan.png',
-        6:'src/img/country/South Korea.png',
-        7:'src/img/country/Taiwan.png',
-        8:'src/img/country/United Kingdom.png',
-        9:'src/img/country/United States of America.png',
-        10:'src/img/country/Vietnam.png'
-    }
-    return types[cuisine_id];
-}
-
-const getCountryMark= (cuisine_id) => {
-    let types = {
-        1:'src/img/mark/China.png',
-        2:'src/img/mark/France.png',
-        3:'src/img/mark/Hong Kong.png',
-        4:'src/img/mark/Italy.png',
-        5:'src/img/mark/Japan.png',
-        6:'src/img/mark/South Korea.png',
-        7:'src/img/mark/Taiwan.png',
-        8:'src/img/mark/United Kingdom.png',
-        9:'src/img/mark/United States of America.png',
-        10:'src/img/mark/Vietnam.png'
-    }
-    return types[cuisine_id];
-}
-
-
 
 // Makes data.
 //

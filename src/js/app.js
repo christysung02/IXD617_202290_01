@@ -57,11 +57,6 @@ $(() => {
         checkUserId();
     })
 
-    .on("click", "#submit-password-edit-form", function(e) {
-        checkPasswordEditForm();
-        $(target).removeClass("active");
-    })
-
     // LOCATION
     .on("click", ".js-submit-location-add-form", function(e) {
         checkLocationAddForm();
@@ -109,6 +104,20 @@ $(() => {
             })
         })
     })
+
+    // PROFILE PASSWORD EDIT 
+    .on("click", "#submit-password-edit-form", function(e) {
+        checkPasswordEditForm();
+        $("#profile-edit-page").removeClass("active");
+    })
+
+    .on("click", "#remove-password-edit-form", function(){
+        // Make modal disappear.
+        console.log("Go back.")
+        window.location.href= "#profile-settings-page";
+    })
+
+
 
     // ACTIVATE TOOLS
     .on("click", "[data-activate]", function(e) {

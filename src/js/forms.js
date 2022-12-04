@@ -187,19 +187,18 @@ export const deleteCuisineByCuisineIdUserId = async (cuisine_id, user_id) => {
 }
 
 export const deleteAllDishesByCuisineIdUserId = async (cuisine_id, user_id) => {
-    await query({
-        type: 'delete_all_dishes_by_cuisine_id_user_id',
-        params: [
-            cuisine_id,
-            user_id
-        ]
-    }).then((data)=>{
-        if (data.error) {
-            throw(data.error);
-        } else {
-            console.log("delete all dishes with cuisine id: ", cuisine_id);
-        }
-    })
+    let query_dish = await query({
+        type: "dishes_by_user_id_cuisine_id",
+        params: [user_id,cuisine_id]
+    });
+
+    let deleted_dishes = query_dish.result;
+
+    for (let i = 0; i < deleted_dishes.length; i++){
+        let dish_id = deleted_dishes[i].dish_id;
+        deleteLocationByLocationId(dish_id);
+        deleteDishByDishId(dish_id);
+    }   
 }
 
 export const checkDishDetailEditForm = () => {

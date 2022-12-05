@@ -3,7 +3,7 @@ import { checkSigninForm, checkUserId } from "./signin.js";
 import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId, insertCuisine, insertDish, insertLocation, deleteCuisineByCuisineIdUserId, deleteAllDishesByCuisineIdUserId, getMaxDishId} from "./forms.js";
 import { checkUpload} from "./functions.js";
 import { GenerateCountryList } from "../../data/cuisine_data.js";
-import {makeCuisine} from "./parts.js";
+import { makeCuisine} from "./parts.js";
 
 // Document Ready
 $(() => {

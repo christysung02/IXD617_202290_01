@@ -1,6 +1,6 @@
-import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm, CountryDropdown} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm, CountryDropdown, CountryDropdownChooseLocation, DishAddFormChooseLocation} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
-import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId, insertCuisine, deleteCuisineByCuisineIdUserId, deleteAllDishesByCuisineIdUserId} from "./forms.js";
+import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkLocationAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId, insertCuisine, insertDish, insertLocation, deleteCuisineByCuisineIdUserId, deleteAllDishesByCuisineIdUserId, getMaxDishId} from "./forms.js";
 import { checkUpload} from "./functions.js";
 import { GenerateCountryList } from "../../data/cuisine_data.js";
 import {makeCuisine} from "./parts.js"
@@ -37,7 +37,11 @@ $(() => {
             case "profile-edit-page":ProfileEditPage(); break;
 
             case "choose-description-page": ChooseDescriptionPage();break;
-            case "choose-location-page": ChooseLocationPage(); break;
+            case "choose-location-page": 
+                ChooseLocationPage();
+                DishAddFormChooseLocation();
+                CountryDropdownChooseLocation();
+                break;
             case "location-edit-page": break;
         }
     })
@@ -62,9 +66,34 @@ $(() => {
         checkUserId();
     })
 
-    // LOCATION
-    .on("click", ".js-submit-location-add-form", function(e) {
-        checkLocationAddForm();
+    // CHOOSE LOCATION
+    .on("click", ".js-submit-location-add-form", async function(e) {
+        let lat = $("#location-lat").attr("value")
+        let lng = $("#location-lng").attr("value")
+
+        const cuisine_id=$('#country-selected-choose-location option:selected').attr('cuisine_id');
+
+        let dish_name = $("#dish_add_choose_location-dish_name").val();
+        let description = $("#dish_add_choose_location-description").val();
+
+        console.log("dish name: ", dish_name);
+        console.log("description: ", description);
+
+        const dish_id = await getMaxDishId() + 1;
+        let dish_img='https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
+
+        insertDish(dish_id, dish_name, description,
+            cuisine_id, sessionStorage.userId, dish_img)
+
+        // location_id is the same as dish_id.
+        insertLocation(dish_id, dish_id, lat, lng);
+
+        // Back to map page after adding the dishes.
+        window.location.href = "#map-page";    
+    })
+
+    .on("click", "#remove-modal-choose-location", function(e) {
+        $("#add-modal-choose-location").removeClass("active");
     })
 
     // DISH DETAIL EDIT

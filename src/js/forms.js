@@ -33,28 +33,7 @@ export const checkSignupForm = () => {
     })
 }
 
-export const checkLocationAddForm = () => {
-    let location_id = $("#location-location_id").val();
-    let lat = $("#location-lat").val();
-    let lng = $("#location-lng").val();
-    let description = $("#location-description").val();
-
-    let back = +$("#location-back").val();
-
-
-    query({
-        type:"insert_location",
-        params:[location_id,lat,lng,description]
-    }).then((data)=>{
-        if (data.error) {
-            throw(data.error);
-        } else {
-            window.history.go(back);
-        }
-    })
-}
-
-const getMaxDishId = async () => {
+export const getMaxDishId = async () => {
     let max_dish_id = await query({
         type: 'max_dish_id',
         params: []
@@ -81,14 +60,14 @@ export const insertCuisine = async (cuisine_id, user_id, cuisine_type, countryfl
     })
 }
 
-const insertLocation = async (location_id, lat, lng, description) => {
+export const insertLocation = async (location_id, dish_id, lat, lng) => {
     await query({
         type: 'insert_location',
         params: [
             location_id,
+            dish_id,
             lat,
-            lng,
-            description
+            lng
         ]
     }).then((data)=>{
         if (data.error) {
@@ -99,7 +78,7 @@ const insertLocation = async (location_id, lat, lng, description) => {
     })
 }
 
-const insertDish = async (dish_id, dish_name, description,
+export const insertDish = async (dish_id, dish_name, description,
     cuisine_id, userId, dish_img) => {
     await query({
         type: 'insert_dish',

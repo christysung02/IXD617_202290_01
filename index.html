@@ -164,7 +164,7 @@
                 <li><a href="#choose-location-page"><img src="src/img/rightarrowicon.png"></a></li>
             </ul>
         </header>
-        <form data-role="main" data-ajax="false" id="dish-add-form">
+        <form data-role="main" data-ajax="false" class="dish-add-form">
             <div class="body"></div>
         </form>
     </section>
@@ -176,13 +176,40 @@
             <ul>
                 <li><a href="#" data-rel="back"><img src="src/img/leftarrowicon.png"></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-location-add-form"><img src="src/img/clickicon.png"></a></li>
+                <li><a href="#" data-activate="#add-modal-choose-location"><img src="src/img/clickicon.png"></a></li>
             </ul>
         </header>
         <div data-role="main">
             <input type="hidden" id="location-lat">
             <input type="hidden" id="location-lng">
             <div class="map"></div>
+        </div>
+        <div id="add-modal-choose-location" class="modal">
+            <div class="modal-back" data-deactivate="#add-modal-choose-location"></div>
+            <div class="modal-popup">
+                <div data-role="modal-header" class="modal-head modal-title">
+                    <p>Add a New Type of Dish</p>
+                </div>
+                <div class="modal-body">
+                    <div class="country-dropdown" id="country-dropdown">
+                        <label for="country-selected-choose-location">Country</label>
+                        <span style="color: red !important; display: inline; float: none;">*</span>
+                        <select id="country-selected-choose-location" name="country" class="form-control">
+                            <!-- Options would be filled by `CountryDropdown` -->
+                        </select>
+                    </div>
+                    <form data-role="main" data-ajax="false" id="dish-add-form-choose-location">
+                        <div class="modal-body"></div>
+                    </form>
+                </div>
+                <div data-role="modal-footer" class="modal-foot">
+                    <ul>
+                        <li id="remove-modal-choose-location"><button class="cancelbtn">Cancel</button></li>
+                        <li class="flex-stretch"></li>
+                        <li id="add-choose-location"><button class="addbtn js-submit-location-add-form">Add</button></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 

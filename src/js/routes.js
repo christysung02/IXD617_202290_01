@@ -63,6 +63,20 @@ export const ChooseLocationPage = async() => {
     })
 }
 
+export const DishAddFormChooseLocation = async() => {
+    $("#dish-add-form-choose-location .modal-body").html(makeDishDetailEditForm({
+        dish_detail_edit:{
+            dish_name:'',
+            description:'',
+        },
+        namespace:'dish_add_choose_location'
+    }));
+}
+
+export const CountryDropdownChooseLocation = async() =>{
+    console.log();
+    $("#country-selected-choose-location").html(makeCountrySelectionOption(GenerateCountryList()));
+}
 
 // CUISINE PAGE
 //

@@ -1,9 +1,9 @@
-import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, ChooseDescriptionPage, UserEditPhotoForm, CountryDropdown, CountryDropdownChooseLocation, DishAddFormChooseLocation} from "./routes.js";
+import { DishAddForm,DishDetailEditPage, DishDetailPage, DishPage, CuisinePage, MapPage, ProfilePage, ProfileEditPage, ChooseLocationPage, UserEditPhotoForm, CountryDropdown, CountryDropdownChooseLocation, DishAddFormChooseLocation} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 import { checkProfileEditForm,checkPasswordEditForm,checkDishDetailEditForm,checkSignupForm,checkDishAddForm, checkUserEditPhotoForm, deleteDishByDishId, deleteLocationByLocationId, insertCuisine, insertDish, insertLocation, deleteCuisineByCuisineIdUserId, deleteAllDishesByCuisineIdUserId, getMaxDishId} from "./forms.js";
 import { checkUpload} from "./functions.js";
 import { GenerateCountryList } from "../../data/cuisine_data.js";
-import {makeCuisine} from "./parts.js"
+import {makeCuisine} from "./parts.js";
 
 // Document Ready
 $(() => {
@@ -36,7 +36,6 @@ $(() => {
                  break;
             case "profile-edit-page":ProfileEditPage(); break;
 
-            case "choose-description-page": ChooseDescriptionPage();break;
             case "choose-location-page": 
                 ChooseLocationPage();
                 DishAddFormChooseLocation();

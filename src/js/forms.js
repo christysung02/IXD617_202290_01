@@ -114,7 +114,9 @@ export const checkDishAddForm = async () => {
         sessionStorage.cuisine_id, sessionStorage.userId, dish_img)
 
     // location_id is the same as dish_id.
-    insertLocation(dish_id, dish_id, 37.70687, -122.49103)
+    let lat = chance.latitude({min:37.67, max:37.80});
+    let lng = chance.longitude({min:-122.50, max:-122.37});
+    insertLocation(dish_id, dish_id, lat, lng)
 }
 
 export const deleteLocationByLocationId = async (location_id) => {

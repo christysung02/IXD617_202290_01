@@ -1,5 +1,6 @@
 import { query } from "./functions.js";
 import { makeDish } from "./parts.js";
+import { ProfilePage } from "./routes.js";
 
 export const checkSignupForm = () => {
     let username = $("#signup-username").val();
@@ -217,6 +218,7 @@ export const checkUserEditPhotoForm = () => {
             throw(data.error);
         } else {
             console.log("Update success.")
+            ProfilePage(); 
         }
     })
 }

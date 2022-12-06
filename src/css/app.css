@@ -190,7 +190,7 @@ h2{
     line-height: 18px;
     color: var(--color-main-gray);
     display: flex;
-    /* margin-bottom: 8px; */
+    margin-bottom: 8px;
     align-items: center;
 }
 
@@ -510,7 +510,7 @@ textarea#dish_add_choose_location-description {
     top: 50%;
     left: 50%;
     width: 80vw;
-    max-height: 80vh;
+    max-height: 90vh;
     display:flex;
     flex-direction: column;
     border-radius: 1em;
@@ -556,7 +556,6 @@ label {
     align-items: center;
     text-align: center;
     justify-content: center;
-    text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
     line-height: 21px;
@@ -887,19 +886,56 @@ form#profile-edit-form {
     width: 10px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 1px var(--color-main-gray); 
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-main-gray); 
-    border-radius: 10px;
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 1px var(--color-main-gray); 
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: var(--color-main-gray); 
+border-radius: 10px;
+}
+
+/* Remove the non-necessary string come with selected bar */
+#country-selected-button span.form-control{
+    display:none;
+}
+
+/* Add dish-image*/
+.thumbnail {
+    position:relative;
+    display:inline-block;
+    width:100%;
+    height:13rem;
+    border-radius:10px;
+    border:0.5px solid var(--color-main-red);
+    vertical-align:middle;
+    background-position:center;
+    background-size:cover;
   }
 
-  /* Remove the non-necessary string come with selected bar */
-  #country-selected-button span.form-control{
-      display:none;
-  }
+/* This will hide the file input */
+.imagepicker input {
+display:none;
+}
+.imagepicker {
+cursor:pointer;
+color:var(--color-main-red);
+background-color:var(--color-main-white);
+}
+/* This will add the floating plus symbol to the imagepicker */
+.imagepicker:before {
+content:'+';
+position:absolute;
+font-size:5em;
+vertical-align:middle;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+/* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+.imagepicker.picked:before {
+z-index:-1;
+}

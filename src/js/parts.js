@@ -65,7 +65,7 @@ export const makeDishDetail = templater(({dish_name,img, description})=>`
     </div>
 `)
 
-export const makeProfile = templater(({name,email,img,count_row_cuisines,count_row_dishes,count_row_post})=>`
+export const makeProfile = templater(({name,email,img})=>`
      <div class="profileupper" style="flex: 1;">
         <header data-role="header">
             <h1>Profile</h1>
@@ -122,6 +122,13 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => 
 
 export const makeDishDetailEditForm = ({dish_detail_edit,namespace}) => {
     return `
+    <div class="form-control">
+        <label class="form-label">Upload your image</label>
+        <input type="hidden" id="${namespace}-photo-image" value="${dish_detail_edit.img??""}">
+        <label class="imagepicker replace thumbnail ${dish_detail_edit.img?"picked":""}" style="background-image:url('${dish_detail_edit.img}')">
+            <input type="file" id="${namespace}-photo-input" data-role="none" class="hidden">
+        </label>
+    </div>
     ${FormControlInput({
         namespace,
         name: "dish_name",

@@ -171,6 +171,7 @@ export const DishDetailEditPage = async() => {
 export const DishAddForm = async() => {
     $("#dish-add-form .modal-body").html(makeDishDetailEditForm({
         dish_detail_edit:{
+            img:'',
             dish_name:'',
             description:'',
         },

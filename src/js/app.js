@@ -74,12 +74,19 @@ $(() => {
 
         let dish_name = $("#dish_add_choose_location-dish_name").val();
         let description = $("#dish_add_choose_location-description").val();
+        let dish_img = $("#dish_add_choose_location-photo-image").val();
+        // Provide default img if no image uploaded.
+        // See "https://stackoverflow.com/questions/154059/how-do-i-check-for-an-empty-undefined-null-string-in-javascript"
+        if (!dish_img){
+            console.log("No upload img, use the default.");
+            dish_img = 'https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
+        }
 
         console.log("dish name: ", dish_name);
         console.log("description: ", description);
+        console.log("dish_img: ", dish_img);
 
         const dish_id = await getMaxDishId() + 1;
-        let dish_img='https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
 
         insertDish(dish_id, dish_name, description,
             cuisine_id, sessionStorage.userId, dish_img)
@@ -128,7 +135,7 @@ $(() => {
             $(this).parent().prev().val(filename);
             $(this).parent().css({
                 "background-image": `url('${filename}')`
-            })
+            }).addClass("picked");
         })
     })
 

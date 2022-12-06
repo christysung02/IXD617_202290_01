@@ -236,7 +236,8 @@ function makeStatement($data){
             `track_ixd617_dishes`
             SET
                 `dish_name` = ?,
-                `description` = ?
+                `description` = ?,
+                `img` = ?
             WHERE `dish_id` = ?
             ", $params, false);
 

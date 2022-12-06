@@ -80,7 +80,7 @@ export const insertLocation = async (location_id, dish_id, lat, lng) => {
 }
 
 export const insertDish = async (dish_id, dish_name, description,
-    cuisine_id, userId, dish_img) => {
+    cuisine_id, userId, img) => {
     await query({
         type: 'insert_dish',
         params: [
@@ -89,7 +89,7 @@ export const insertDish = async (dish_id, dish_name, description,
             description,
             cuisine_id,
             userId,
-            dish_img
+            img
         ]
     }).then((data)=>{
         if (data.error) {
@@ -101,18 +101,26 @@ export const insertDish = async (dish_id, dish_name, description,
 }
 
 export const checkDishAddForm = async () => {
+    let dish_img = $("#dish_add-photo-image").val();
     let dish_name = $("#dish_add-dish_name").val();
     let description = $("#dish_add-description").val();
 
+    console.log(dish_img);
+    // Provide default img if no image uploaded.
+    // See "https://stackoverflow.com/questions/154059/how-do-i-check-for-an-empty-undefined-null-string-in-javascript"
+    if (!dish_img){
+        console.log("No upload img, use the default.");
+        dish_img = 'https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
+    }
+
     const dish_id = await getMaxDishId() + 1;
     console.log("New dish ID: ", dish_id);
-    let dish_img='https://via.placeholder.com/150/${hex()}/fff/?text=' + dish_name;
 
     $(".dishlist").append(makeDish([
         {dish_id:dish_id, dish_name:dish_name, img:dish_img}]));
 
     insertDish(dish_id, dish_name, description,
-        sessionStorage.cuisine_id, sessionStorage.userId, dish_img)
+        sessionStorage.cuisine_id, sessionStorage.userId,dish_img)
 
     // location_id is the same as dish_id.
     let lat = chance.latitude({min:37.67, max:37.80});
@@ -186,12 +194,16 @@ export const deleteAllDishesByCuisineIdUserId = async (cuisine_id, user_id) => {
 export const checkDishDetailEditForm = () => {
     let dish_name = $("#dish_detail_edit-dish_name").val();
     let description = $("#dish_detail_edit-description").val();
+    let dish_img = $("#dish_detail_edit-photo-image").attr('value');
+
+    console.log(dish_img);
 
     query({
         type: 'update_dish_detail',
         params: [
             dish_name,
             description,
+            dish_img,
             sessionStorage.dish_id
         ]
     }).then((data)=>{

@@ -5,6 +5,18 @@ import { checkUpload} from "./functions.js";
 import { GenerateCountryList } from "../../data/cuisine_data.js";
 import { makeCuisine} from "./parts.js";
 
+let RefreshImagePicker = () => {
+    // Clear the uploaded image in the image picker.
+    $(".imagepicker").attr("style", "background-image: url('')");
+
+    // Remove the 'picked' in the imagepicker's class so that the plus sign shows again.
+    // After uploading the img, the class of image picker becomes "imagepicker replace thumbnail  picked".
+    // Since there is 'picked' in its class, the plus sign in the middle would disappear. Thus,
+    // We have to remove the 'picked' in the class
+    // "imagepicker replace thumbnail  picked".replace('picked', '') --> "imagepicker replace thumbnail".
+    $(".imagepicker").attr("class", $(".imagepicker").attr("class").replace('picked', ''));
+}
+
 // Document Ready
 $(() => {
     checkUserId();
@@ -94,11 +106,15 @@ $(() => {
         // location_id is the same as dish_id.
         insertLocation(dish_id, dish_id, lat, lng);
 
+        RefreshImagePicker();
+
         // Back to map page after adding the dishes.
         window.location.href = "#map-page";    
     })
 
     .on("click", "#remove-modal-choose-location", function(e) {
+        RefreshImagePicker();
+
         $("#add-modal-choose-location").removeClass("active");
     })
 
@@ -228,16 +244,21 @@ $(() => {
     .on("click", "#submit-dish-add-form", function(e){
         e.preventDefault();
         const dish_name = $("#dish_add-dish_name").val();
+        console.log("image picker class: ", $(".imagepicker").attr("class"));
         console.log("dish: ", dish_name);
         checkDishAddForm();
+
+        RefreshImagePicker();
         
         // Make modal disappear.
         $("#add-modal-dish").removeClass("active");
     })
 
 
-      // Remove dish
-      .on("click", "#remove-modal-dish", function(){
+    // Remove dish
+    .on("click", "#remove-modal-dish", function(){
+        RefreshImagePicker();
+
         // Make modal disappear.
         $("#add-modal-dish").removeClass("active");
     })

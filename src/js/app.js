@@ -266,7 +266,7 @@ $(() => {
 
     // Long click
     var timer
-    $('body').on("mousedown touchstart",'.dishlist-item',function(e){
+    $('body').on("mousedown touchstart",'#dish-page .dishlist-item',function(e){
         timer = setTimeout(() => {
             console.log("Long click");
             let dish_id = parseInt($(this).find('a').attr("data-dish-id"));

@@ -228,7 +228,7 @@ $(() => {
             deleteCuisineByCuisineIdUserId(cuisine_id, sessionStorage.userId);
 
             // Delete all dishes within the cuisine for the user.
-            deleteAllDishesByCuisineIdUserId(cuisine_id, sessionStorage.userId);
+            // deleteAllDishesByCuisineIdUserId(cuisine_id, sessionStorage.userId);
         },500);
     }).on("mouseup touchend",function(){
         clearTimeout(timer);

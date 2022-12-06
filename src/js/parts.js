@@ -45,7 +45,7 @@ export const makeDishMapDescription = templater(({img,countryflag,dish_name,cuis
 `)
 
 export const makeDishDetail = templater(({dish_name,img, description})=>`
-    <div style="flex: 1;"> 
+    <div style="flex: 1.5;"> 
         <div class="dish-detail-img">
             <img src="${img}" alt="${dish_name}">
         </div>

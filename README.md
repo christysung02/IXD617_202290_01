@@ -9,6 +9,7 @@ IXD 617 Advanced Tech: Mobile Web
 
 ### Screenshots Links
 - http://github.com/christysung02/IXD617_202290_01/tree/main/screenshots/midterm
+- http://github.com/christysung02/IXD617_202290_01/tree/main/screenshots/final
 
 ### Assignment Links
 - http://christysung02.com/aau/ixd617/profile/
